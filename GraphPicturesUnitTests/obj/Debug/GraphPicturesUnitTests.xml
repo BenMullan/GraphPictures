@@ -1,0 +1,39 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+GraphPicturesUnitTests
+</name>
+</assembly>
+<members>
+<member name="P:GraphPicturesUnitTests.BezierObjectsTests.TestContext">
+	<summary>
+Gets or sets the test context which provides
+information about and functionality for the current test run.
+</summary>
+</member><member name="M:GraphPicturesUnitTests.BezierObjectsTests.WithAllPointsIncrementedTest">
+	<summary>
+A test for WithAllPointsIncremented
+</summary>
+</member><member name="T:GraphPicturesUnitTests.BezierObjectsTests">
+	<summary>
+This is a test class for BezierObjectsTests and is intended
+to contain all BezierObjectsTests Unit Tests
+</summary>
+</member><member name="P:GraphPicturesUnitTests.ExcelResourcesTests.TestContext">
+	<summary>
+Gets or sets the test context which provides
+information about and functionality for the current test run.
+</summary>
+</member><member name="M:GraphPicturesUnitTests.ExcelResourcesTests.ExcelColumnFromNumberTest">
+	<summary>
+A test for ExcelColumnFromNumber
+</summary>
+</member><member name="T:GraphPicturesUnitTests.ExcelResourcesTests">
+	<summary>
+This is a test class for ExcelResourcesTests and is intended
+to contain all ExcelResourcesTests Unit Tests
+</summary>
+</member>
+</members>
+</doc>

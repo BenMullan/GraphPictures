@@ -1,0 +1,112 @@
+﻿/*
+	Utilities.CSS - Generic multi-use Clases
+
+	PADDING		=		Inside the Element
+	MARGIN		=		Outside the Element
+*/
+
+.HideScrollBars {
+	/*Hide scroll bars*/
+	overflow: hidden;
+    touch-action: none;
+    -ms-touch-action: none;
+    overflow-y: -moz-hidden-unscrollable;
+    overflow-x: -moz-hidden-unscrollable;
+}
+
+.PaddedByTen {
+	padding-top: 10px;
+	padding-right: 10px;
+	padding-bottom: 10px;
+	padding-left: 10px;
+}
+
+.GreyBorder {
+    border-width: 4px;
+    border-style: solid;
+    border-color: #CCCCCC;
+    border-radius: 8px;
+}
+
+.Unselectable {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.VerticallyCentered {
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
+.ScalingImage {
+	/* Formatting for Images - Making them scale with different screen sizes */
+    position: absolute;
+    width: 0%;
+    height: auto;
+}
+
+.Shadow {
+    box-shadow: rgba(0, 0, 0, 0.45) 0px 5px 15px;
+}
+
+.Centered {
+    text-align: center;
+}
+
+.Container {
+	text-align: center;
+	background: #B8E0FF;
+	/**/
+	margin-top: 1%;
+	margin-right: 5%;
+	margin-bottom: 1%;
+	margin-left: 5%;
+	/**/
+	padding-top: 1%;
+	padding-right: 1%;
+	padding-bottom: 1%;
+	padding-left: 1%;
+}
+
+.Heading {
+	background-color: transparent;
+    color: #202020;
+    text-align: center;
+    font-size: 220%;
+    font-family: sans-serif;
+    font-weight: bold; 
+}
+
+.SubHeading {
+	background-color: transparent;
+    color: #202020;
+    text-align: center;
+    font-size: 130%;
+    font-family: sans-serif;
+    font-weight: bold; 
+}
+
+.Button {
+	box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 15px;
+	cursor: pointer;
+	font-size: 100%;
+    border-width: 3px;
+    border-color: #CCCCCC;
+    background-color: #F2F2EA;
+    color: #707070;
+    border-style: solid;
+    border-radius: 8px;
+    /**/
+    margin: 5px 5px 5px 5px;
+	padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+}

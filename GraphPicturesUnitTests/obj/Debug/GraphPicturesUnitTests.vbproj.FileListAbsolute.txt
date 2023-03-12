@@ -1,0 +1,12 @@
+D:\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\FromBravoSession0\GraphPicturesUnitTests\bin\Debug\GraphPicturesUnitTests.dll
+D:\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\FromBravoSession0\GraphPicturesUnitTests\bin\Debug\GraphPicturesUnitTests.pdb
+D:\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\FromBravoSession0\GraphPicturesUnitTests\bin\Debug\GraphPicturesUnitTests.xml
+D:\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\FromBravoSession0\GraphPicturesUnitTests\bin\Debug\GraphPictures.Library.dll
+D:\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\FromBravoSession0\GraphPicturesUnitTests\bin\Debug\GraphPictures.Library.pdb
+D:\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\FromBravoSession0\GraphPicturesUnitTests\bin\Debug\GraphPictures.Library.xml
+D:\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\FromBravoSession0\GraphPicturesUnitTests\bin\Debug\GraphPictures.Library_Accessor.dll
+D:\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\FromBravoSession0\GraphPicturesUnitTests\bin\Debug\GraphPictures.Library_Accessor.pdb
+D:\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\FromBravoSession0\GraphPicturesUnitTests\obj\Debug\GraphPicturesUnitTests.vbprojResolveAssemblyReference.cache
+D:\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\FromBravoSession0\GraphPicturesUnitTests\obj\Debug\GraphPicturesUnitTests.dll
+D:\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\FromBravoSession0\GraphPicturesUnitTests\obj\Debug\GraphPicturesUnitTests.xml
+D:\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\FromBravoSession0\GraphPicturesUnitTests\obj\Debug\GraphPicturesUnitTests.pdb

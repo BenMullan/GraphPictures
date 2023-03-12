@@ -1,0 +1,7 @@
+26 01 2022		Implemented Caching of DesmosState API Responses as APIR Files
+27 01 2022		Imropoved WhiteBoard CSS
+28 01 2022		Began the Implementation of HTML2Canvas for Video Frame Screenshotting
+08 02 2022		Wrote first version of AdjustInputQuality SVGFileSizeModerationAlgorythm, and set WebParts VSGGEnerationOptions to use it. ALGORYTHM REQUIRES MORE TESTING!!!
+25 05 2022		Added the EmptyFrameDesmosGraphState, so that VideoFrames which are empty still get rendered.
+26 05 2022		Extended the Response of the "DesmosStateForVideoFrame" API, to also return the SVGGenerationResultDataBase64.
+13 03 2023		Added the Project to GitHub. All Future Changes will be logged there. Sorry.

@@ -1,0 +1,60 @@
+D:\Benedict\Documents\SchoolWork\FormTime and Misc\BezierPictures\Solution\GraphPictures\GraphPicturesCMDUtils\bin\Debug\GraphPictures.CMDUtils.exe
+D:\Benedict\Documents\SchoolWork\FormTime and Misc\BezierPictures\Solution\GraphPictures\GraphPicturesCMDUtils\bin\Debug\GraphPictures.CMDUtils.pdb
+D:\Benedict\Documents\SchoolWork\FormTime and Misc\BezierPictures\Solution\GraphPictures\GraphPicturesCMDUtils\bin\Debug\GraphPictures.CMDUtils.xml
+D:\Benedict\Documents\SchoolWork\FormTime and Misc\BezierPictures\Solution\GraphPictures\GraphPicturesCMDUtils\bin\Debug\GraphPictures.Library.dll
+D:\Benedict\Documents\SchoolWork\FormTime and Misc\BezierPictures\Solution\GraphPictures\GraphPicturesCMDUtils\bin\Debug\GraphPictures.Library.pdb
+D:\Benedict\Documents\SchoolWork\FormTime and Misc\BezierPictures\Solution\GraphPictures\GraphPicturesCMDUtils\bin\Debug\GraphPictures.Library.xml
+D:\Benedict\Documents\SchoolWork\FormTime and Misc\BezierPictures\Solution\GraphPictures\GraphPicturesCMDUtils\obj\x86\Debug\GraphPicturesCMDUtils.vbprojResolveAssemblyReference.cache
+D:\Benedict\Documents\SchoolWork\FormTime and Misc\BezierPictures\Solution\GraphPictures\GraphPicturesCMDUtils\obj\x86\Debug\GraphPictures.Resources.resources
+D:\Benedict\Documents\SchoolWork\FormTime and Misc\BezierPictures\Solution\GraphPictures\GraphPicturesCMDUtils\obj\x86\Debug\GraphPicturesCMDUtils.vbproj.GenerateResource.Cache
+D:\Benedict\Documents\SchoolWork\FormTime and Misc\BezierPictures\Solution\GraphPictures\GraphPicturesCMDUtils\obj\x86\Debug\GraphPictures.CMDUtils.exe
+D:\Benedict\Documents\SchoolWork\FormTime and Misc\BezierPictures\Solution\GraphPictures\GraphPicturesCMDUtils\obj\x86\Debug\GraphPictures.CMDUtils.xml
+D:\Benedict\Documents\SchoolWork\FormTime and Misc\BezierPictures\Solution\GraphPictures\GraphPicturesCMDUtils\obj\x86\Debug\GraphPictures.CMDUtils.pdb
+D:\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\GraphPictures\GraphPicturesCMDUtils\bin\Debug\GraphPictures.CMDUtils.exe
+D:\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\GraphPictures\GraphPicturesCMDUtils\bin\Debug\GraphPictures.CMDUtils.pdb
+D:\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\GraphPictures\GraphPicturesCMDUtils\bin\Debug\GraphPictures.CMDUtils.xml
+D:\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\GraphPictures\GraphPicturesCMDUtils\bin\Debug\GraphPictures.Library.dll
+D:\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\GraphPictures\GraphPicturesCMDUtils\bin\Debug\GraphPictures.Library.pdb
+D:\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\GraphPictures\GraphPicturesCMDUtils\bin\Debug\GraphPictures.Library.xml
+D:\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\GraphPictures\GraphPicturesCMDUtils\obj\x86\Debug\GraphPicturesCMDUtils.vbprojResolveAssemblyReference.cache
+D:\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\GraphPictures\GraphPicturesCMDUtils\obj\x86\Debug\GraphPictures.Resources.resources
+D:\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\GraphPictures\GraphPicturesCMDUtils\obj\x86\Debug\GraphPicturesCMDUtils.vbproj.GenerateResource.Cache
+D:\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\GraphPictures\GraphPicturesCMDUtils\obj\x86\Debug\GraphPictures.CMDUtils.exe
+D:\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\GraphPictures\GraphPicturesCMDUtils\obj\x86\Debug\GraphPictures.CMDUtils.xml
+D:\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\GraphPictures\GraphPicturesCMDUtils\obj\x86\Debug\GraphPictures.CMDUtils.pdb
+\\Victor.MullNet.NET\Public\Documents\Programming\GraphPictures\15-10-2021\GraphPicturesCMDUtils\bin\Debug\GraphPictures.CMDUtils.exe
+\\Victor.MullNet.NET\Public\Documents\Programming\GraphPictures\15-10-2021\GraphPicturesCMDUtils\bin\Debug\GraphPictures.CMDUtils.pdb
+\\Victor.MullNet.NET\Public\Documents\Programming\GraphPictures\15-10-2021\GraphPicturesCMDUtils\bin\Debug\GraphPictures.CMDUtils.xml
+\\Victor.MullNet.NET\Public\Documents\Programming\GraphPictures\15-10-2021\GraphPicturesCMDUtils\bin\Debug\GraphPictures.Library.dll
+\\Victor.MullNet.NET\Public\Documents\Programming\GraphPictures\15-10-2021\GraphPicturesCMDUtils\bin\Debug\GraphPictures.Library.pdb
+\\Victor.MullNet.NET\Public\Documents\Programming\GraphPictures\15-10-2021\GraphPicturesCMDUtils\bin\Debug\GraphPictures.Library.xml
+\\Victor.MullNet.NET\Public\Documents\Programming\GraphPictures\15-10-2021\GraphPicturesCMDUtils\obj\x86\Debug\GraphPicturesCMDUtils.vbprojResolveAssemblyReference.cache
+\\Victor.MullNet.NET\Public\Documents\Programming\GraphPictures\15-10-2021\GraphPicturesCMDUtils\obj\x86\Debug\GraphPictures.Resources.resources
+\\Victor.MullNet.NET\Public\Documents\Programming\GraphPictures\15-10-2021\GraphPicturesCMDUtils\obj\x86\Debug\GraphPicturesCMDUtils.vbproj.GenerateResource.Cache
+\\Victor.MullNet.NET\Public\Documents\Programming\GraphPictures\15-10-2021\GraphPicturesCMDUtils\obj\x86\Debug\GraphPictures.CMDUtils.exe
+\\Victor.MullNet.NET\Public\Documents\Programming\GraphPictures\15-10-2021\GraphPicturesCMDUtils\obj\x86\Debug\GraphPictures.CMDUtils.xml
+\\Victor.MullNet.NET\Public\Documents\Programming\GraphPictures\15-10-2021\GraphPicturesCMDUtils\obj\x86\Debug\GraphPictures.CMDUtils.pdb
+\\Mnlt01\d$\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\FromBravoSession0\GraphPicturesCMDUtils\obj\x86\Debug\GraphPictures.CMDUtils.exe
+\\Mnlt01\d$\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\FromBravoSession0\GraphPicturesCMDUtils\obj\x86\Debug\GraphPictures.CMDUtils.xml
+\\Mnlt01\d$\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\FromBravoSession0\GraphPicturesCMDUtils\obj\x86\Debug\GraphPictures.CMDUtils.pdb
+\\Mnlt01\d$\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\FromBravoSession0\GraphPicturesCMDUtils\bin\Debug\GraphPictures.CMDUtils.exe
+\\Mnlt01\d$\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\FromBravoSession0\GraphPicturesCMDUtils\bin\Debug\GraphPictures.CMDUtils.pdb
+\\Mnlt01\d$\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\FromBravoSession0\GraphPicturesCMDUtils\bin\Debug\GraphPictures.CMDUtils.xml
+\\Mnlt01\d$\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\FromBravoSession0\GraphPicturesCMDUtils\bin\Debug\GraphPictures.Library.dll
+\\Mnlt01\d$\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\FromBravoSession0\GraphPicturesCMDUtils\bin\Debug\GraphPictures.Library.pdb
+\\Mnlt01\d$\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\FromBravoSession0\GraphPicturesCMDUtils\bin\Debug\GraphPictures.Library.xml
+\\Mnlt01\d$\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\FromBravoSession0\GraphPicturesCMDUtils\obj\x86\Debug\GraphPicturesCMDUtils.vbprojResolveAssemblyReference.cache
+\\Mnlt01\d$\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\FromBravoSession0\GraphPicturesCMDUtils\obj\x86\Debug\GraphPictures.Resources.resources
+\\Mnlt01\d$\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\FromBravoSession0\GraphPicturesCMDUtils\obj\x86\Debug\GraphPicturesCMDUtils.vbproj.GenerateResource.Cache
+D:\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\FromBravoSession0\GraphPicturesCMDUtils\bin\Debug\GraphPictures.CMDUtils.exe
+D:\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\FromBravoSession0\GraphPicturesCMDUtils\bin\Debug\GraphPictures.CMDUtils.pdb
+D:\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\FromBravoSession0\GraphPicturesCMDUtils\bin\Debug\GraphPictures.CMDUtils.xml
+D:\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\FromBravoSession0\GraphPicturesCMDUtils\bin\Debug\GraphPictures.Library.dll
+D:\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\FromBravoSession0\GraphPicturesCMDUtils\bin\Debug\GraphPictures.Library.pdb
+D:\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\FromBravoSession0\GraphPicturesCMDUtils\bin\Debug\GraphPictures.Library.xml
+D:\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\FromBravoSession0\GraphPicturesCMDUtils\obj\x86\Debug\GraphPicturesCMDUtils.vbprojResolveAssemblyReference.cache
+D:\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\FromBravoSession0\GraphPicturesCMDUtils\obj\x86\Debug\GraphPictures.Resources.resources
+D:\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\FromBravoSession0\GraphPicturesCMDUtils\obj\x86\Debug\GraphPicturesCMDUtils.vbproj.GenerateResource.Cache
+D:\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\FromBravoSession0\GraphPicturesCMDUtils\obj\x86\Debug\GraphPictures.CMDUtils.exe
+D:\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\FromBravoSession0\GraphPicturesCMDUtils\obj\x86\Debug\GraphPictures.CMDUtils.xml
+D:\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\FromBravoSession0\GraphPicturesCMDUtils\obj\x86\Debug\GraphPictures.CMDUtils.pdb

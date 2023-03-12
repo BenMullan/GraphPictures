@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<publishData>
+  <publishProfile publishUrl="C:\inetpub\wwwroot" deleteExistingFiles="False" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="True" profileName="GraphPicturesLocalIIS" publishMethod="FileSystem" replaceMatchingFiles="True" userName="" savePWD="False" userPWD="" SelectedForPublish="True">
+    <file relUrl="bin/GraphPictures.WebParts.dll" publishTime="05/26/2022 15:05:34" />
+    <file relUrl="ClientPages/Resources/AJAX.JS" publishTime="05/26/2022 15:12:49" />
+    <file relUrl="ClientPages/Resources/Utilities.CSS" publishTime="05/15/2022 15:42:52" />
+    <file relUrl="ClientPages/VideoTranscoding/ShowExprListRenderDesmosVideoFrames.ASPX" publishTime="05/26/2022 15:09:45" />
+    <file relUrl="API/VideoAPI.ASPX" publishTime="10/13/2021 08:17:47" />
+    <file relUrl="ClientPages/Resources/Utilities.JS" publishTime="01/12/2022 16:33:48" />
+    <file relUrl="ClientPages/VideoTranscoding/ViewVideoFile.ASPX" publishTime="11/19/2021 20:47:20" />
+    <file relUrl="ClientPages/Resources/EntryPoints.JS" publishTime="02/05/2022 21:22:23" />
+    <file relUrl="ClientPages/RasterImageToDesmos.ASPX" publishTime="11/19/2021 08:14:55" />
+    <file relUrl="ClientPages/WebCamUpload.ASPX" publishTime="01/28/2022 08:51:29" />
+    <file relUrl="ClientPages/DesmosTileLinksForSVG.ASPX" publishTime="11/27/2021 10:23:33" />
+    <file relUrl="ClientPages/ViewSVG.ASPX" publishTime="11/19/2021 20:55:09" />
+    <file relUrl="ClientPages/MainMenu.ASPX" publishTime="05/15/2022 09:32:25" />
+    <file relUrl="bin/GraphPictures.WebParts.pdb" publishTime="05/26/2022 15:05:34" />
+    <file relUrl="ClientPages/PlotRasterGraphic.ASPX" publishTime="11/19/2021 11:29:57" />
+    <file relUrl="ClientPages/DesmosTile.ASPX" publishTime="01/27/2022 17:47:48" />
+    <file relUrl="ClientPages/VideoTranscoding/PointPlotRenderDesmosVideoFrames.ASPX" publishTime="11/19/2021 08:14:55" />
+    <file relUrl="ClientPages/UploadRasterImage.ASPX" publishTime="02/05/2022 21:25:01" />
+    <file relUrl="Tiles/Default.ASPX" publishTime="01/27/2022 12:24:39" />
+    <file relUrl="ClientPages/VideoTranscoding/StartVideoTranscoding.ASPX" publishTime="05/25/2022 14:10:27" />
+    <file relUrl="ClientPages/UploadRasterImageAJAX.ASPX" publishTime="02/05/2022 21:39:16" />
+    <file relUrl="ClientPages/Resources/WebCamEasy.JS" publishTime="11/18/2021 10:50:39" />
+    <file relUrl="Default.ASPX" publishTime="01/27/2022 12:23:13" />
+    <file relUrl="ClientPages/WhiteBoard.ASPX" publishTime="01/12/2022 13:50:25" />
+    <file relUrl="ClientPages/RasterImageToSVG.ASPX" publishTime="11/19/2021 08:54:47" />
+    <file relUrl="bin/GraphPictures.WebParts.xml" publishTime="05/26/2022 15:05:34" />
+    <file relUrl="ClientPages/VideoTranscoding/EndVideoTranscoding.ASPX" publishTime="11/19/2021 08:14:55" />
+    <file relUrl="ClientPages/VideoTranscoding/RenderDesmosVideoFrames.ASPX" publishTime="11/19/2021 08:14:55" />
+    <file relUrl="ClientPages/Resources/WebCamResources.JS" publishTime="11/29/2021 14:10:03" />
+    <file relUrl="API/Upload.ASPX" publishTime="11/18/2021 18:26:03" />
+    <file relUrl="ClientPages/SVGToDesmos.ASPX" publishTime="01/28/2022 08:21:45" />
+    <file relUrl="ClientPages/Resources/JQuery-UI-1.12.1.JS" publishTime="09/29/2021 13:23:33" />
+    <file relUrl="bin/GraphPictures.Library.dll" publishTime="05/26/2022 12:00:00" />
+    <file relUrl="ClientPages/Resources/General.JS" publishTime="11/18/2021 16:33:00" />
+    <file relUrl="ClientPages/Resources/LoadingGif.GIF" publishTime="09/30/2021 07:56:13" />
+    <file relUrl="ClientPages/VideoTranscoding/ApplyAudioToDesmosVideo.ASPX" publishTime="11/19/2021 08:14:55" />
+    <file relUrl="ClientPages/Resources/WebCamSnap.Wav" publishTime="09/16/2021 19:52:41" />
+    <file relUrl="ClientPages/Resources/Desmos.Calcuator.JS" publishTime="11/01/2021 11:54:07" />
+    <file relUrl="bin/GraphPictures.Library.xml" publishTime="05/26/2022 12:00:00" />
+    <file relUrl="ClientPages/Resources/HTML2Canvas.Min.JS" publishTime="01/28/2022 10:29:06" />
+    <file relUrl="API/Get.ASPX" publishTime="10/07/2021 12:24:53" />
+    <file relUrl="favicon.ico" publishTime="09/29/2021 13:23:33" />
+    <file relUrl="bin/GraphPictures.Library.pdb" publishTime="05/26/2022 12:00:00" />
+    <file relUrl="ClientPages/Resources/JQuery-3.5.1.Min.JS" publishTime="09/29/2021 13:23:33" />
+    <file relUrl="Web.config" publishTime="02/03/2022 12:39:55" />
+    <file relUrl="ClientPages/DesmosTileLinks.ASPX" publishTime="11/19/2021 20:55:25" />
+    <file relUrl="ClientPages/Resources/General.CSS" publishTime="01/28/2022 08:46:04" />
+  </publishProfile>
+</publishData>

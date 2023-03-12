@@ -1,0 +1,666 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+GraphPictures.Library
+</name>
+</assembly>
+<members>
+<member name="P:GraphPictures.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:GraphPictures.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="T:GraphPictures.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member><member name="F:GraphPictures.Library.ImagingResources.SVGGenerator.SVGSizeModerationAlgorythm.CropInputEdges">
+	<summary>
+ Chops off the outer walls of the input RasterGraphic to attempt to reduce the size of the SVG generated
+ </summary>
+</member><member name="F:GraphPictures.Library.ImagingResources.SVGGenerator.SVGSizeModerationAlgorythm.AdjustTSize">
+	<summary>
+ Changes the "--turdsize=" Argument to Potrace, so that More, or less, detail, ends up in the SVG.
+ </summary>
+</member><member name="F:GraphPictures.Library.ImagingResources.SVGGenerator.SVGSizeModerationAlgorythm.AdjustInputQuality">
+	<summary>
+ Alters the [RG for Potrace]'s Dimensions relative to those of the IRG, over a Maximun Number of attempts, in the hope that Potrace will then pick up on less, or more, detail from the RG.
+ </summary>
+</member><member name="F:GraphPictures.Library.ImagingResources.SVGGenerator.SVGSizeModerationAlgorythm.DontModerateSVGFileSize">
+	<summary>
+ Bypasses all attempts to Get the SVGFile to be a certian size.
+ </summary>
+</member><member name="M:GraphPictures.Library.ImagingResources.SVGGenerator.SVGGenerationResultData.ToString">
+	<summary>Returns some XML (as a string), indicitive of the current contents of the current SVGGenerationResultData Object</summary>
+</member><member name="M:GraphPictures.Library.ImagingResources.SVGGenerator.#ctor(System.IO.FileInfo,GraphPictures.Library.ImagingResources.SVGGenerator.SVGGenerationOptions)">
+	<summary>Instanciates an SVGGenerator</summary>
+	<param name="_InputRasterGraphic">A Pointer to the RasterGraphic for which an SVG is to be generated</param>
+	<param name="_SVGGenerationOptions">Various Perameters required to how to Generate the SVG from the RasterGraphic. Some of these parameters are already predefined with default values, but some are not!</param>
+</member><member name="M:GraphPictures.Library.ImagingResources.SVGGenerator.GenerateSVGInFolder(System.IO.DirectoryInfo)">
+	<summary>
+ Generates an SVG whose name is based off of the name of the Input RasterGraphic, and the number of times the input image had to be cropped
+ </summary>
+</member><member name="M:GraphPictures.Library.ImagingResources.SVGGenerator.GenerateSVG(System.String)">
+	<summary>
+ Generates an SVG for the InputRasterGraphic, overwriting the File at _FinalSVGFile_OutputPath if it already exists.
+ </summary>
+</member><member name="M:GraphPictures.Library.ImagingResources.SVGGenerator.GenerateSVG_DontModerateSVGFileSize_(System.String,System.UInt16)">
+	<summary>
+ Generates an SVG for the InputRasterGraphic, using the Hard-Coded TSize
+ </summary>
+	<returns></returns>
+</member><member name="M:GraphPictures.Library.ImagingResources.SVGGenerator.GenerateSVG_AdjustInputQuality_(System.String,System.UInt16,System.UInt16)">
+	<summary>
+ Generates an SVG for the InputRasterGraphic, reducing or increacing the Bitmap Dimensions of the IRG over a Maximun Number of attempts, in the hope that Potrace will then pick up on less (or mrore) detail
+ </summary>
+	<returns></returns>
+</member><member name="M:GraphPictures.Library.ImagingResources.SVGGenerator.GenerateSVG_AdjustTSize_(System.String,System.UInt16)">
+	<summary>
+ Generates an SVG for the InputRasterGraphic, adjusting the Potrace TSize if it's not within 10% of the _TargetSVGFileSizeKB
+ </summary>
+	<returns></returns>
+</member><member name="M:GraphPictures.Library.ImagingResources.SVGGenerator.GenerateSVG_CropInputEdges_(System.String,System.UInt16)">
+	<summary>
+ Generates an SVG for the InputRasterGraphic, cropping the input RasterGraphic if it produces too many beziers in the output SVG
+ </summary>
+	<param name="_IdealMaximumSVGFileSizeKB">SVGs above this size will actually make it through if MaxAttempts to crop the image is reached, before an SVG below this size is generated...</param>
+	<returns>Data including The Number of times the Input Image had to be cropped, before an SVG of acceptable size was produced.</returns>
+</member><member name="M:GraphPictures.Library.ImagingResources.SVGGenerator.GenerateBMPInFolder(System.IO.FileInfo,System.IO.DirectoryInfo)">
+	<summary>
+ Generates a .BMP version of the _InputRasterGraphic, and saves it under an avaliable FileName within the _BMPOutputFolder, before returning this a Pointer to this File in the form of a FileInfo
+ </summary>
+</member><member name="M:GraphPictures.Library.ImagingResources.SVGGenerator.GenerateBMP(System.IO.FileInfo,System.String)">
+	<summary>
+ Generates a .BMP version of the _InputRasterHraphic, saved under the _BMPOutputPath$
+ </summary>
+</member><member name="M:GraphPictures.Library.ImagingResources.SVGGenerator.RunPotraceEXE(System.IO.FileInfo,System.String,System.UInt32)">
+	<summary>
+ Instanciates POTRACE.EXE with the specifier CLA's, from the specified Image Path. If the Process dosen't terminate in the specified No. MS, then it is killed.
+ </summary>
+</member><member name="M:GraphPictures.Library.ImagingResources.SVGGenerator.SVGFileContainsNoBeziers(System.String)">
+	<summary>
+ Evaluates weather or not an SVG File contains any path data. An Exception is also Thrown if the SVGFile contains no text at all.
+ </summary>
+</member><member name="M:GraphPictures.Library.ImagingResources.GenerateBitmapFromText(System.String)">
+	<summary>
+ Puts the Specified Text in the Middle of the Bitmap Returned
+ </summary>
+</member><member name="M:GraphPictures.Library.ImagingResources.SaveBase64PNGToDisk(System.String,System.String)">
+	<summary>
+ Saves a Base64 String, beginning with [data:image/png;base64,] to a .PNG file on Disk
+ </summary>
+	<param name="_OutputPNGPath">The full path the the Output PNG, E.g. [Z:\Images\Output.PNG]</param>
+	<remarks>The File is OVERWRITTEN, not APPENDED to, if it already exists</remarks>
+</member><member name="M:GraphPictures.Library.ImagingResources.ApplyTransformationToSavedImage(System.String,System.Drawing.RotateFlipType)">
+	<summary>
+ Reads in the Image from Disk, applies the specified Transformaiton, and saves the image back unto disk
+ </summary>
+</member><member name="T:GraphPictures.Library.PointPlottingObjects.PointPlottedRasterGraphic">
+	<summary>
+ Represents a Graphic which can be plotted onto a DesmosGraph, using a Point for each Pixel
+ </summary>
+	<remarks></remarks>
+</member><member name="P:GraphPictures.Library.ColourResources.ColourRange.ColourAtPercentageThrough(System.Decimal)">
+	<summary>
+ Gets the Colour x% of the way through the Range
+ </summary>
+	<param name="_ProportionOfRangeLength">E.g. 0.52 Would be 52% of the way through the Colours Array of the current ColourRange Object</param>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:GraphPictures.Library.ColourResources.ColourRange">
+	<summary>
+ Represents a Range of Colours.
+ </summary>
+	<remarks></remarks>
+</member><member name="M:GraphPictures.Library.FileResources.RemoveFirstNBytesFromStartOfFile(System.String,System.UInt16)">
+	<summary>
+ Removes the first N bytes from the start of the File's :Data$ Stream
+ </summary>
+	<param name="_FilePath"></param>
+	<param name="_NumberOfBytesToRemove"></param>
+	<remarks></remarks>
+</member><member name="M:GraphPictures.Library.FileResources.FindAvaliableFileNameInFolder(System.String,System.String)">
+	<summary>
+ Returns a FileName which does not yet exist in the folder. An attempt is made to use the Seed as it is, but that FileName is already taken, then a random String will be prepended.
+ </summary>
+</member><member name="P:GraphPictures.Library.BezierObjects.NOrderBezier.BezierOrderDescription">
+	<summary>
+ Returns the Bezier's Order, E.g. "Linear", or "9-th Order"
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:GraphPictures.Library.BezierObjects.NOrderBezier.GetExpressionsForGraphWithDragablePoints(System.UInt16)">
+	<summary>
+ Retunrs the IDesmosExpressions, for the current nOrder Bezier, but with all of it's points as draggable elements in Desmos.
+ Run these through the ToDesmosPastable() Compiler Extention Method for a String you can Paste into Desmos
+ </summary>
+</member><member name="M:GraphPictures.Library.BezierObjects.NOrderBezier.GetExpressionsForGraphWithDragablePointsAndShowAllSubBeziers(System.UInt16)">
+	<summary>
+ Retunrs the IDesmosExpressions, for the current nOrder Bezier, but with all of it's points as draggable elements in Desmos.
+ Also returns [IDesmosExpression]'s for all the SubBeziers within the current NOrderBezier. These SubBeziers also referance the XYVariables, so response when the Points are dragged.
+ Run these through the ToDesmosPastable() Compiler Extention Method for a String you can paste into Desmos
+ </summary>
+</member><member name="M:GraphPictures.Library.BezierObjects.CubicBezier.ToLatexExpression">
+	<summary>
+ Formats the Bezier as a LaTeX Expression, ready to paste into Graphing Calcuators such as Desmos
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:GraphPictures.Library.BezierObjects.CubicBezier.ToString">
+	<summary>
+ Returns a String representing the Bezier's Start, Control and End Points
+ </summary>
+	<returns>Returns a String representing the Bezier's Start, Control and End Points</returns>
+	<remarks></remarks>
+</member><member name="P:GraphPictures.Library.BezierObjects.CubicBezier.GraphBoundries">
+	<summary>
+ Gets the Max and Min X and Y values in the Points of the Cubic Bezier
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:GraphPictures.Library.BezierObjects.CubicBezier">
+	<summary>
+ Represents a Bezier with a StartPoint, Two ControlPoints, and an EndPoint
+ </summary>
+	<remarks></remarks>
+</member><member name="M:GraphPictures.Library.BezierObjects.QuadraticBezier.MakeBezierPassThrough(System.Drawing.Point)">
+	<summary>
+ Positions the ControlPoint, so that the Quadratic Bezier passes through the _DesiredPoint, Based off of the current Values of [the StartPoint and EndPoint, which must be set first for this to work].
+ </summary>
+	<param name="_DesiredPoint"></param>
+	<remarks></remarks>
+</member><member name="M:GraphPictures.Library.BezierObjects.QuadraticBezier.ToLatexExpression">
+	<summary>
+ Formats the Bezier as a LaTeX Expression, ready to paste into Graphing Calcuators such as Desmos
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:GraphPictures.Library.BezierObjects.QuadraticBezier.GraphBoundries">
+	<summary>
+ Gets the Max and Min X and Y values in the Points of the Cubic Bezier
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:GraphPictures.Library.BezierObjects.QuadraticBezier.ToString">
+	<summary>
+ Returns a String representing the Bezier's Start, Control and End Points
+ </summary>
+	<returns>Returns a String representing the Bezier's Start, Control and End Points</returns>
+	<remarks></remarks>
+</member><member name="T:GraphPictures.Library.BezierObjects.QuadraticBezier">
+	<summary>
+ Represents a Bezier with a StartPoint, ControlPoint, and EndPoint
+ </summary>
+	<remarks></remarks>
+</member><member name="F:GraphPictures.Library.BezierObjects.DraggablePoint.XYVariablesNumber">
+	<summary>
+ The SubScript X and Y number to use for the corrosponding Desmos Variables for this DraggablePoint.
+ E.g. were it 5, then this Point's LatexExpr would be (x_{5},y_{5})
+ </summary>
+</member><member name="P:GraphPictures.Library.BezierObjects.DraggablePoint.GraphBoundries">
+	<summary>
+ !!! There are no GraphBoundries for a DraggablePoint; it's position is determined by it's X and Y Variables
+ </summary>
+</member><member name="F:GraphPictures.Library.BezierObjects.DesmosVariable.SubScriptNumber">
+	<summary>
+ I.E. Name_{SubScriptNumber} for the LaTeX Expr
+ </summary>
+</member><member name="P:GraphPictures.Library.BezierObjects.DesmosVariable.Colour">
+	<summary>
+ This Type of DesmosExpr isn't actually seen on the Graph, so the Colour dosen't matter
+ </summary>
+</member><member name="P:GraphPictures.Library.BezierObjects.DesmosVariable.GraphBoundries">
+	<summary>
+ Variables do not appear on the Graph themselves, so do not have boundries
+ </summary>
+</member><member name="T:GraphPictures.Library.BezierObjects.GenericDesmosLatexExpression">
+	<summary>
+ Represents a Generic Desmos Latex Expression
+ </summary>
+</member><member name="M:GraphPictures.Library.BezierObjects.SVGPathInstruction.FromDAttributeInstruction(System.String)">
+	<summary>
+ Takes in a Singular Instruction which appeared in a Path's d="" Attribute. E.g. C 60 90
+ </summary>
+	<param name="_DAttributeInstruction"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:GraphPictures.Library.BezierObjects.SVGPathInstruction.ToString">
+	<summary>
+ Produces a String representing the CommandLetter and Points of the current SVGPathInstruction Instance.
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:GraphPictures.Library.BezierObjects.SVGPathInstruction">
+	<summary>
+ Represents an SVG path element Instruction, such as "M 50 50"
+ </summary>
+	<remarks></remarks>
+</member><member name="P:GraphPictures.Library.BezierObjects.DesmosGraphSize.NoGraphSize">
+	<summary>
+ Used for Expressions which don't appear on the Graph themselves, such as Variables
+ </summary>
+</member><member name="P:GraphPictures.Library.BezierObjects.DesmosGraphSize.StandardViewport">
+	<summary>
+ Used for Blank VideoFrames
+ </summary>
+</member><member name="T:GraphPictures.Library.BezierObjects.DesmosGraphSize">
+	<summary>
+ An structre to represent the Size of a BezierGraph
+ </summary>
+	<remarks></remarks>
+</member><member name="M:GraphPictures.Library.ExcelResources.PlotBitmapOnExcelByRGB(System.Drawing.Bitmap,System.Boolean,System.UInt32)">
+	<summary>
+ Instead of colouring 1 square cell per pixel, 3 cells are used, one for each of the Red, Green, and Blue.
+ </summary>
+</member><member name="M:GraphPictures.Library.BezierResources.GetBeziersFromPotraceSVG(System.String)">
+	<summary>
+ Creates Quadratic Beziers representing the lines and curves in the SVG File
+ </summary>
+	<param name="_SVGFilePath"></param>
+	<returns></returns>
+	<remarks>Supporting ONLY Potrace-outputted SVGs for now. (Only the path Elements are delt with, and only the M, L, and C commands are handled.)</remarks>
+</member><member name="M:GraphPictures.Library.CompilerExtentions.StringExtentions.MakeNoLongerThan(System.String,System.UInt32)">
+	<summary>
+ (MullNet CompilerExtention) Chops off Excess Characters from the end of the String if it's too long
+ </summary>
+</member><member name="M:GraphPictures.Library.CompilerExtentions.StringExtentions.Clense(System.String,System.Char[])">
+	<summary>
+ (MullNet CompilerExtention) Checks that the Path is Valid, before returning a version of it with a backslach if it dosen't have one already.
+ </summary>
+</member><member name="M:GraphPictures.Library.CompilerExtentions.StringExtentions.MakeValidFolderPath(System.String)">
+	<summary>
+ (MullNet CompilerExtention) Checks that the Path is Valid, before returning a version of it with a backslach if it dosen't have one already.
+ </summary>
+</member><member name="M:GraphPictures.Library.CompilerExtentions.StringExtentions.SplitAtWithoutRemoving(System.String,System.Char[])">
+	<summary>
+ (MullNet CompilerExtention) Splits the String whenever one of the _CharsAtWhichToSplitString occours, but the _CharAtWhichToSplitString stays in each New String
+ <example>
+ "Hello, World; Today" and {","c, ";"c} Becomes {"Hello", ", World", "; Today"}
+ </example>
+	</summary>
+	<param name="_InputString"></param>
+	<param name="_CharsAtWhichToSplitString"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:GraphPictures.Library.CompilerExtentions.StringExtentions.RemoveLineBreaksAndTabs(System.String@)">
+	<summary>
+ (MullNet CompilerExtention) Modifies the Existing String, as well as returning it.
+ </summary>
+	<param name="_InputString"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:GraphPictures.Library.CompilerExtentions.StringExtentions.ReplaceLineBreaksAndTabsWithSpaces(System.String@)">
+	<summary>
+ (Custom Extention) Modifies the Existing String, as well as returning it.
+ </summary>
+	<param name="_InputString"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:GraphPictures.Library.CompilerExtentions.StringExtentions.RemoveAllOccourancesOf(System.String,System.Char[])">
+	<summary>
+ (MullNet CompilerExtention) Returns a new version of the string, which dosen't contain any of the disallowed Characters
+ </summary>
+	<param name="_InputString"></param>
+	<param name="_DisallowedChars">The characters to remove from the String</param>
+	<returns>The String, without these Characters in it</returns>
+	<remarks></remarks>
+</member><member name="M:GraphPictures.Library.CompilerExtentions.StringExtentions.RemoveLeadingWhiteSpace(System.String@)">
+	<summary>
+ (MullNet CompilerExtention) Removes any Spaces, Tabs, or LineBreak Characters which appear at the start of the String
+ </summary>
+	<param name="_InputString">The String from which to Remove WhiteSpace</param>
+	<returns>The String which has been modified</returns>
+	<remarks>Not only modifies this method the Input String, but it also returns the resultant output. Chars removed (ASCII): 09, 10, 11, 12, 13, 32</remarks>
+</member><member name="M:GraphPictures.Library.CompilerExtentions.StringExtentions.RemoveTrailingWhiteSpace(System.String@)">
+	<summary>
+ (MullNet CompilerExtention) Removes any Spaces, Tabs, or LineBreak Characters which appear at the end of the String
+ </summary>
+	<param name="_InputString">The String from which to Remove WhiteSpace</param>
+	<returns>The String which has been modified</returns>
+	<remarks>Not only modifies this method the Input String, but it also returns the resultant output. Chars removed (ASCII): 09, 10, 11, 12, 13, 32</remarks>
+</member><member name="M:GraphPictures.Library.CompilerExtentions.StringExtentions.RemoveFirstCharacter(System.String@)">
+	<summary>
+ (MullNet CompilerExtention) Removes the First Character from the String
+ </summary>
+	<param name="_InputString"></param>
+	<returns></returns>
+	<remarks>Both Modifies the Parameter, and returns the post-computation Result</remarks>
+</member><member name="M:GraphPictures.Library.CompilerExtentions.StringExtentions.RemoveLastCharacter(System.String@)">
+	<summary>
+ (MullNet CompilerExtention) Removes the Last Character from the String
+ </summary>
+	<param name="_InputString"></param>
+	<returns></returns>
+	<remarks>Both Modifies the Parameter, and returns the post-computation Result</remarks>
+</member><member name="M:GraphPictures.Library.CompilerExtentions.StringExtentions.RemoveLastTwoCharacters(System.String@)">
+	<summary>
+ (MullNet CompilerExtention) Removes the Last two Characters from the String
+ </summary>
+	<param name="_InputString"></param>
+	<returns></returns>
+	<remarks>Both Modifies the Parameter, and returns the post-computation Result</remarks>
+</member><member name="M:GraphPictures.Library.CompilerExtentions.StringExtentions.IsEmpty(System.String@)">
+	<summary>
+ (MullNet CompilerExtention) Evaluates weather or not the String is Empty. (WhiteSpace does not count as Empty)
+ </summary>
+	<param name="_InputString"></param>
+	<returns>Retruns True if the String is Empty</returns>
+	<remarks></remarks>
+</member><member name="M:GraphPictures.Library.CompilerExtentions.StringExtentions.FirstCharacter(System.String@)">
+	<summary>
+ (MullNet CompilerExtention) Returns the First Character in the String
+ </summary>
+	<param name="_InputString"></param>
+	<returns>Returns the First Character in the String</returns>
+	<remarks></remarks>
+</member><member name="M:GraphPictures.Library.CompilerExtentions.StringExtentions.LastCharacter(System.String@)">
+	<summary>
+ (MullNet CompilerExtention) Returns the Last Character in the String
+ </summary>
+	<param name="_InputString"></param>
+	<returns>Returns the Last Character in the String</returns>
+	<remarks></remarks>
+</member><member name="M:GraphPictures.Library.CompilerExtentions.StringExtentions.EncapsulateIn(System.String@,System.String)">
+	<summary>
+ (MullNet CompilerExtention) Encapsulates the current System.String Object with the _StringWithWhichToWrapInput$. This modifies the String Object from which this method is called, and returns the result too.
+ </summary>
+	<param name="_InputString">The String to Wrap</param>
+	<param name="_StringWithWhichToWrapInput">The String to prepend and append the _InputString$ with</param>
+	<returns>The Encapsulated String</returns>
+	<remarks></remarks>
+</member><member name="M:GraphPictures.Library.CompilerExtentions.StringExtentions.MatchesRegEx(System.String,System.String)">
+	<summary>
+ (MullNet CompilerExtention) Matches a String against a Regular Expression
+ </summary>
+	<param name="_StringToValidate"></param>
+	<param name="_RegExPattern">The pattern to satisfy</param>
+	<returns>Returns True if the RegExp is satisfied by the Input String.</returns>
+	<remarks></remarks>
+</member><member name="M:GraphPictures.Library.CompilerExtentions.StringExtentions.MathsExpressionToLatex(System.String)">
+	<summary>
+ (MullNet CompilerExtention) Converts a Mathematical Expression E.g. 5 + (2 - 6) into a Latex one, replacing Brackets and MultiplyBy Symbols
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:GraphPictures.Library.CompilerExtentions.StringExtentions.LatexToMathsExpression(System.String)">
+	<summary>
+ (MullNet CompilerExtention) Converts a LaTeX Expression, to a Mathematical Expression E.g. 5 + (2 - 6).Brackets and MultiplyBy Symbols are replaced
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:GraphPictures.Library.CompilerExtentions.StringExtentions.ToDecimal(System.String)">
+	<summary>
+ (MullNet CompilerExtention) Attempts to convert the String to a Decimal. Throws an Exception on failure to do so.
+ </summary>
+	<param name="_InputString"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:GraphPictures.Library.CompilerExtentions.StringExtentions.ToASCIIBase64(System.String)">
+	<summary>
+ (MullNet CompilerExtention) Returns the String encoded into Base64.
+ </summary>
+</member><member name="M:GraphPictures.Library.CompilerExtentions.NumericExtentions.BytesToIntegralKB(System.UInt64)">
+	<summary>
+ (MullNet CompilerExtention) Converts [A Number of Bytes] into [How many KB that would be]
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:GraphPictures.Library.CompilerExtentions.NumericExtentions.IsEven(System.Int32)">
+	<summary>
+ Evaluates weather or not the _Integer is Even, by BitWise ANDing it with 1
+ </summary>
+	<param name="_Integer"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:GraphPictures.Library.CompilerExtentions.NumericExtentions.Plus5Percent(System.Int32@)">
+	<summary>
+ (MullNet CompilerExtention) Returns 105% of the existing Integer Value, Rounded to the nearest Integer if a Decimal would be produced.
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:GraphPictures.Library.CompilerExtentions.NumericExtentions.IsBetween(System.Int64@,System.Int64,System.Int64)">
+	<summary>
+ (MullNet CompilerExtention) Evaluates weather or not the _InputInteger is [Higher than the _LowerValue] AND [Lower than the _HigherValue]
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:GraphPictures.Library.CompilerExtentions.NumericExtentions.IsBetweenInclusive(System.Int64@,System.Int64,System.Int64)">
+	<summary>
+ (MullNet CompilerExtention) Evaluates weather or not the _InputInteger is [Higher than OR EQUAL TO the _LowerValue] AND [Lower than OR EQUAL TO the _HigherValue]
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:GraphPictures.Library.CompilerExtentions.NumericExtentions.IsAtLeast(System.Int32,System.Int32)">
+	<summary>
+ (MullNet CompilerExtention) Evaluates weather or not the _Integer is at least _Amount.
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:GraphPictures.Library.CompilerExtentions.CollectionTypeExtentions.MaxIndex(System.Array@)">
+	<summary>
+ (MullNet CompilerExtention) Returns the Maximun possible Index one could specify for a non-[dynamically-allocated], zero-indexed Array
+ </summary>
+	<param name="_Array"></param>
+	<returns>Returns the Maximun possible Index one could specify for a non-[dynamically-allocated], zero-indexed Array</returns>
+	<remarks></remarks>
+</member><member name="M:GraphPictures.Library.CompilerExtentions.CollectionTypeExtentions.PenultimateIndex(System.Array@)">
+	<summary>
+ (MullNet CompilerExtention)
+ </summary>
+</member><member name="M:GraphPictures.Library.CompilerExtentions.CollectionTypeExtentions.ListValues(System.Collections.Generic.List{System.UInt64})">
+	<summary>
+ (MullNet CompilerExtention)
+ </summary>
+</member><member name="M:GraphPictures.Library.CompilerExtentions.CollectionTypeExtentions.Repeat_TimesNotImplementedCorrectly``1(``0@,System.UInt32)">
+	<summary>
+ (MullNet CompilerExtention) Repeats the _Object _Times times, returning the resultans Array in which every item is a copy of (or Referance to) _Object
+ </summary>
+</member><member name="M:GraphPictures.Library.CompilerExtentions.GraphPictureObjectExtentions.ToColourGenerationMode(System.String)">
+	<summary>
+ (MullNet CompilerExtention) Attempts to convert the String into a ColourResources.ColourRange.ColourGenerationMode
+ </summary>
+	<param name="_InputString"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:GraphPictures.Library.CompilerExtentions.GraphPictureObjectExtentions.ToDesmosLineStyle(System.String)">
+	<summary>
+ (MullNet CompilerExtention) Attempts to convert the String into a DesmosStateCreationOptions.DesmosLineStyle
+ </summary>
+</member><member name="M:GraphPictures.Library.CompilerExtentions.GraphPictureObjectExtentions.ToDesmosState(GraphPictures.Library.BezierObjects.IDesmosExpression[]@,GraphPictures.Library.Resources.DesmosStateCreationOptions)">
+	<summary>
+ (MullNet CompilerExtention) Produces a JSON String which a Desmos Instance can be set to, in order to draw all the DesmosExpressions in the Array
+ </summary>
+	<param name="_DesmosExpressions">An object of Type [IDesmosExpression()]</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:GraphPictures.Library.CompilerExtentions.GraphPictureObjectExtentions.ToDesmosPastable(GraphPictures.Library.BezierObjects.IDesmosExpression[]@)">
+	<summary>
+ (MullNet CompilerExtention) Returns a LineBreak-Deliminated List of all the Expressions as Latex, ready for pasting into Desmos
+ </summary>
+</member><member name="M:GraphPictures.Library.CompilerExtentions.GraphPictureObjectExtentions.GetGraphSize(GraphPictures.Library.BezierObjects.IDesmosExpression[]@)">
+	<summary>
+ (MullNet CompilerExtention) Gets the MostPositive and MostNegative X and Y Values in the Array of all Beziers
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:GraphPictures.Library.CompilerExtentions.IOObjectExtentions.SizeInIntegralKB(System.IO.FileInfo@)">
+	<summary>
+ (MullNet CompilerExtention) Gets the Size of the File in KB, to the nearest Integer
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:GraphPictures.Library.CompilerExtentions.ImageObjectExtentions.ResizeTo(System.Drawing.Bitmap@,System.Int32,System.Int32)">
+	<summary>
+ (MullNet CompilerExtention) Modifies (and Returns) the _InputBitmap, resized to the Specified Width and Height
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:GraphPictures.Library.CompilerExtentions.ImageObjectExtentions.ResizeToPercentage(System.Drawing.Bitmap@,System.UInt16)">
+	<summary>
+ (MullNet CompilerExtention) Modifies (and Returns) the _InputBitmap, resizing both the Width and Height by the Specified _PercentageOfCurrentDimensions
+ </summary>
+</member><member name="M:GraphPictures.Library.CompilerExtentions.ImageObjectExtentions.GetConstrictedSize(System.Drawing.Bitmap@,System.UInt32)">
+	<summary>
+ (MullNet CompilerExtention) Evaluates what the Dimensions of a Bitmap become, when it is 
+ </summary>
+	<returns></returns>
+</member><member name="M:GraphPictures.Library.CompilerExtentions.ImageObjectExtentions.MakeNoLargerThan(System.Drawing.Bitmap@,System.UInt32)">
+	<summary>
+ (MullNet CompilerExtention) Makes sure that the Largest Dimension of the _Bitmap is no larger than the _MaxDimension, resizing the _Bitmap is needed.
+ </summary>
+	<returns></returns>
+	<remarks>Modifies and Returns the _Bitmap</remarks>
+</member><member name="M:GraphPictures.Library.CompilerExtentions.ImageObjectExtentions.GetZoomedInCopy(System.Drawing.Bitmap@,System.Decimal)">
+	<summary>
+ (MullNet CompilerExtention) Returns a copy of the _Bitmap, zooming in by the the _ZoomFactor
+ </summary>
+	<param name="_Bitmap"></param>
+	<param name="_ZoomFactor">
+ E.g. [0.8] would cause 10% of the width to be removed from both sides, and 10% of the height to be removed from both the top and bottom, going inwards towards the center of the image.
+ In other words, a _ZoomFactor of 0.8 causes the Returned copy of the Image to be 80% of the height of the origional, and 80% of the width of the origional
+ </param>
+	<returns></returns>
+	<remarks>
+ A _ZoomFactor of [0.8] would cause 10% of the width to be removed from both sides, and 10% of the height to be removed from both the top and bottom (going inwards towards the center of the image).
+ In other words, a _ZoomFactor of 0.8 causes the Returned copy of the Image to be 80% of the height of the origional, and 80% of the width of the origional
+ 0.8 would therefore actually cause 64% of the pixels of the origional image to be kept, because 10*10 = 100, but 8*8 only = 64.
+ </remarks>
+</member><member name="M:GraphPictures.Library.CompilerExtentions.WebObjectExtentions.WriteAndEnd(System.Web.HttpResponse@,System.String)">
+	<summary>
+ (MullNet CompilerExtention) Writes to, and then Ends the Response Stream
+ </summary>
+	<remarks></remarks>
+</member><member name="M:GraphPictures.Library.CompilerExtentions.WebObjectExtentions.ClearAndWriteAndEnd(System.Web.HttpResponse@,System.String)">
+	<summary>
+ (MullNet CompilerExtention) Clears, Writes to, and then Ends the Response Stream
+ </summary>
+	<remarks></remarks>
+</member><member name="M:GraphPictures.Library.CompilerExtentions.WebObjectExtentions.SafelyEnd(System.Web.HttpResponse@)">
+	<summary>
+ (MullNet CompilerExtention) Ends the Response Stream, without Throwing the "Thread was being aborted" Exception
+ </summary>
+	<remarks></remarks>
+</member><member name="M:GraphPictures.Library.CompilerExtentions.WebObjectExtentions.QueryStringIsSpecified(System.Web.HttpRequest@,System.String)">
+	<summary>
+ (MullNet CompilerExtention) Checks that the Specified QueryString is contained in the current Request Object.
+ </summary>
+	<param name="_RequestObject"></param>
+	<remarks></remarks>
+</member><member name="M:GraphPictures.Library.CompilerExtentions.WebObjectExtentions.PostDataItemIsSpecified(System.Web.HttpRequest@,System.String)">
+	<summary>
+ (MullNet CompilerExtention) Checks that the Specified PostData Item is contained in the current Request Object.
+ </summary>
+	<param name="_RequestObject"></param>
+	<remarks></remarks>
+</member><member name="M:GraphPictures.Library.CompilerExtentions.WebObjectExtentions.QueryStringIsSpecifiedAndHasValue(System.Web.HttpRequest@,System.String)">
+	<summary>
+ (MullNet CompilerExtention) Checks that the Specified QueryString is contained in the current Request Object, and that it has a Value.
+ </summary>
+	<param name="_RequestObject"></param>
+	<remarks></remarks>
+</member><member name="M:GraphPictures.Library.CompilerExtentions.WebObjectExtentions.PostDataItemIsSpecifiedAndHasValue(System.Web.HttpRequest@,System.String)">
+	<summary>
+ (MullNet CompilerExtention) Checks that the Specified PostData Item is contained in the current Request Object, and that it has a Value.
+ </summary>
+	<param name="_RequestObject"></param>
+	<remarks></remarks>
+</member><member name="M:GraphPictures.Library.CompilerExtentions.ControlExtentions.InvokeIfRequired(System.Windows.Forms.Control,System.Action)">
+	<summary>
+ (MullNet CompilerExtention) Invokes the Control if required, and runs the specified _Action
+ </summary>
+</member><member name="M:GraphPictures.Library.Resources.DesmosStateCreationOptions.ModifyByQueryStrings(System.Web.HttpRequest@)">
+	<summary>
+ Scans the QueryStrings in the _Request, and changes the propities of the current DesmosStateCreationOptions Object, based off of the QueryString Values if they are there...
+ Returns the Current Instance in it's new State...
+ </summary>
+</member><member name="M:GraphPictures.Library.Resources.DesmosStateCreationOptions.FromQueryStrings(System.Web.HttpRequest@)">
+	<summary>
+ Scans the QueryStrings in the _Request, creating a Perameter Object From them.
+ </summary>
+</member><member name="M:GraphPictures.Library.Resources.DesmosStateCreationOptions.ToString">
+	<summary>
+ Generates a String representing the current Instance of the CreationOptions
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:GraphPictures.Library.Resources.DesmosStateCreationOptions">
+	<summary>
+ Used for the _Options Argument to ToDesmosState() CompilerExtention
+ </summary>
+</member><member name="M:GraphPictures.Library.Resources.GetRandomString(System.UInt16)">
+	<summary>
+ Generates a Random String of the Specified Length. The Characters used are specified in the Array inside the Function
+ </summary>
+	<param name="_WantedLength"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:GraphPictures.Library.OscilloscopeResources.GetPDEFileContentsFromBeziers(GraphPictures.Library.BezierObjects.IDesmosExpression[])">
+	<summary>
+ Only produces xy.vector() instructions, to make a shape.
+ </summary>
+</member><member name="M:GraphPictures.Library.OscilloscopeResources.GenerateAndRunPDEFileFromSVG(System.String)">
+	<summary>
+ Saves the PDE to Disk (Generated from the SVG), in the OscilloscopeResources.SinglePDEs_OutputFolder_Path, with a randomly-generated FileName.
+ </summary>
+</member><member name="M:GraphPictures.Library.OscilloscopeResources.GenerateOscilloscopeVideoFramePDEsFor(System.String)">
+	<summary>
+ Generates the .PDE Files for each frame of the Video. These can then be opened in Processing, to get the Audio for the Frame.
+ </summary>
+</member><member name="M:GraphPictures.Library.OscilloscopeResources.SequentiallyRunVideoFramePDEFiles(System.String)">
+	<summary>
+ !
+ !
+ !
+ MAKE SURE TO SET THE SYSTEM VOLUME TO MUTE, BEFORE RUNNING THIS METHOD!!!!!!!!!!!!!!!
+ !
+ !
+ !
+ Runs the PDEFile for Frame00001, then for Frame00002, etc...
+ </summary>
+	<param name="_VideoName"></param>
+	<remarks></remarks>
+</member><member name="M:GraphPictures.Library.OscilloscopeResources.GenerateFramesForOscilliVideo(System.String)">
+	<summary>
+ Generates Frames from _VideoFileName$
+ </summary>
+	<param name="_VideoFileName"></param>
+	<returns>The Number of Frames Generated</returns>
+	<remarks></remarks>
+</member><member name="M:GraphPictures.Library.OscilloscopeResources.GenerateSVGForOscilliVideoFrame(System.String,System.String,System.UInt16)">
+	<summary>
+ Produces an SVG for the Frame, assuming that the Frame is in [OscilloscopeData\Videos\VideoName.MP4_Frames\Frame00001.BMP].
+ The SVG is then saved to [OscilloscopeData\Videos\VideoName.MP4_Frames\SVGs\Frame00001.SVG].
+ 
+ Note that the _FrameNumber$ is a string because it needs to have the correct number of leading 0's
+ </summary>
+</member><member name="M:GraphPictures.Library.OscilloscopeResources.GetPDEFileContentsFromSVG(System.String)">
+	<summary>
+ The SVG File's Beziers are approximated as 3 Lines Each, and the PDE File tells Processing\XYScope to Draw these lines as vertex's in a compound shape.
+ </summary>
+	<param name="_SVGFilePath"></param>
+	<returns>The Contents of the PDEFile</returns>
+	<remarks></remarks>
+</member><member name="M:GraphPictures.Library.OscilloscopeResources.SavePDEToDisk(System.String,System.String,System.String)">
+	<summary>
+ The PDE File is saved to disk (in the strange manner that processing seems to require - that's why this function isn't just a File.WriteText() call...)
+ </summary>
+	<param name="_PDEName">If set to {AutoGenerate}, then a FileName will be automatically generated in the format ^GP_\w{10}\.PDE$</param>
+	<returns>The Name of the PDE (Sketch) Generated (Same as the File without the Extention .pde)</returns>
+</member><member name="M:GraphPictures.Library.OscilloscopeResources.RunPDEFile(System.String)">
+	<summary>
+ Starts playing the Audio for the PDEFile, using the Processing-Java.EXE
+ </summary>
+	<param name="_PDEFolderPath">NOTE: This is not the path to a .PDE File. Instead, it is the path to the Folder, which has the same name as the pde file, but without the extention</param>
+	<remarks></remarks>
+</member>
+</members>
+</doc>

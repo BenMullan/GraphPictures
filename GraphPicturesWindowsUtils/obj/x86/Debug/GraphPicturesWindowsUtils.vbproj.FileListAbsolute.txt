@@ -1,0 +1,14 @@
+D:\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\FromBravoSession0\GraphPicturesWindowsUtils\obj\x86\Debug\GraphPicturesWindowsUtils.vbprojResolveAssemblyReference.cache
+D:\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\FromBravoSession0\GraphPicturesWindowsUtils\obj\x86\Debug\GraphPictures.Home.resources
+D:\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\FromBravoSession0\GraphPicturesWindowsUtils\obj\x86\Debug\GraphPictures.Resources.resources
+D:\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\FromBravoSession0\GraphPicturesWindowsUtils\obj\x86\Debug\GraphPicturesWindowsUtils.vbproj.GenerateResource.Cache
+D:\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\FromBravoSession0\GraphPicturesWindowsUtils\bin\Debug\GraphPictures.WindowsUtils.exe.config
+D:\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\FromBravoSession0\GraphPicturesWindowsUtils\bin\Debug\GraphPictures.WindowsUtils.exe
+D:\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\FromBravoSession0\GraphPicturesWindowsUtils\bin\Debug\GraphPictures.WindowsUtils.pdb
+D:\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\FromBravoSession0\GraphPicturesWindowsUtils\bin\Debug\GraphPictures.WindowsUtils.xml
+D:\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\FromBravoSession0\GraphPicturesWindowsUtils\bin\Debug\GraphPictures.Library.dll
+D:\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\FromBravoSession0\GraphPicturesWindowsUtils\bin\Debug\GraphPictures.Library.pdb
+D:\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\FromBravoSession0\GraphPicturesWindowsUtils\bin\Debug\GraphPictures.Library.xml
+D:\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\FromBravoSession0\GraphPicturesWindowsUtils\obj\x86\Debug\GraphPictures.WindowsUtils.exe
+D:\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\FromBravoSession0\GraphPicturesWindowsUtils\obj\x86\Debug\GraphPictures.WindowsUtils.xml
+D:\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\FromBravoSession0\GraphPicturesWindowsUtils\obj\x86\Debug\GraphPictures.WindowsUtils.pdb

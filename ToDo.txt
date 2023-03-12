@@ -1,0 +1,55 @@
+To Actually Do:
+	- Make the ClientData Folder automatically clean itself if it's size exceedes a Const MaxSize.
+	- The [c] won't currently work for 16 Points in {this}. Fix that. Try [To Length - 3].
+	- For the VideoRendering, make <path>-less frames not throw an exception.
+	- Security: String to Enum conversion stuff: Could integers also be converted, if so which ones?
+	- Implement Logging Calls
+	- Make everything Throw only [GraphPicturesException]s and not [System.Exception]s
+	- CSS on WebCamUpload and WhiteBoard (Done sort of - good enough)
+	- !!! AdjustInputQuality SVGGeneration Algorythm !!!
+
+W3 Org:
+
+A closed subpath must be closed with a "closepath" command, this "joins" the first and last path segments. Any other path is an open subpath.
+https://www.w3.org/TR/SVG/paths.html
+
+
+Therefore, have two Variables:
+	_FirstInstructionInSubPath
+	_LastInstructionInSubPath
+
+And update them accordingly. Then Draw the Z from the ENDPOINT of the _FirstInstructionInSubPath, to the ENDPOINT of the _LastInstructionInSubPath
+
+
+
+
+Question:
+Is it always
+Draw the Z from the ENDPOINT of the _FirstInstructionInSubPath, to the ENDPOINT of the _LastInstructionInSubPath
+Or is it sometimes
+Draw the Z from the LUP to the _SubPathStartPoint
+
+^ Experiment and find out what determines this, if they can both occour.
+
+
+
+
+
+
+A closed subpath differs in behavior from an open subpath whose final coordinate is the initial point of the subpath.
+The first and last path segments of an open subpath will not be joined, even when the final coordinate of the last path segment is the initial point of the subpath.
+This will result in the first and last path segments being capped using the current value of stroke-linecap rather than joined using the current value of stroke-linejoin.
+
+
+
+NEW Ideas:
+
+It doesen't seem to ever
+Draw the Z from the ENDPOINT of the _FirstInstructionInSubPath, to the ENDPOINT of the _LastInstructionInSubPath
+But it does MAKE UP NEW PARTS OF THE CURVE!!!!!
+
+
+Even newer Ideas:
+
+	For the l command, all Points are relative to the LUP
+	For the c command, all Points are relative to the Point set by the Previous m|M (I.e. the PathStartPoint)

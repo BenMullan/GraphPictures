@@ -1,0 +1,48 @@
+Notations used in this Solution:
+	[Key]		to indicate a HTTP QueryString KeyValuePair with that Key
+	[?Key]		to indicate an Optional HTTP QueryString KeyValuePair with that Key
+	IRG			Input Raster Graphic (to an SVGGeneration Algorythm)
+	RG			A RasterGraphic
+	{this}		The current Array of Points for an SVGPathInstruction
+	REM			For Formal Comments in Visual Basic .NET
+	'			Informal Comments in Visual Basic .NET
+
+Advancded QueryStrings:
+	[?BypassSVGFileSizeCheck]		Get.ASPX?Item=DesmosStateForSVG&BypassSVGFileSizeCheck=True
+	
+If FFMPEG complains about the Width or height not being an even number, then make -vf command look like this:
+	-vf "pad=ceil(iw/2)*2:ceil(ih/2)*2,fps=25,format=yuv420p"
+
+How the VideoTranscoding System works:
+	- Put Input.MP4 into \ClientData\Videos\
+	- Select the VideoFile to Render from StartVideoTranscoding.ASPX (DirListing). This ASPX File:
+		- Calls the [VideoAPI.ASPX?Action=VideoToFrames&VideoFile=Input.MP4] API, which returns (as JSON) the number of Frames Generated
+		- Generates href's to [RenderDesmosVideoFrames.ASPX?VideoName=Input.MP4&StartFrame=1&EndFrame=250] etc...
+			- The [RenderDesmosVideoFrames.ASPX] Instances do this:
+				- For _Frame = ?StartFrame To ?EndFrame:
+					- Make request: [VideoAPI.ASPX?Action=DesmosStateForVideoFrame&VideoName={?VideoName}&FrameNumber={_Frame}], which returns the DesmosState for the _Frame
+					- Call asyncScreenshot() in JS, and in callback, post PNG Data to API: [VideoAPI.ASPX?Action=SaveDesmosFrame&FrameNumber={_Frame}]
+					- Next _Frame
+	- When all the [RenderDesmosVideoFrames] Instances are finished, they provide a link to [EndVideoTranscoding.ASPX?VideoName=Input.MP4]
+		- This page Calls the [VideoAPI.ASPX?Action=DesmosFramesToVideo?VideoName=Input.MP4] API, and gives a href to the DesmosRendered_Input.MP4
+	- Final Video Output should be called (E.g.) DesmosRendered_Input.MP4
+	- The AudioTrack is then copied from the Input.MP4, unto a File called WithAudio_DesmosRendered_Input.MP4
+
+	- Update 28012022: An additional DesmosFrames Renderer has been introduced,
+		...which has the effect of using the HTML2Canvas rendering, instead of Desmos's built-in Screenshot function.
+
+		REM		VideoFile Location Convention:
+		REM \ClientData\Videos\Input.MP4
+		REM \ClientData\Videos\Input.MP4_Frames\Frame00001.BMP
+		REM \ClientData\Videos\Input.MP4_Frames\SVGs\Frame00001.SVG
+		REM \ClientData\Videos\Input.MP4_Frames\DesmosFrames\Frame00001.PNG
+		REM \ClientData\Videos\DesmosRendered_Input.MP4
+		REM \ClientData\Videos\AudioFor_Input.MP4
+		REM \ClientData\Videos\WithAudio_DesmosRendered_Input.MP4
+
+		REM OscilliVideos Location Convention:
+		'OscilloscopeData\Videos\Input.MP4
+		'OscilloscopeData\Videos\Input.MP4_Frames\
+		'OscilloscopeData\Videos\Input.MP4_Frames\Frame00001.BMP
+		'OscilloscopeData\Videos\Input.MP4_Frames\SVGs\Frame00001.SVG
+		'OscilloscopeData\Videos\Input.MP4_Frames\PDEs\Frame00001\Frame00001.pde
