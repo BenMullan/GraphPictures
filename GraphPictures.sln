@@ -13,6 +13,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Utilities", "Utilities", "{
 		Documentation.TXT = Documentation.TXT
 		FileMap.txt = FileMap.txt
 		OldAndUndeeded.VB = OldAndUndeeded.VB
+		README.md = README.md
 		ToDo.txt = ToDo.txt
 	EndProjectSection
 EndProject
