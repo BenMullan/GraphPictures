@@ -14,26 +14,30 @@
 		<!----------------------------- The Avaliable VideoFiles's Container ----------------------------->
 		<div class="GreyBorder Shadow Container" id="VideoFileSelectionBox">
 			
+			<i style="color: #909090;">(Place input video files in \GraphPicturesWebParts\ClientData\Videos)</i>
+			<br/>
 			<label for="AvaliableVideoFiles">Select an Avaliable Video File: </label>
 
 			<!--
 				We need to list all the avaliable Video Files,
-				But because we're being Lazy, we're just shoring all files which don't:
-					- Start \w "DesmosRednered_"
+				But because we're being Lazy, we're just showing all files which don't:
+					- Start \w "DesmosRednered_*"
 					- End \w *:
-						- .MP3			(To exclude "AudioFor_*" Files)
+						- .MP3			(To exclude AudioFor_*)
 						- .EXE			(To exclude FFMPEG.EXE)
-						- .DB			(To exclude Thumbs.db)
+						- .DB			(To exclude *_RendererHrefs.HTM)
+						- .HTM			(To exclude Thumbs.db)
 			-->
 			<select name="AvaliableVideoFiles" id="AvaliableVideoFilesSelector">
 				<%
 					For Each _File As IO.FileInfo In (New IO.DirectoryInfo(GraphPictures.WebParts.Resources.WWWVideosFolderPath)).GetFiles()
 						
 						If (
-						 (Not _File.Name.StartsWith("DesmosRendered_", True, Global.System.Globalization.CultureInfo.CurrentCulture)) _
-						 AndAlso (Not _File.Name.EndsWith(".MP3", True, Global.System.Globalization.CultureInfo.CurrentCulture)) _
-						 AndAlso (Not _File.Name.EndsWith(".EXE", True, Global.System.Globalization.CultureInfo.CurrentCulture)) _
-						 AndAlso (Not _File.Name.EndsWith(".DB", True, Global.System.Globalization.CultureInfo.CurrentCulture))
+						 (Not _File.Name.StartsWith("DesmosRendered_", ignoreCase:=True, culture:=Global.System.Globalization.CultureInfo.CurrentCulture)) _
+						 AndAlso (Not _File.Name.EndsWith(".MP3", ignoreCase:=True, culture:=Global.System.Globalization.CultureInfo.CurrentCulture)) _
+						 AndAlso (Not _File.Name.EndsWith(".EXE", ignoreCase:=True, culture:=Global.System.Globalization.CultureInfo.CurrentCulture)) _
+						 AndAlso (Not _File.Name.EndsWith(".HTM", ignoreCase:=True, culture:=Global.System.Globalization.CultureInfo.CurrentCulture)) _
+						 AndAlso (Not _File.Name.EndsWith(".DB", ignoreCase:=True, culture:=Global.System.Globalization.CultureInfo.CurrentCulture))
 						) Then _
 						 Response.Write("<option value=""" & _File.Name & """>" & _File.Name & "</option>" & vbCrLf)
 					
@@ -43,9 +47,9 @@
 
 			<label for="VideoRenderingMode">Video Rendering Mode: </label>
 			<select name="VideoRenderingMode" id="VideoRenderingModeSelector">
-				<option value="SVGToBeziers">Frame -> SVG -> Beziers</option>
-				<option value="SVGToBeziersShowExprList">Frame -> SVG -> Beziers (Show ExprList)</option>
-				<option value="PlotRasterGraphic">Frame -> DesmosPlottedPixels</option>
+				<option value="SVGToBeziersShowExprList">Frame → SVG → Beziers (Showing Desmos Expression-List)</option>
+				<option value="SVGToBeziers">Frame → SVG → Beziers</option>
+				<option value="PlotRasterGraphic">Frame → DesmosPlottedPixels</option>
 			</select><br/><br/>
 
 			<button type="button" class="Button" onclick="SendVideoToFramesAPIRequestAndGenerateHrefs($('#AvaliableVideoFilesSelector').val());">Generate Frames</button>

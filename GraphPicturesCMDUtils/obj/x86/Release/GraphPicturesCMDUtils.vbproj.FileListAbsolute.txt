@@ -9,3 +9,15 @@ D:\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\FromBravoSessio
 D:\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\FromBravoSession0\GraphPicturesCMDUtils\obj\x86\Release\GraphPictures.CMDUtils.exe
 D:\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\FromBravoSession0\GraphPicturesCMDUtils\obj\x86\Release\GraphPictures.CMDUtils.xml
 D:\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\FromBravoSession0\GraphPicturesCMDUtils\obj\x86\Release\GraphPictures.CMDUtils.pdb
+D:\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\SolutionGH\GraphPicturesCMDUtils\bin\Release\GraphPictures.CMDUtils.exe
+D:\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\SolutionGH\GraphPicturesCMDUtils\bin\Release\GraphPictures.CMDUtils.pdb
+D:\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\SolutionGH\GraphPicturesCMDUtils\bin\Release\GraphPictures.CMDUtils.xml
+D:\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\SolutionGH\GraphPicturesCMDUtils\bin\Release\GraphPictures.Library.dll
+D:\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\SolutionGH\GraphPicturesCMDUtils\bin\Release\GraphPictures.Library.pdb
+D:\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\SolutionGH\GraphPicturesCMDUtils\bin\Release\GraphPictures.Library.xml
+D:\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\SolutionGH\GraphPicturesCMDUtils\obj\x86\Release\GraphPicturesCMDUtils.vbprojResolveAssemblyReference.cache
+D:\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\SolutionGH\GraphPicturesCMDUtils\obj\x86\Release\GraphPictures.Resources.resources
+D:\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\SolutionGH\GraphPicturesCMDUtils\obj\x86\Release\GraphPicturesCMDUtils.vbproj.GenerateResource.Cache
+D:\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\SolutionGH\GraphPicturesCMDUtils\obj\x86\Release\GraphPictures.CMDUtils.exe
+D:\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\SolutionGH\GraphPicturesCMDUtils\obj\x86\Release\GraphPictures.CMDUtils.xml
+D:\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\SolutionGH\GraphPicturesCMDUtils\obj\x86\Release\GraphPictures.CMDUtils.pdb

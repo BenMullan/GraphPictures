@@ -9,11 +9,11 @@ Imports System.Runtime.InteropServices
 ' Review the values of the assembly attributes
 
 <Assembly: AssemblyTitle("GraphPicturesWindowsUtils")> 
-<Assembly: AssemblyDescription("")> 
-<Assembly: AssemblyCompany("")> 
+<Assembly: AssemblyDescription("GraphPictures' Excel & Bezier Utilities")> 
+<Assembly: AssemblyCompany("BM")> 
 <Assembly: AssemblyProduct("GraphPicturesWindowsUtils")> 
-<Assembly: AssemblyCopyright("Copyright ©  2022")> 
-<Assembly: AssemblyTrademark("")> 
+<Assembly: AssemblyCopyright("Copyright ©  2022; revisited 2024")> 
+<Assembly: AssemblyTrademark("BM-TM")> 
 
 <Assembly: ComVisible(False)>
 
@@ -31,5 +31,5 @@ Imports System.Runtime.InteropServices
 ' by using the '*' as shown below:
 ' <Assembly: AssemblyVersion("1.0.*")> 
 
-<Assembly: AssemblyVersion("1.0.0.0")> 
-<Assembly: AssemblyFileVersion("1.0.0.0")> 
+<Assembly: AssemblyVersion("1.8.0.0")> 
+<Assembly: AssemblyFileVersion("1.8.0.0")> 

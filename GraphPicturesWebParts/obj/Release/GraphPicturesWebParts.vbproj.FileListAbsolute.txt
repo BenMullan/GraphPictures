@@ -9,3 +9,15 @@ D:\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\FromBravoSessio
 D:\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\FromBravoSession0\GraphPicturesWebParts\obj\Release\GraphPictures.WebParts.dll
 D:\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\FromBravoSession0\GraphPicturesWebParts\obj\Release\GraphPictures.WebParts.xml
 D:\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\FromBravoSession0\GraphPicturesWebParts\obj\Release\GraphPictures.WebParts.pdb
+D:\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\SolutionGH\GraphPicturesWebParts\bin\GraphPictures.WebParts.dll
+D:\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\SolutionGH\GraphPicturesWebParts\bin\GraphPictures.WebParts.pdb
+D:\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\SolutionGH\GraphPicturesWebParts\bin\GraphPictures.WebParts.xml
+D:\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\SolutionGH\GraphPicturesWebParts\bin\GraphPictures.Library.dll
+D:\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\SolutionGH\GraphPicturesWebParts\bin\GraphPictures.Library.pdb
+D:\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\SolutionGH\GraphPicturesWebParts\bin\GraphPictures.Library.xml
+D:\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\SolutionGH\GraphPicturesWebParts\obj\Release\GraphPicturesWebParts.vbprojResolveAssemblyReference.cache
+D:\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\SolutionGH\GraphPicturesWebParts\obj\Release\GraphPictures.Resources.resources
+D:\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\SolutionGH\GraphPicturesWebParts\obj\Release\GraphPicturesWebParts.vbproj.GenerateResource.Cache
+D:\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\SolutionGH\GraphPicturesWebParts\obj\Release\GraphPictures.WebParts.dll
+D:\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\SolutionGH\GraphPicturesWebParts\obj\Release\GraphPictures.WebParts.xml
+D:\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\SolutionGH\GraphPicturesWebParts\obj\Release\GraphPictures.WebParts.pdb

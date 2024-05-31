@@ -86,10 +86,10 @@ function ShowExprListRenderDesmosVideoFramesEntryPoint() {
 	$("#DesmosScreenshotContainer").hide();
 
 	/*
-	- For _Frame = ?StartFrame To ?EndFrame:
-	- Make request: [VideoAPI.ASPX?Action=DesmosStateForVideoFrame&VideoName={?VideoName}&FrameNumber={_Frame}], which returns the DesmosState for the _Frame
-	- Call html2canvas() in JS, and in callback, post PNG Data to API: [VideoAPI.ASPX?Action=SaveDesmosFrame&FrameNumber={_Frame}]
-	- Next _Frame (Recursive)
+		- For _Frame = ?StartFrame To ?EndFrame:
+			- Make request: [VideoAPI.ASPX?Action=DesmosStateForVideoFrame&VideoName={?VideoName}&FrameNumber={_Frame}], which returns the DesmosState for the _Frame
+			- Call html2canvas() in JS, and in callback, post PNG Data to API: [VideoAPI.ASPX?Action=SaveDesmosFrame&FrameNumber={_Frame}]
+			- Next _Frame (Recursive)
 	*/
 
 	window.VideoName = $("#RendererInstanceData").attr("data-VideoName");

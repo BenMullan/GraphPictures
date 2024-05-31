@@ -48,8 +48,7 @@ Namespace Library
 				_BitmapCellRange = _Worksheet.Range(_BitmapCellRangeString)
 				_BitmapCellRange.CopyPicture(Microsoft.Office.Interop.Excel.XlPictureAppearance.xlScreen, Microsoft.Office.Interop.Excel.XlCopyPictureFormat.xlBitmap)
 
-				REM Get the Image from the Clipboard and Return it
-				If My.Computer.Clipboard.ContainsImage() Then Return (New Drawing.Bitmap(My.Computer.Clipboard.GetImage())) Else Return ImagingResources.GenerateBitmapFromText("Could not Extract the Excel Rendering from the Clipboard")
+				Return ImagingResources.GetImageFromClipboard_OrErrorImage()
 
 			Catch _Ex As Exception When True
 				Throw (New Exception("The following Exception was thrown upon attempting to Plot a RasterGraphic on Excel: " & _Ex.Message))
@@ -109,8 +108,7 @@ Namespace Library
 				_BitmapCellRange = _Worksheet.Range(_BitmapCellRangeString)
 				_BitmapCellRange.CopyPicture(Microsoft.Office.Interop.Excel.XlPictureAppearance.xlScreen, Microsoft.Office.Interop.Excel.XlCopyPictureFormat.xlBitmap)
 
-				REM Get the Image from the Clipboard and Return it
-				If My.Computer.Clipboard.ContainsImage() Then Return (New Drawing.Bitmap(My.Computer.Clipboard.GetImage())) Else Return ImagingResources.GenerateBitmapFromText("Could not Extract the Excel Rendering from the Clipboard")
+				Return ImagingResources.GetImageFromClipboard_OrErrorImage()
 
 			Catch _Ex As Exception When True
 				Throw (New Exception("The following Exception was thrown upon attempting to Plot a RasterGraphic on Excel (Via RGB Cells): " & _Ex.Message))

@@ -51,7 +51,7 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>favicon.ico</ApplicationIcon>
+    <ApplicationIcon>ExeIcon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -112,7 +112,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="favicon.ico" />
+    <Content Include="ExeIcon.ico" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\GraphPicturesLibrary\GraphPicturesLibrary.vbproj">

@@ -828,9 +828,7 @@ Namespace Library
 
 		End Class
 
-		''' <summary>
-		''' Puts the Specified Text in the Middle of the Bitmap Returned
-		''' </summary>
+		''' <summary>Puts the Specified Text in the Middle of the Bitmap Returned, using a size-25 Tahoma font on a grey background</summary>
 		Public Function GenerateBitmapFromText(ByVal _Text$) As Drawing.Bitmap
 
 			Dim _Bitmap As New Drawing.Bitmap(400, 400)
@@ -900,6 +898,35 @@ Namespace Library
 			End Try
 
 		End Sub
+
+		Public Function GetImageFromClipboard_OrErrorImage() As Drawing.Bitmap
+
+			REM Attempt to: Get the Image from the Clipboard and Return it
+			REM This has to occur in an STA Thread
+
+			'Possible alternative method: System.Windows.Forms.Clipboard.GetDataObject().GetFormats()
+
+			Try
+
+				Dim _ExtractedBitmap As Drawing.Bitmap = Nothing
+
+				Dim _STAThread As New Threading.Thread(
+				  Sub() _ExtractedBitmap = (New Drawing.Bitmap(My.Computer.Clipboard.GetImage()))
+				)
+
+				_STAThread.SetApartmentState(Threading.ApartmentState.STA)
+				_STAThread.Start()
+				_STAThread.Join()
+
+				If _ExtractedBitmap Is Nothing Then Throw New Exception("The STA Thread didn't populate _ExtractedBitmap")
+				Return _ExtractedBitmap
+
+			Catch _Ex As Exception
+				Debug.WriteLine("Couldn't extract image from clipboard; " & _Ex.Message)
+				Return ImagingResources.GenerateBitmapFromText("Couldn't extract Excel-Rendering from clipboard")
+			End Try
+
+		End Function
 
 	End Module
 

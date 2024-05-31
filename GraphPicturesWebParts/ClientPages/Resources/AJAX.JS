@@ -285,10 +285,10 @@ function ShowExprListRenderNextDesmosFrame() {
 	window.Utilities.SendAJAXRequest(
 		("/API/VideoAPI.ASPX?Action=DesmosStateForVideoFrame&VideoName=" + window.VideoName + "&FrameNumber=" + window.Utilities.MakeFiveDigitNumber(window.FrameNumber)),
 		function (_ResponseContent) {
+			
 			/*
-			We should have received the [DesmosState], and [ExpressionCount]
-
-			If the VideoFrame wasn't blank, then there should also be a [SVGGenerationResultDataBase64] KeyValuePair in the JSON Response.
+				We should have received the [DesmosState], and [ExpressionCount]
+				If the VideoFrame wasn't blank, then there should also be a [SVGGenerationResultDataBase64] KeyValuePair in the JSON Response.
 			*/
 
 			$("#LoadingMessageContainer").hide();
@@ -319,8 +319,8 @@ function ShowExprListRenderNextDesmosFrame() {
 				);
 				window.Utilities.LogDebugMessageToConsole("ResultData from last SVG Generation:\r\n\r\n" + (new XMLSerializer()).serializeToString(_SVGGenResData));
 				/*
-				To get an Attribute from XML:
-				((new DOMParser()).parseFromString(atob(_ResponseContent.SVGGenerationResultDataBase64), "text/xml").getElementsByTagName("SVGGenerationResultData")[0].getAttribute("GeneratedSVGFileSizes"))
+					To get an Attribute from XML:
+					((new DOMParser()).parseFromString(atob(_ResponseContent.SVGGenerationResultDataBase64), "text/xml").getElementsByTagName("SVGGenerationResultData")[0].getAttribute("GeneratedSVGFileSizes"))
 				*/
 			} else {
 				window.Utilities.LogDebugMessageToConsole("No SVGGenerationResultData was received for the most recent Frame's DesmosState...");
@@ -353,8 +353,8 @@ function ShowExprListRenderNextDesmosFrame() {
 			*/
 
 			/*
-			We firstly need to wait for Desmos to be able to Render a Screenshot of the Graph,
-			because only after that can we know that the Graph is actually ready to take the screenshot of...
+				We firstly need to wait for Desmos to be able to Render a Screenshot of the Graph,
+				because only after that can we know that the Graph is actually ready to take the screenshot of...
 			*/
 
 			window.DesmosCalculator.asyncScreenshot(
@@ -386,7 +386,7 @@ function ShowExprListRenderNextDesmosFrame() {
 
 							window.Utilities.SendAJAXPostRequest(
 								("/API/VideoAPI.ASPX?Action=SaveDesmosFrame&VideoName=" + window.VideoName + "&FrameNumber=" + window.Utilities.MakeFiveDigitNumber(window.FrameNumber)),
-								{ DesmosFrameBase64PNG: _ScreenshotPNGData },
+								{ DesmosFrameBase64PNG : _ScreenshotPNGData },
 								function (_ResponseContent) {
 									/* We have successfully Saved the Image to the Server. */
 									window.Utilities.LogDebugMessageToConsole("Saved ShowExprList DesmosFrame" + window.Utilities.MakeFiveDigitNumber(window.FrameNumber) + ".PNG to the Server...");

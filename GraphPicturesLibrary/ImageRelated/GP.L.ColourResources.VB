@@ -68,7 +68,7 @@ Namespace Library
 									Try
 										Me.Colours.Add(Color.FromArgb(_Red, 255 - _Green, 255 - _Blue))
 									Catch _Ex As Exception
-										MsgBox("Skipping a Colour being added to the List. Mode: [Aqua Sea].")
+										Debug.WriteLine("Skipping a Colour being added to the List. Mode: [Aqua Sea].")
 									End Try
 								Next
 							Next

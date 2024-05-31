@@ -9,10 +9,10 @@ Imports System.Runtime.InteropServices
 ' Review the values of the assembly attributes
 
 <Assembly: AssemblyTitle("GraphPicturesLibrary")> 
-<Assembly: AssemblyDescription("Ben Mullan, Tom Brockett")> 
-<Assembly: AssemblyCompany("")> 
+<Assembly: AssemblyDescription("GraphPictures' DLL (Ben Mullan, Tom Brockett 2021)")> 
+<Assembly: AssemblyCompany("(BM revisited 2024)")> 
 <Assembly: AssemblyProduct("GraphPicturesLibrary")> 
-<Assembly: AssemblyCopyright("Copyright ©  2021")> 
+<Assembly: AssemblyCopyright("Copyright ©  2021-2024")> 
 <Assembly: AssemblyTrademark("")> 
 
 <Assembly: ComVisible(False)>
@@ -31,5 +31,5 @@ Imports System.Runtime.InteropServices
 ' by using the '*' as shown below:
 ' <Assembly: AssemblyVersion("1.0.*")> 
 
-<Assembly: AssemblyVersion("1.0.0.0")> 
-<Assembly: AssemblyFileVersion("1.0.0.0")> 
+<Assembly: AssemblyVersion("1.8.0.0")> 
+<Assembly: AssemblyFileVersion("1.8.0.0")> 

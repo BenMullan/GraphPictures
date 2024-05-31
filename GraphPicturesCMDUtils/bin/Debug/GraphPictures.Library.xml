@@ -6,20 +6,7 @@ GraphPictures.Library
 </name>
 </assembly>
 <members>
-<member name="P:GraphPictures.My.Resources.Resources.ResourceManager">
-	<summary>
-  Returns the cached ResourceManager instance used by this class.
-</summary>
-</member><member name="P:GraphPictures.My.Resources.Resources.Culture">
-	<summary>
-  Overrides the current thread's CurrentUICulture property for all
-  resource lookups using this strongly typed resource class.
-</summary>
-</member><member name="T:GraphPictures.My.Resources.Resources">
-	<summary>
-  A strongly-typed resource class, for looking up localized strings, etc.
-</summary>
-</member><member name="F:GraphPictures.Library.ImagingResources.SVGGenerator.SVGSizeModerationAlgorythm.CropInputEdges">
+<member name="F:GraphPictures.Library.ImagingResources.SVGGenerator.SVGSizeModerationAlgorythm.CropInputEdges">
 	<summary>
  Chops off the outer walls of the input RasterGraphic to attempt to reduce the size of the SVG generated
  </summary>
@@ -100,42 +87,8 @@ GraphPictures.Library
 	<summary>
  Reads in the Image from Disk, applies the specified Transformaiton, and saves the image back unto disk
  </summary>
-</member><member name="T:GraphPictures.Library.PointPlottingObjects.PointPlottedRasterGraphic">
-	<summary>
- Represents a Graphic which can be plotted onto a DesmosGraph, using a Point for each Pixel
- </summary>
-	<remarks></remarks>
-</member><member name="P:GraphPictures.Library.ColourResources.ColourRange.ColourAtPercentageThrough(System.Decimal)">
-	<summary>
- Gets the Colour x% of the way through the Range
- </summary>
-	<param name="_ProportionOfRangeLength">E.g. 0.52 Would be 52% of the way through the Colours Array of the current ColourRange Object</param>
-	<value></value>
-	<returns></returns>
-	<remarks></remarks>
-</member><member name="T:GraphPictures.Library.ColourResources.ColourRange">
-	<summary>
- Represents a Range of Colours.
- </summary>
-	<remarks></remarks>
-</member><member name="M:GraphPictures.Library.FileResources.RemoveFirstNBytesFromStartOfFile(System.String,System.UInt16)">
-	<summary>
- Removes the first N bytes from the start of the File's :Data$ Stream
- </summary>
-	<param name="_FilePath"></param>
-	<param name="_NumberOfBytesToRemove"></param>
-	<remarks></remarks>
-</member><member name="M:GraphPictures.Library.FileResources.FindAvaliableFileNameInFolder(System.String,System.String)">
-	<summary>
- Returns a FileName which does not yet exist in the folder. An attempt is made to use the Seed as it is, but that FileName is already taken, then a random String will be prepended.
- </summary>
 </member><member name="P:GraphPictures.Library.BezierObjects.NOrderBezier.BezierOrderDescription">
-	<summary>
- Returns the Bezier's Order, E.g. "Linear", or "9-th Order"
- </summary>
-	<value></value>
-	<returns></returns>
-	<remarks></remarks>
+	<summary>Returns the Bezier's Order, E.g. "Linear", or "9-th Order"</summary>
 </member><member name="M:GraphPictures.Library.BezierObjects.NOrderBezier.GetExpressionsForGraphWithDragablePoints(System.UInt16)">
 	<summary>
  Retunrs the IDesmosExpressions, for the current nOrder Bezier, but with all of it's points as draggable elements in Desmos.
@@ -261,6 +214,75 @@ GraphPictures.Library
 	<summary>
  Instead of colouring 1 square cell per pixel, 3 cells are used, one for each of the Red, Green, and Blue.
  </summary>
+</member><member name="M:GraphPictures.Library.FileResources.RemoveFirstNBytesFromStartOfFile(System.String,System.UInt16)">
+	<summary>
+ Removes the first N bytes from the start of the File's :Data$ Stream
+ </summary>
+	<param name="_FilePath"></param>
+	<param name="_NumberOfBytesToRemove"></param>
+	<remarks></remarks>
+</member><member name="M:GraphPictures.Library.FileResources.FindAvaliableFileNameInFolder(System.String,System.String)">
+	<summary>
+ Returns a FileName which does not yet exist in the folder. An attempt is made to use the Seed as it is, but that FileName is already taken, then a random String will be prepended.
+ </summary>
+</member><member name="M:GraphPictures.Library.OscilloscopeResources.GetPDEFileContentsFromBeziers(GraphPictures.Library.BezierObjects.IDesmosExpression[])">
+	<summary>
+ Only produces xy.vector() instructions, to make a shape.
+ </summary>
+</member><member name="M:GraphPictures.Library.OscilloscopeResources.GenerateAndRunPDEFileFromSVG(System.String)">
+	<summary>
+ Saves the PDE to Disk (Generated from the SVG), in the OscilloscopeResources.SinglePDEs_OutputFolder_Path, with a randomly-generated FileName.
+ </summary>
+</member><member name="M:GraphPictures.Library.OscilloscopeResources.GenerateOscilloscopeVideoFramePDEsFor(System.String)">
+	<summary>
+ Generates the .PDE Files for each frame of the Video. These can then be opened in Processing, to get the Audio for the Frame.
+ </summary>
+</member><member name="M:GraphPictures.Library.OscilloscopeResources.SequentiallyRunVideoFramePDEFiles(System.String)">
+	<summary>
+ !
+ !
+ !
+ MAKE SURE TO SET THE SYSTEM VOLUME TO MUTE, BEFORE RUNNING THIS METHOD!!!!!!!!!!!!!!!
+ !
+ !
+ !
+ Runs the PDEFile for Frame00001, then for Frame00002, etc...
+ </summary>
+	<param name="_VideoName"></param>
+	<remarks></remarks>
+</member><member name="M:GraphPictures.Library.OscilloscopeResources.GenerateFramesForOscilliVideo(System.String)">
+	<summary>
+ Generates Frames from _VideoFileName$
+ </summary>
+	<param name="_VideoFileName"></param>
+	<returns>The Number of Frames Generated</returns>
+	<remarks></remarks>
+</member><member name="M:GraphPictures.Library.OscilloscopeResources.GenerateSVGForOscilliVideoFrame(System.String,System.String,System.UInt16)">
+	<summary>
+ Produces an SVG for the Frame, assuming that the Frame is in [OscilloscopeData\Videos\VideoName.MP4_Frames\Frame00001.BMP].
+ The SVG is then saved to [OscilloscopeData\Videos\VideoName.MP4_Frames\SVGs\Frame00001.SVG].
+ 
+ Note that the _FrameNumber$ is a string because it needs to have the correct number of leading 0's
+ </summary>
+</member><member name="M:GraphPictures.Library.OscilloscopeResources.GetPDEFileContentsFromSVG(System.String)">
+	<summary>
+ The SVG File's Beziers are approximated as 3 Lines Each, and the PDE File tells Processing\XYScope to Draw these lines as vertex's in a compound shape.
+ </summary>
+	<param name="_SVGFilePath"></param>
+	<returns>The Contents of the PDEFile</returns>
+	<remarks></remarks>
+</member><member name="M:GraphPictures.Library.OscilloscopeResources.SavePDEToDisk(System.String,System.String,System.String)">
+	<summary>
+ The PDE File is saved to disk (in the strange manner that processing seems to require - that's why this function isn't just a File.WriteText() call...)
+ </summary>
+	<param name="_PDEName">If set to {AutoGenerate}, then a FileName will be automatically generated in the format ^GP_\w{10}\.PDE$</param>
+	<returns>The Name of the PDE (Sketch) Generated (Same as the File without the Extention .pde)</returns>
+</member><member name="M:GraphPictures.Library.OscilloscopeResources.RunPDEFile(System.String)">
+	<summary>
+ Starts playing the Audio for the PDEFile, using the Processing-Java.EXE
+ </summary>
+	<param name="_PDEFolderPath">NOTE: This is not the path to a .PDE File. Instead, it is the path to the Folder, which has the same name as the pde file, but without the extention</param>
+	<remarks></remarks>
 </member><member name="M:GraphPictures.Library.BezierResources.GetBeziersFromPotraceSVG(System.String)">
 	<summary>
  Creates Quadratic Beziers representing the lines and curves in the SVG File
@@ -603,63 +625,36 @@ GraphPictures.Library
 	<param name="_WantedLength"></param>
 	<returns></returns>
 	<remarks></remarks>
-</member><member name="M:GraphPictures.Library.OscilloscopeResources.GetPDEFileContentsFromBeziers(GraphPictures.Library.BezierObjects.IDesmosExpression[])">
+</member><member name="P:GraphPictures.My.Resources.Resources.ResourceManager">
 	<summary>
- Only produces xy.vector() instructions, to make a shape.
- </summary>
-</member><member name="M:GraphPictures.Library.OscilloscopeResources.GenerateAndRunPDEFileFromSVG(System.String)">
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:GraphPictures.My.Resources.Resources.Culture">
 	<summary>
- Saves the PDE to Disk (Generated from the SVG), in the OscilloscopeResources.SinglePDEs_OutputFolder_Path, with a randomly-generated FileName.
- </summary>
-</member><member name="M:GraphPictures.Library.OscilloscopeResources.GenerateOscilloscopeVideoFramePDEsFor(System.String)">
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="T:GraphPictures.My.Resources.Resources">
 	<summary>
- Generates the .PDE Files for each frame of the Video. These can then be opened in Processing, to get the Audio for the Frame.
- </summary>
-</member><member name="M:GraphPictures.Library.OscilloscopeResources.SequentiallyRunVideoFramePDEFiles(System.String)">
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member><member name="P:GraphPictures.Library.ColourResources.ColourRange.ColourAtPercentageThrough(System.Decimal)">
 	<summary>
- !
- !
- !
- MAKE SURE TO SET THE SYSTEM VOLUME TO MUTE, BEFORE RUNNING THIS METHOD!!!!!!!!!!!!!!!
- !
- !
- !
- Runs the PDEFile for Frame00001, then for Frame00002, etc...
+ Gets the Colour x% of the way through the Range
  </summary>
-	<param name="_VideoName"></param>
+	<param name="_ProportionOfRangeLength">E.g. 0.52 Would be 52% of the way through the Colours Array of the current ColourRange Object</param>
+	<value></value>
+	<returns></returns>
 	<remarks></remarks>
-</member><member name="M:GraphPictures.Library.OscilloscopeResources.GenerateFramesForOscilliVideo(System.String)">
+</member><member name="T:GraphPictures.Library.ColourResources.ColourRange">
 	<summary>
- Generates Frames from _VideoFileName$
+ Represents a Range of Colours.
  </summary>
-	<param name="_VideoFileName"></param>
-	<returns>The Number of Frames Generated</returns>
 	<remarks></remarks>
-</member><member name="M:GraphPictures.Library.OscilloscopeResources.GenerateSVGForOscilliVideoFrame(System.String,System.String,System.UInt16)">
+</member><member name="T:GraphPictures.Library.PointPlottingObjects.PointPlottedRasterGraphic">
 	<summary>
- Produces an SVG for the Frame, assuming that the Frame is in [OscilloscopeData\Videos\VideoName.MP4_Frames\Frame00001.BMP].
- The SVG is then saved to [OscilloscopeData\Videos\VideoName.MP4_Frames\SVGs\Frame00001.SVG].
- 
- Note that the _FrameNumber$ is a string because it needs to have the correct number of leading 0's
+ Represents a Graphic which can be plotted onto a DesmosGraph, using a Point for each Pixel
  </summary>
-</member><member name="M:GraphPictures.Library.OscilloscopeResources.GetPDEFileContentsFromSVG(System.String)">
-	<summary>
- The SVG File's Beziers are approximated as 3 Lines Each, and the PDE File tells Processing\XYScope to Draw these lines as vertex's in a compound shape.
- </summary>
-	<param name="_SVGFilePath"></param>
-	<returns>The Contents of the PDEFile</returns>
-	<remarks></remarks>
-</member><member name="M:GraphPictures.Library.OscilloscopeResources.SavePDEToDisk(System.String,System.String,System.String)">
-	<summary>
- The PDE File is saved to disk (in the strange manner that processing seems to require - that's why this function isn't just a File.WriteText() call...)
- </summary>
-	<param name="_PDEName">If set to {AutoGenerate}, then a FileName will be automatically generated in the format ^GP_\w{10}\.PDE$</param>
-	<returns>The Name of the PDE (Sketch) Generated (Same as the File without the Extention .pde)</returns>
-</member><member name="M:GraphPictures.Library.OscilloscopeResources.RunPDEFile(System.String)">
-	<summary>
- Starts playing the Audio for the PDEFile, using the Processing-Java.EXE
- </summary>
-	<param name="_PDEFolderPath">NOTE: This is not the path to a .PDE File. Instead, it is the path to the Folder, which has the same name as the pde file, but without the extention</param>
 	<remarks></remarks>
 </member>
 </members>

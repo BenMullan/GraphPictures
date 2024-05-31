@@ -42,29 +42,35 @@ Partial Class Home
 		Me.IRGTextBox = New System.Windows.Forms.TextBox()
 		Me.BrowseForFileButton = New System.Windows.Forms.Button()
 		Me.RenderOnExcelButton = New System.Windows.Forms.Button()
-		Me.OscilloscopeTabPage = New System.Windows.Forms.TabPage()
-		Me.TabPage1 = New System.Windows.Forms.TabPage()
+		Me.BezUtilsTabPage = New System.Windows.Forms.TabPage()
+		Me.DesmosLinkLabel = New System.Windows.Forms.LinkLabel()
+		Me.DontUseLatex_CheckBox = New System.Windows.Forms.CheckBox()
+		Me.Label6 = New System.Windows.Forms.Label()
+		Me.Label5 = New System.Windows.Forms.Label()
+		Me.BezierPointsTextBox = New System.Windows.Forms.TextBox()
+		Me.DesmosPastable_DraggableBezierWithSubExpressions_Button = New System.Windows.Forms.Button()
+		Me.DesmosPastable_DraggableBezier_Button = New System.Windows.Forms.Button()
+		Me.DesmosPastable_SingleBezier_Button = New System.Windows.Forms.Button()
+		Me.CopyBezWithSubBezsButton = New System.Windows.Forms.Button()
 		Me.CopyDraggableBezierButton = New System.Windows.Forms.Button()
 		Me.NOrderBezierButton = New System.Windows.Forms.Button()
 		Me.TheStatusStrip = New System.Windows.Forms.StatusStrip()
 		Me.RenderProgressLabel = New System.Windows.Forms.ToolStripStatusLabel()
 		Me.RenderProgressBar = New System.Windows.Forms.ToolStripProgressBar()
-		Me.CopyBezWithSubBezsButton = New System.Windows.Forms.Button()
 		Me.TheTabControl.SuspendLayout()
 		Me.ExcelTabPage.SuspendLayout()
 		Me.GroupBox1.SuspendLayout()
 		CType(Me.MaxDimensionSelector, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.ExcelOutputPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
 		CType(Me.IRGPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
-		Me.TabPage1.SuspendLayout()
+		Me.BezUtilsTabPage.SuspendLayout()
 		Me.TheStatusStrip.SuspendLayout()
 		Me.SuspendLayout()
 		'
 		'TheTabControl
 		'
 		Me.TheTabControl.Controls.Add(Me.ExcelTabPage)
-		Me.TheTabControl.Controls.Add(Me.OscilloscopeTabPage)
-		Me.TheTabControl.Controls.Add(Me.TabPage1)
+		Me.TheTabControl.Controls.Add(Me.BezUtilsTabPage)
 		Me.TheTabControl.Location = New System.Drawing.Point(12, 12)
 		Me.TheTabControl.Name = "TheTabControl"
 		Me.TheTabControl.SelectedIndex = 0
@@ -264,54 +270,142 @@ Partial Class Home
 		Me.RenderOnExcelButton.Name = "RenderOnExcelButton"
 		Me.RenderOnExcelButton.Size = New System.Drawing.Size(75, 23)
 		Me.RenderOnExcelButton.TabIndex = 0
-		Me.RenderOnExcelButton.Text = "Render"
+		Me.RenderOnExcelButton.Text = "&Render"
 		Me.RenderOnExcelButton.UseVisualStyleBackColor = True
 		'
-		'OscilloscopeTabPage
+		'BezUtilsTabPage
 		'
-		Me.OscilloscopeTabPage.Location = New System.Drawing.Point(4, 22)
-		Me.OscilloscopeTabPage.Name = "OscilloscopeTabPage"
-		Me.OscilloscopeTabPage.Padding = New System.Windows.Forms.Padding(3)
-		Me.OscilloscopeTabPage.Size = New System.Drawing.Size(592, 387)
-		Me.OscilloscopeTabPage.TabIndex = 1
-		Me.OscilloscopeTabPage.Text = "Oscilloscope"
-		Me.OscilloscopeTabPage.UseVisualStyleBackColor = True
+		Me.BezUtilsTabPage.Controls.Add(Me.DesmosLinkLabel)
+		Me.BezUtilsTabPage.Controls.Add(Me.DontUseLatex_CheckBox)
+		Me.BezUtilsTabPage.Controls.Add(Me.Label6)
+		Me.BezUtilsTabPage.Controls.Add(Me.Label5)
+		Me.BezUtilsTabPage.Controls.Add(Me.BezierPointsTextBox)
+		Me.BezUtilsTabPage.Controls.Add(Me.DesmosPastable_DraggableBezierWithSubExpressions_Button)
+		Me.BezUtilsTabPage.Controls.Add(Me.DesmosPastable_DraggableBezier_Button)
+		Me.BezUtilsTabPage.Controls.Add(Me.DesmosPastable_SingleBezier_Button)
+		Me.BezUtilsTabPage.Controls.Add(Me.CopyBezWithSubBezsButton)
+		Me.BezUtilsTabPage.Controls.Add(Me.CopyDraggableBezierButton)
+		Me.BezUtilsTabPage.Controls.Add(Me.NOrderBezierButton)
+		Me.BezUtilsTabPage.Location = New System.Drawing.Point(4, 22)
+		Me.BezUtilsTabPage.Name = "BezUtilsTabPage"
+		Me.BezUtilsTabPage.Padding = New System.Windows.Forms.Padding(3)
+		Me.BezUtilsTabPage.Size = New System.Drawing.Size(592, 387)
+		Me.BezUtilsTabPage.TabIndex = 2
+		Me.BezUtilsTabPage.Text = "Bezier Utilities"
+		Me.BezUtilsTabPage.UseVisualStyleBackColor = True
 		'
-		'TabPage1
+		'DesmosLinkLabel
 		'
-		Me.TabPage1.Controls.Add(Me.CopyBezWithSubBezsButton)
-		Me.TabPage1.Controls.Add(Me.CopyDraggableBezierButton)
-		Me.TabPage1.Controls.Add(Me.NOrderBezierButton)
-		Me.TabPage1.Location = New System.Drawing.Point(4, 22)
-		Me.TabPage1.Name = "TabPage1"
-		Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-		Me.TabPage1.Size = New System.Drawing.Size(592, 387)
-		Me.TabPage1.TabIndex = 2
-		Me.TabPage1.Text = "Presentation Utilities"
-		Me.TabPage1.UseVisualStyleBackColor = True
+		Me.DesmosLinkLabel.AutoSize = True
+		Me.DesmosLinkLabel.Location = New System.Drawing.Point(502, 368)
+		Me.DesmosLinkLabel.Name = "DesmosLinkLabel"
+		Me.DesmosLinkLabel.Size = New System.Drawing.Size(83, 13)
+		Me.DesmosLinkLabel.TabIndex = 6
+		Me.DesmosLinkLabel.TabStop = True
+		Me.DesmosLinkLabel.Text = "Open Desmos..."
+		'
+		'DontUseLatex_CheckBox
+		'
+		Me.DontUseLatex_CheckBox.AutoSize = True
+		Me.DontUseLatex_CheckBox.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+		Me.DontUseLatex_CheckBox.Location = New System.Drawing.Point(7, 365)
+		Me.DontUseLatex_CheckBox.Name = "DontUseLatex_CheckBox"
+		Me.DontUseLatex_CheckBox.Size = New System.Drawing.Size(275, 17)
+		Me.DontUseLatex_CheckBox.TabIndex = 5
+		Me.DontUseLatex_CheckBox.Text = "Make expression human-readable (instead of LaTeX)"
+		Me.DontUseLatex_CheckBox.UseVisualStyleBackColor = True
+		'
+		'Label6
+		'
+		Me.Label6.AutoSize = True
+		Me.Label6.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+		Me.Label6.Location = New System.Drawing.Point(16, 61)
+		Me.Label6.Name = "Label6"
+		Me.Label6.Size = New System.Drawing.Size(137, 13)
+		Me.Label6.TabIndex = 4
+		Me.Label6.Text = "Copy desmos-pastable for..."
+		'
+		'Label5
+		'
+		Me.Label5.AutoSize = True
+		Me.Label5.Location = New System.Drawing.Point(16, 14)
+		Me.Label5.Name = "Label5"
+		Me.Label5.Size = New System.Drawing.Size(103, 13)
+		Me.Label5.TabIndex = 4
+		Me.Label5.Text = "Enter bezier points..."
+		'
+		'BezierPointsTextBox
+		'
+		Me.BezierPointsTextBox.Location = New System.Drawing.Point(15, 29)
+		Me.BezierPointsTextBox.Name = "BezierPointsTextBox"
+		Me.BezierPointsTextBox.Size = New System.Drawing.Size(559, 20)
+		Me.BezierPointsTextBox.TabIndex = 3
+		Me.BezierPointsTextBox.Text = "{12, 14} ~ {56, 6} ~ {-14, 78} ~ {43, 76} ~ {65, 54} ~ {43, 87}"
+		'
+		'DesmosPastable_DraggableBezierWithSubExpressions_Button
+		'
+		Me.DesmosPastable_DraggableBezierWithSubExpressions_Button.Location = New System.Drawing.Point(398, 56)
+		Me.DesmosPastable_DraggableBezierWithSubExpressions_Button.Name = "DesmosPastable_DraggableBezierWithSubExpressions_Button"
+		Me.DesmosPastable_DraggableBezierWithSubExpressions_Button.Size = New System.Drawing.Size(176, 23)
+		Me.DesmosPastable_DraggableBezierWithSubExpressions_Button.TabIndex = 2
+		Me.DesmosPastable_DraggableBezierWithSubExpressions_Button.Text = "D&raggable Bezier && sub-exprs..."
+		Me.DesmosPastable_DraggableBezierWithSubExpressions_Button.UseVisualStyleBackColor = True
+		'
+		'DesmosPastable_DraggableBezier_Button
+		'
+		Me.DesmosPastable_DraggableBezier_Button.Location = New System.Drawing.Point(277, 56)
+		Me.DesmosPastable_DraggableBezier_Button.Name = "DesmosPastable_DraggableBezier_Button"
+		Me.DesmosPastable_DraggableBezier_Button.Size = New System.Drawing.Size(115, 23)
+		Me.DesmosPastable_DraggableBezier_Button.TabIndex = 2
+		Me.DesmosPastable_DraggableBezier_Button.Text = "&Draggable Bezier..."
+		Me.DesmosPastable_DraggableBezier_Button.UseVisualStyleBackColor = True
+		'
+		'DesmosPastable_SingleBezier_Button
+		'
+		Me.DesmosPastable_SingleBezier_Button.Location = New System.Drawing.Point(156, 56)
+		Me.DesmosPastable_SingleBezier_Button.Name = "DesmosPastable_SingleBezier_Button"
+		Me.DesmosPastable_SingleBezier_Button.Size = New System.Drawing.Size(115, 23)
+		Me.DesmosPastable_SingleBezier_Button.TabIndex = 2
+		Me.DesmosPastable_SingleBezier_Button.Text = "&Single Bezier..."
+		Me.DesmosPastable_SingleBezier_Button.UseVisualStyleBackColor = True
+		'
+		'CopyBezWithSubBezsButton
+		'
+		Me.CopyBezWithSubBezsButton.Enabled = False
+		Me.CopyBezWithSubBezsButton.Location = New System.Drawing.Point(6, 314)
+		Me.CopyBezWithSubBezsButton.Name = "CopyBezWithSubBezsButton"
+		Me.CopyBezWithSubBezsButton.Size = New System.Drawing.Size(180, 23)
+		Me.CopyBezWithSubBezsButton.TabIndex = 1
+		Me.CopyBezWithSubBezsButton.Text = "Copy Bezier Exprs \w SubBeziers"
+		Me.CopyBezWithSubBezsButton.UseVisualStyleBackColor = True
+		Me.CopyBezWithSubBezsButton.Visible = False
 		'
 		'CopyDraggableBezierButton
 		'
-		Me.CopyDraggableBezierButton.Location = New System.Drawing.Point(16, 45)
+		Me.CopyDraggableBezierButton.Enabled = False
+		Me.CopyDraggableBezierButton.Location = New System.Drawing.Point(6, 285)
 		Me.CopyDraggableBezierButton.Name = "CopyDraggableBezierButton"
 		Me.CopyDraggableBezierButton.Size = New System.Drawing.Size(168, 23)
 		Me.CopyDraggableBezierButton.TabIndex = 0
 		Me.CopyDraggableBezierButton.Text = "Copy Draggable Bezier Exprs"
 		Me.CopyDraggableBezierButton.UseVisualStyleBackColor = True
+		Me.CopyDraggableBezierButton.Visible = False
 		'
 		'NOrderBezierButton
 		'
-		Me.NOrderBezierButton.Location = New System.Drawing.Point(16, 16)
+		Me.NOrderBezierButton.Enabled = False
+		Me.NOrderBezierButton.Location = New System.Drawing.Point(6, 256)
 		Me.NOrderBezierButton.Name = "NOrderBezierButton"
 		Me.NOrderBezierButton.Size = New System.Drawing.Size(147, 23)
 		Me.NOrderBezierButton.TabIndex = 0
 		Me.NOrderBezierButton.Text = "Generate N-Order Bezier"
 		Me.NOrderBezierButton.UseVisualStyleBackColor = True
+		Me.NOrderBezierButton.Visible = False
 		'
 		'TheStatusStrip
 		'
 		Me.TheStatusStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.RenderProgressLabel, Me.RenderProgressBar})
-		Me.TheStatusStrip.Location = New System.Drawing.Point(0, 440)
+		Me.TheStatusStrip.Location = New System.Drawing.Point(0, 439)
 		Me.TheStatusStrip.Name = "TheStatusStrip"
 		Me.TheStatusStrip.Size = New System.Drawing.Size(624, 22)
 		Me.TheStatusStrip.TabIndex = 1
@@ -331,26 +425,19 @@ Partial Class Home
 		Me.RenderProgressBar.Size = New System.Drawing.Size(100, 16)
 		Me.RenderProgressBar.ToolTipText = "The Current YPixel Progress"
 		'
-		'CopyBezWithSubBezsButton
-		'
-		Me.CopyBezWithSubBezsButton.Location = New System.Drawing.Point(16, 74)
-		Me.CopyBezWithSubBezsButton.Name = "CopyBezWithSubBezsButton"
-		Me.CopyBezWithSubBezsButton.Size = New System.Drawing.Size(180, 23)
-		Me.CopyBezWithSubBezsButton.TabIndex = 1
-		Me.CopyBezWithSubBezsButton.Text = "Copy Bezier Exprs \w SubBeziers"
-		Me.CopyBezWithSubBezsButton.UseVisualStyleBackColor = True
-		'
 		'Home
 		'
 		Me.AllowDrop = True
 		Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
 		Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-		Me.ClientSize = New System.Drawing.Size(624, 462)
+		Me.ClientSize = New System.Drawing.Size(624, 461)
 		Me.Controls.Add(Me.TheStatusStrip)
 		Me.Controls.Add(Me.TheTabControl)
 		Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
 		Me.MaximizeBox = False
+		Me.MaximumSize = New System.Drawing.Size(640, 500)
 		Me.MinimizeBox = False
+		Me.MinimumSize = New System.Drawing.Size(640, 500)
 		Me.Name = "Home"
 		Me.Text = "GraphPictures Windows Utilities"
 		Me.TheTabControl.ResumeLayout(False)
@@ -361,7 +448,8 @@ Partial Class Home
 		CType(Me.MaxDimensionSelector, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.ExcelOutputPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
 		CType(Me.IRGPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
-		Me.TabPage1.ResumeLayout(False)
+		Me.BezUtilsTabPage.ResumeLayout(False)
+		Me.BezUtilsTabPage.PerformLayout()
 		Me.TheStatusStrip.ResumeLayout(False)
 		Me.TheStatusStrip.PerformLayout()
 		Me.ResumeLayout(False)
@@ -371,7 +459,6 @@ Partial Class Home
 	Friend WithEvents TheTabControl As System.Windows.Forms.TabControl
 	Friend WithEvents ExcelTabPage As System.Windows.Forms.TabPage
 	Friend WithEvents RenderOnExcelButton As System.Windows.Forms.Button
-	Friend WithEvents OscilloscopeTabPage As System.Windows.Forms.TabPage
 	Friend WithEvents Label1 As System.Windows.Forms.Label
 	Friend WithEvents IRGTextBox As System.Windows.Forms.TextBox
 	Friend WithEvents BrowseForFileButton As System.Windows.Forms.Button
@@ -391,8 +478,16 @@ Partial Class Home
 	Friend WithEvents Label4 As System.Windows.Forms.Label
 	Friend WithEvents IRGDimensionsLabel As System.Windows.Forms.Label
 	Friend WithEvents CloseExcelsLinkLabel As System.Windows.Forms.LinkLabel
-	Friend WithEvents TabPage1 As System.Windows.Forms.TabPage
+	Friend WithEvents BezUtilsTabPage As System.Windows.Forms.TabPage
 	Friend WithEvents NOrderBezierButton As System.Windows.Forms.Button
 	Friend WithEvents CopyDraggableBezierButton As System.Windows.Forms.Button
 	Friend WithEvents CopyBezWithSubBezsButton As System.Windows.Forms.Button
+	Friend WithEvents BezierPointsTextBox As System.Windows.Forms.TextBox
+	Friend WithEvents DesmosPastable_SingleBezier_Button As System.Windows.Forms.Button
+	Friend WithEvents Label5 As System.Windows.Forms.Label
+	Friend WithEvents Label6 As System.Windows.Forms.Label
+	Friend WithEvents DontUseLatex_CheckBox As System.Windows.Forms.CheckBox
+	Friend WithEvents DesmosPastable_DraggableBezier_Button As System.Windows.Forms.Button
+	Friend WithEvents DesmosPastable_DraggableBezierWithSubExpressions_Button As System.Windows.Forms.Button
+	Friend WithEvents DesmosLinkLabel As System.Windows.Forms.LinkLabel
 End Class

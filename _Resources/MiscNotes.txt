@@ -1,0 +1,147 @@
+File:		MiscNotes.txt - conflated documentation/to-do-lists/change-log/file-map for GraphPictures
+Author:		Ben Mullan 2024 (Revisisted solution to clean things up a bit)
+
+
+
+----------------------------------------------------------------------------------------------------
+											 Documentation
+----------------------------------------------------------------------------------------------------
+
+
+Notations used in this Solution:
+	[Key]		to indicate a HTTP QueryString KeyValuePair with that Key
+	[?Key]		to indicate an Optional HTTP QueryString KeyValuePair with that Key
+	IRG			Input Raster Graphic (to an SVGGeneration Algorythm)
+	RG			A RasterGraphic
+	{this}		The current Array of Points for an SVGPathInstruction
+	REM			For Formal Comments in Visual Basic .NET
+	'			Informal Comments in Visual Basic .NET
+
+Advancded QueryStrings:
+	[?BypassSVGFileSizeCheck]		Get.ASPX?Item=DesmosStateForSVG&BypassSVGFileSizeCheck=True
+	
+If FFMPEG complains about the Width or height not being an even number, then make -vf command look like this:
+	-vf "pad=ceil(iw/2)*2:ceil(ih/2)*2,fps=25,format=yuv420p"
+
+How the VideoTranscoding System works:
+	- Put Input.MP4 into \ClientData\Videos\
+	- Select the VideoFile to Render from StartVideoTranscoding.ASPX (DirListing). This ASPX File:
+		- Calls the [VideoAPI.ASPX?Action=VideoToFrames&VideoFile=Input.MP4] API, which returns (as JSON) the number of Frames Generated
+		- Generates href's to [RenderDesmosVideoFrames.ASPX?VideoName=Input.MP4&StartFrame=1&EndFrame=250] etc...
+			- The [RenderDesmosVideoFrames.ASPX] Instances do this:
+				- For _Frame = ?StartFrame To ?EndFrame:
+					- Make request: [VideoAPI.ASPX?Action=DesmosStateForVideoFrame&VideoName={?VideoName}&FrameNumber={_Frame}], which returns the DesmosState for the _Frame
+					- Call asyncScreenshot() in JS, and in callback, post PNG Data to API: [VideoAPI.ASPX?Action=SaveDesmosFrame&FrameNumber={_Frame}]
+					- Next _Frame
+	- When all the [RenderDesmosVideoFrames] Instances are finished, they provide a link to [EndVideoTranscoding.ASPX?VideoName=Input.MP4]
+		- This page Calls the [VideoAPI.ASPX?Action=DesmosFramesToVideo?VideoName=Input.MP4] API, and gives a href to the DesmosRendered_Input.MP4
+	- Final Video Output should be called (E.g.) DesmosRendered_Input.MP4
+	- The AudioTrack is then copied from the Input.MP4, unto a File called WithAudio_DesmosRendered_Input.MP4
+
+	- Update 28012022: An additional DesmosFrames Renderer has been introduced,
+		...which has the effect of using the HTML2Canvas rendering, instead of Desmos's built-in Screenshot function.
+
+	REM		VideoFile Location Convention:
+	REM \ClientData\Videos\Input.MP4
+	REM \ClientData\Videos\Input.MP4_Frames\Frame00001.BMP
+	REM \ClientData\Videos\Input.MP4_Frames\SVGs\Frame00001.SVG
+	REM \ClientData\Videos\Input.MP4_Frames\DesmosFrames\Frame00001.PNG
+	REM \ClientData\Videos\DesmosRendered_Input.MP4
+	REM \ClientData\Videos\AudioFor_Input.MP4
+	REM \ClientData\Videos\WithAudio_DesmosRendered_Input.MP4
+
+	REM OscilliVideos Location Convention:
+	'OscilloscopeData\Videos\Input.MP4
+	'OscilloscopeData\Videos\Input.MP4_Frames\
+	'OscilloscopeData\Videos\Input.MP4_Frames\Frame00001.BMP
+	'OscilloscopeData\Videos\Input.MP4_Frames\SVGs\Frame00001.SVG
+	'OscilloscopeData\Videos\Input.MP4_Frames\PDEs\Frame00001\Frame00001.pde
+
+
+
+
+
+
+
+----------------------------------------------------------------------------------------------------
+											 Change-Log
+----------------------------------------------------------------------------------------------------
+
+
+26 01 2022		Implemented Caching of DesmosState API Responses as APIR Files
+27 01 2022		Imropoved WhiteBoard CSS
+28 01 2022		Began the Implementation of HTML2Canvas for Video Frame Screenshotting
+08 02 2022		Wrote first version of AdjustInputQuality SVGFileSizeModerationAlgorythm, and set WebParts VSGGEnerationOptions to use it. ALGORYTHM REQUIRES MORE TESTING!!!
+25 05 2022		Added the EmptyFrameDesmosGraphState, so that VideoFrames which are empty still get rendered.
+26 05 2022		Extended the Response of the "DesmosStateForVideoFrame" API, to also return the SVGGenerationResultDataBase64.
+13 03 2023		Added the Project to GitHub. All Future Changes will be logged there. Sorry.
+
+
+
+
+
+
+
+
+
+
+----------------------------------------------------------------------------------------------------
+											 To-Do
+----------------------------------------------------------------------------------------------------
+
+
+To Actually Do:
+	- Make the ClientData Folder automatically clean itself if it's size exceedes a Const MaxSize.
+	- The [c] won't currently work for 16 Points in {this}. Fix that. Try [To Length - 3].
+	- For the VideoRendering, make <path>-less frames not throw an exception.
+	- Security: String to Enum conversion stuff: Could integers also be converted, if so which ones?
+	- Implement Logging Calls
+	- Make everything Throw only [GraphPicturesException]s and not [System.Exception]s
+	- CSS on WebCamUpload and WhiteBoard (Done sort of - good enough)
+	- !!! AdjustInputQuality SVGGeneration Algorythm !!!
+
+W3 Org:
+
+A closed subpath must be closed with a "closepath" command, this "joins" the first and last path segments. Any other path is an open subpath.
+https://www.w3.org/TR/SVG/paths.html
+
+
+Therefore, have two Variables:
+	_FirstInstructionInSubPath
+	_LastInstructionInSubPath
+
+And update them accordingly. Then Draw the Z from the ENDPOINT of the _FirstInstructionInSubPath, to the ENDPOINT of the _LastInstructionInSubPath
+
+
+
+
+Question:
+Is it always
+Draw the Z from the ENDPOINT of the _FirstInstructionInSubPath, to the ENDPOINT of the _LastInstructionInSubPath
+Or is it sometimes
+Draw the Z from the LUP to the _SubPathStartPoint
+
+^ Experiment and find out what determines this, if they can both occour.
+
+
+
+
+
+
+A closed subpath differs in behavior from an open subpath whose final coordinate is the initial point of the subpath.
+The first and last path segments of an open subpath will not be joined, even when the final coordinate of the last path segment is the initial point of the subpath.
+This will result in the first and last path segments being capped using the current value of stroke-linecap rather than joined using the current value of stroke-linejoin.
+
+
+
+NEW Ideas:
+
+It doesen't seem to ever
+Draw the Z from the ENDPOINT of the _FirstInstructionInSubPath, to the ENDPOINT of the _LastInstructionInSubPath
+But it does MAKE UP NEW PARTS OF THE CURVE!!!!!
+
+
+Even newer Ideas:
+
+	For the l command, all Points are relative to the LUP
+	For the c command, all Points are relative to the Point set by the Previous m|M (I.e. the PathStartPoint)

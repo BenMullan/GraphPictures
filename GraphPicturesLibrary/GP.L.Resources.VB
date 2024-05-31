@@ -5,6 +5,13 @@ Namespace Library
 
 	Public Module Resources
 
+		Public Const _
+		 GraphViewport_MinX% = -50,
+		 GraphViewport_MaxX% = 1100,
+		 GraphViewport_MinY% = -100,
+		 GraphViewport_MaxY% = 700
+
+		Public Const BezierScaling_TargetDesmosGraphWidth As UInt32 = 1000UI 'Passed into GraphPictureObjectExtentions.ScaledTo()
 		Public Const VideoFrame_FileName_RegExp$ = "^Frame\d{5}\.BMP$"
 
 		Public Sub MsgDebug(ByVal _Message$)
@@ -17,6 +24,7 @@ Namespace Library
 		''' Used for the _Options Argument to ToDesmosState() CompilerExtention
 		''' </summary>
 		Public Class DesmosStateCreationOptions
+
 			Public ShowGrid As [Boolean] = True
 			Public ColourAllocationMode As ColourRange.ColourGenerationMode = ColourRange.ColourGenerationMode.AllBlack
 			Public GraphZoomSize@ = 1.05D

@@ -17,11 +17,11 @@ Namespace WebParts
 		 .BitmapConversionFolder = New IO.DirectoryInfo(WWWUploadedRasterImageBitmapConversionFolderPath),
 		 .PotraceEXE = New IO.FileInfo(WWWPotraceEXEPath),
 		 .SVGSizeModerationMode = Library.SVGGenerator.SVGSizeModerationAlgorythm.AdjustInputQuality,
-		 .TargetOrMaximun_SVGFileSizeKB = 40US
+		 .TargetOrMaximun_SVGFileSizeKB = 60US
 		}
 
-		Public Const VideoFrameRate% = 1 'Frames Per Second
-		Public Const MaxAllowedSVGFileSizeKB As UInt64 = 80	'The API will refuse to derive Beziers from SVG's over this Size
+		Public Const VideoFrameRate% = 24 'Frames Per Second
+		Public Const MaxAllowedSVGFileSizeKB As UInt64 = 90	'The API will refuse to derive Beziers from SVG's over this Size
 		Public Const DefaultVideoFrameTargetSVGFileSize As UInt16 = 60US
 		Public ReadOnly DefaultVideoDesmosGraphOptions As New Library.Resources.DesmosStateCreationOptions() With {.ShowGrid = True, .ColourAllocationMode = Library.ColourRange.ColourGenerationMode.AllBlack, .GraphZoomSize = 1.05@}
 
@@ -62,12 +62,8 @@ Namespace WebParts
 		REM \ClientData\Videos\AudioFor_Input.MP4
 		REM \ClientData\Videos\WithAudio_DesmosRendered_Input.MP4
 
-		''' <summary>
-		''' Generates Frames from _VideoFileName$
-		''' </summary>
-		''' <param name="_VideoFileName"></param>
+		''' <summary>Generates Frames from _VideoFileName$</summary>
 		''' <returns>The Number of Frames Generated</returns>
-		''' <remarks></remarks>
 		Public Function GenerateFramesFromVideo(ByVal _VideoFileName$) As UInt32
 
 			Try
@@ -86,7 +82,7 @@ Namespace WebParts
 					.Start()
 					Try
 						.WaitForExit()
-						If Not (.ExitCode = 0) Then Throw New [Library].GraphPicturesConversionException("The FFMPEG Process returned a non-zero ExitCode. The ExitCode was: " & .ExitCode.ToString() & ". The Command-Line Arguments were: " & _FFMPEGCLAs & ". If FFMPEG complains about the Width or height not being an even number, then make -vf command look like this: [-vf ""pad=ceil(iw/2)*2:ceil(ih/2)*2,fps=25,format=yuv420p""] (Without the square brackets...)")
+						If Not (.ExitCode = 0) Then Throw New [Library].GraphPicturesConversionException("The FFMPEG Process returned a non-zero ExitCode. The ExitCode was: " & .ExitCode.ToString() & ". The Command-Line Arguments were: " & _FFMPEGCLAs)
 					Catch _Ex As Library.GraphPicturesConversionException When True
 						Throw (New Library.GraphPicturesConversionException("The FFMPEG Process could not be waited upon to exit, or it returned an Error. The Exception Thrown was: " & _Ex.Message))
 					End Try
@@ -115,10 +111,7 @@ Namespace WebParts
 
 		End Function
 
-		''' <summary>
-		''' Generated the output as DesmosRendered_{_VideoName}
-		''' </summary>
-		''' <remarks></remarks>
+		''' <summary>Generated the output as DesmosRendered_{_VideoName}</summary>
 		Public Sub GenerateVideoFromDesmosFrames(ByVal _VideoName$)
 
 			Try
@@ -127,14 +120,14 @@ Namespace WebParts
 				If Not Global.System.IO.Directory.Exists(WWWVideosFolderPath & _VideoName & "_Frames\DesmosFrames\") Then Throw (New GraphPictures.Library.GraphPicturesConversionException("An attempt was made to Generate A VideoFile From some DesmosFrames, however the DesmosFrames do not exist. The VideoFile was: " & _VideoName))
 
 				REM Specify the CommandLine Arguments for FFMPEG
-				Dim _FFMPEGCLAs$ = "-r " & Resources.VideoFrameRate.ToString() & " -start_number 0 -i """ & WWWVideosFolderPath & _VideoName & "_Frames\DesmosFrames\Frame%5d.PNG"" -c:v libx264 -vf ""fps=25,format=yuv420p"" """ & WWWVideosFolderPath & "DesmosRendered_" & _VideoName & """"
+				Dim _FFMPEGCLAs$ = "-r " & Resources.VideoFrameRate.ToString() & " -start_number 0 -i """ & WWWVideosFolderPath & _VideoName & "_Frames\DesmosFrames\Frame%5d.PNG"" -c:v libx264 -vf ""pad=ceil(iw/2)*2:ceil(ih/2)*2,fps=25,format=yuv420p"" """ & WWWVideosFolderPath & "DesmosRendered_" & _VideoName & """"
 
 				With (New Diagnostics.Process())
 					.StartInfo = (New Diagnostics.ProcessStartInfo(WWWFFMPEGEXEPath, _FFMPEGCLAs))
 					.Start()
 					Try
 						.WaitForExit()
-						If Not (.ExitCode = 0) Then Throw New [Library].GraphPicturesConversionException("The FFMPEG Process returned a non-zero ExitCode. The ExitCode was: " & .ExitCode.ToString() & ". The Command-Line Arguments were: " & _FFMPEGCLAs)
+						If Not (.ExitCode = 0) Then Throw New [Library].GraphPicturesConversionException("The FFMPEG Process returned a non-zero ExitCode. The ExitCode was: " & .ExitCode.ToString() & ". The Command-Line Arguments were: " & _FFMPEGCLAs & vbCrLf & "If FFMPEG complains about the Width or height not being an even/odd number (""width not divisible by 2""), then make -vf command look like this: -vf ""fps=25,format=yuv420p""")
 					Catch _Ex As Library.GraphPicturesConversionException When True
 						Throw (New Library.GraphPicturesConversionException("The FFMPEG Process could not be waited upon to exit, or it returned an Error. The Exception Thrown was: " & _Ex.Message))
 					End Try
@@ -152,7 +145,7 @@ Namespace WebParts
 		''' Produces an SVG for the Frame, assuming that the Frame is in the location [ClientData\Videos\VideoName.MP4_Frames\Frame00001.BMP].
 		''' The SVG is then saved to [ClientData\Videos\VideoName.MP4_Frames\SVGs\Frame00001.SVG].
 		''' </summary>
-		''' <returns>All SVGGenerationResultData. To get the SVGFileName, use *.LastSVGFileGenerated.Name - This is just the Name of the File, NOT the FullPath</returns>
+		''' <returns>All SVGGenerationResultData. To get the SVGFileName, use *.LastSVGFileGenerated.Name - That is just the Name of the File, NOT the FullPath</returns>
 		Public Function GenerateSVGForVideoFrame(ByVal _VideoName$, ByVal _FrameNumber$, Optional ByVal _TargetSVGFileSizeKB As UInt16 = DefaultVideoFrameTargetSVGFileSize) As Library.ImagingResources.SVGGenerator.SVGGenerationResultData
 
 			'From		\ClientData\Videos\{_VideoName}_Frames\Frame{_FrameNumber}.BMP

@@ -55,3 +55,11 @@ D:\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\FromBravoSessio
 D:\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\FromBravoSession0\GraphPicturesLibrary\obj\Debug\GraphPictures.Library.dll
 D:\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\FromBravoSession0\GraphPicturesLibrary\obj\Debug\GraphPictures.Library.xml
 D:\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\FromBravoSession0\GraphPicturesLibrary\obj\Debug\GraphPictures.Library.pdb
+D:\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\SolutionGH\GraphPicturesLibrary\bin\Debug\GraphPictures.Library.dll
+D:\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\SolutionGH\GraphPicturesLibrary\bin\Debug\GraphPictures.Library.pdb
+D:\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\SolutionGH\GraphPicturesLibrary\bin\Debug\GraphPictures.Library.xml
+D:\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\SolutionGH\GraphPicturesLibrary\obj\Debug\GraphPictures.Resources.resources
+D:\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\SolutionGH\GraphPicturesLibrary\obj\Debug\GraphPicturesLibrary.vbproj.GenerateResource.Cache
+D:\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\SolutionGH\GraphPicturesLibrary\obj\Debug\GraphPictures.Library.dll
+D:\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\SolutionGH\GraphPicturesLibrary\obj\Debug\GraphPictures.Library.xml
+D:\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\SolutionGH\GraphPicturesLibrary\obj\Debug\GraphPictures.Library.pdb

@@ -17,11 +17,11 @@ Namespace Library
 
 			Public ReadOnly Property Points As ObjectModel.ReadOnlyCollection(Of Drawing.Point)
 				Get
-					Return (New ObjectModel.ReadOnlyCollection(Of Drawing.Point)(Me.Internal_Points))
+					Return (New ObjectModel.ReadOnlyCollection(Of Drawing.Point)(Me.Points_))
 				End Get
 			End Property
 
-			Private Internal_Points As New List(Of Drawing.Point)()
+			Protected Points_ As New List(Of Drawing.Point)()
 
 			Public Sub New(ByVal ParamArray _Points As Int32()())
 
@@ -42,7 +42,7 @@ Namespace Library
 					_MePoints.Add(New Drawing.Point(_PointXY(0), _PointXY(1)))
 				Next
 
-				Me.Internal_Points = _MePoints
+				Me.Points_ = _MePoints
 
 			End Sub
 
@@ -51,7 +51,7 @@ Namespace Library
 				'There must be at least one point in the Array, to form a Point
 				If Not _Points.Length.IsAtLeast(1) Then Throw New Exception("An attempt was made to instanciate an N-Order Bezier, however fewer than one Points were specified in the Constructor. The Number of Points specified was: " & _Points.Length.ToString())
 
-				Me.Internal_Points = _Points.ToList()
+				Me.Points_ = _Points.ToList()
 
 			End Sub
 
@@ -61,12 +61,12 @@ Namespace Library
 					REM At a later date, perhaps rewrite this to return the actual Min&Max X&Y Values for the LINE itself,
 					REM ...And not just it's Start, Control, and End Points
 
-					Dim _MostPositiveX% = Me.Internal_Points(0).X
-					Dim _MostPositiveY% = Me.Internal_Points(0).Y
-					Dim _MostNegativeX% = Me.Internal_Points(0).X
-					Dim _MostNegativeY% = Me.Internal_Points(0).Y
+					Dim _MostPositiveX% = Me.Points_.First().X
+					Dim _MostPositiveY% = Me.Points_.First().Y
+					Dim _MostNegativeX% = Me.Points_.First().X
+					Dim _MostNegativeY% = Me.Points_.First().Y
 
-					For Each _Point As Drawing.Point In Me.Internal_Points
+					For Each _Point As Drawing.Point In Me.Points_
 
 						If _Point.X > _MostPositiveX Then _MostPositiveX = _Point.X
 						If _Point.Y > _MostPositiveY Then _MostPositiveY = _Point.Y
@@ -85,27 +85,22 @@ Namespace Library
 				End Get
 			End Property
 
-			''' <summary>
-			''' Returns the Bezier's Order, E.g. "Linear", or "9-th Order"
-			''' </summary>
-			''' <value></value>
-			''' <returns></returns>
-			''' <remarks></remarks>
-			Public ReadOnly Property BezierOrderDescription As String
+			''' <summary>Returns the Bezier's Order, E.g. "Linear", or "9-th Order"</summary>
+			Public ReadOnly Property BezierOrderDescription As [String]
 				Get
 
-					If Me.Internal_Points.Count < 1 Then
+					If Me.Points_.Count < 1 Then
 						Throw New Exception("This Bezier Object is invalid!!! Fewer than one Points exist within it. (This was discovered whilst attempting to Generate a Description of the Bezier's Order...)")
-					ElseIf Me.Internal_Points.Count = 1 Then
+					ElseIf Me.Points_.Count = 1 Then
 						Return "Point"
-					ElseIf Me.Internal_Points.Count = 2 Then
+					ElseIf Me.Points_.Count = 2 Then
 						Return "Linear"
-					ElseIf Me.Internal_Points.Count = 3 Then
+					ElseIf Me.Points_.Count = 3 Then
 						Return "Quadratic"
-					ElseIf Me.Internal_Points.Count = 4 Then
+					ElseIf Me.Points_.Count = 4 Then
 						Return "Cubic"
 					Else
-						Return (Me.Internal_Points.Count - 1).ToString() & "-th Order"
+						Return (Me.Points_.Count - 1).ToString() & "-th Order"
 					End If
 
 				End Get
@@ -114,7 +109,7 @@ Namespace Library
 			Public Function ToLatexExpression() As String Implements IDesmosExpression.ToLatexExpression
 
 				REM If there is only one Point in Me.Points, then just return it's coordinates, to form a single Point
-				If Me.Internal_Points.Count = 1 Then Return String.Format("({0},{1})", Me.Internal_Points(0).X.ToString(), Me.Internal_Points(0).Y.ToString()).MathsExpressionToLatex()
+				If Me.Points_.Count = 1 Then Return String.Format("({0},{1})", Me.Points_(0).X.ToString(), Me.Points_(0).Y.ToString()).MathsExpressionToLatex()
 
 				Dim _XLatexToReturn$ = String.Empty
 				Dim _YLatexToReturn$ = String.Empty
@@ -125,7 +120,7 @@ Namespace Library
 				_XA = "¬X0¬" : _XB = "¬X1¬"
 				_YA = "¬Y0¬" : _YB = "¬Y1¬"
 
-				Do Until _HighestPUsed = (Me.Internal_Points.Count - 1)
+				Do Until _HighestPUsed = (Me.Points_.Count - 1)
 
 					_XLatexToReturn = "(" & _XA & "+((" & _XB & "-" & _XA & ")*t))"
 					_YLatexToReturn = "(" & _YA & "+((" & _YB & "-" & _YA & ")*t))"
@@ -138,14 +133,14 @@ Namespace Library
 
 					_HighestPUsed += 1%
 
-					MsgBox("(" & _XLatexToReturn & ", " & _YLatexToReturn & ")")
+					'MsgBox("(" & _XLatexToReturn & ", " & _YLatexToReturn & ")")
 
 				Loop
 
 				REM Now replace all the ¬X|Y*¬ Expressions with their actual values
 
 				'Instance Members of the Class cannot be used in LambdaExpressions, so a Local Copy of Me.Points is made
-				Dim _LocalCopyOfMePoints As Drawing.Point() = Me.Internal_Points.ToArray()
+				Dim _LocalCopyOfMePoints As Drawing.Point() = Me.Points_.ToArray()
 
 				_XLatexToReturn = System.Text.RegularExpressions.Regex.Replace(_XLatexToReturn, NotEncapsulatedPlaceHolderRegExp, evaluator:=New System.Text.RegularExpressions.MatchEvaluator( _
 				 Function(_Match As System.Text.RegularExpressions.Match)
@@ -180,7 +175,7 @@ Namespace Library
 			Public Function GetExpressionsForGraphWithDragablePoints(Optional ByVal _XYVariableNumberOffSet As UInt16 = 0) As IDesmosExpression()
 
 				REM If there is only one Point in Me.Points, then just return it's coordinates, to form a single Point
-				If Me.Internal_Points.Count = 1 Then Return CType({New GraphPictures.Library.PointPlottingObjects.PlottablePoint(Me.Internal_Points(0).X, Me.Internal_Points(0).Y, Drawing.Color.Black)}, IDesmosExpression())
+				If Me.Points_.Count = 1 Then Return CType({New GraphPictures.Library.PointPlottingObjects.PlottablePoint(Me.Points_(0).X, Me.Points_(0).Y, Drawing.Color.Black)}, IDesmosExpression())
 
 				Dim _XLatexToReturn$ = String.Empty
 				Dim _YLatexToReturn$ = String.Empty
@@ -191,7 +186,7 @@ Namespace Library
 				_XA = "¬X0¬" : _XB = "¬X1¬"
 				_YA = "¬Y0¬" : _YB = "¬Y1¬"
 
-				Do Until _HighestPUsed = (Me.Internal_Points.Count - 1)
+				Do Until _HighestPUsed = (Me.Points_.Count - 1)
 
 					_XLatexToReturn = "(" & _XA & "+((" & _XB & "-" & _XA & ")*t))"
 					_YLatexToReturn = "(" & _YA & "+((" & _YB & "-" & _YA & ")*t))"
@@ -224,7 +219,7 @@ Namespace Library
 				Next
 
 				'Instance Members of the Class cannot be used in LambdaExpressions, so a Local Copy of Me.Points is made
-				Dim _LocalCopyOfMePoints As Drawing.Point() = Me.Internal_Points.ToArray()
+				Dim _LocalCopyOfMePoints As Drawing.Point() = Me.Points_.ToArray()
 
 				_XLatexToReturn = System.Text.RegularExpressions.Regex.Replace(_XLatexToReturn, NotEncapsulatedPlaceHolderRegExp, evaluator:=New System.Text.RegularExpressions.MatchEvaluator( _
 				 Function(_Match As System.Text.RegularExpressions.Match)
@@ -263,7 +258,7 @@ Namespace Library
 			Public Function GetExpressionsForGraphWithDragablePointsAndShowAllSubBeziers(Optional ByVal _XYVariableNumberOffSet As UInt16 = 0) As IDesmosExpression()
 
 				REM If there is only one Point in Me.Points, then just return it's coordinates, to form a single Point. There are NoSubBeziers
-				If Me.Internal_Points.Count = 1 Then Return CType({New GraphPictures.Library.PointPlottingObjects.PlottablePoint(Me.Internal_Points(0).X, Me.Internal_Points(0).Y, Drawing.Color.Black)}, IDesmosExpression())
+				If Me.Points_.Count = 1 Then Return CType({New GraphPictures.Library.PointPlottingObjects.PlottablePoint(Me.Points_(0).X, Me.Points_(0).Y, Drawing.Color.Black)}, IDesmosExpression())
 
 				Dim _XLatexToReturn$ = String.Empty
 				Dim _YLatexToReturn$ = String.Empty
@@ -274,7 +269,7 @@ Namespace Library
 				_XA = "¬X0¬" : _XB = "¬X1¬"
 				_YA = "¬Y0¬" : _YB = "¬Y1¬"
 
-				Do Until _HighestPUsed = (Me.Internal_Points.Count - 1)
+				Do Until _HighestPUsed = (Me.Points_.Count - 1)
 
 					_XLatexToReturn = "(" & _XA & "+((" & _XB & "-" & _XA & ")*t))"
 					_YLatexToReturn = "(" & _YA & "+((" & _YB & "-" & _YA & ")*t))"
@@ -330,7 +325,7 @@ Namespace Library
 				Next
 
 				'Instance Members of the Class cannot be used in LambdaExpressions, so a Local Copy of Me.Points is made
-				Dim _LocalCopyOfMePoints As Drawing.Point() = Me.Internal_Points.ToArray()
+				Dim _LocalCopyOfMePoints As Drawing.Point() = Me.Points_.ToArray()
 
 				_XLatexToReturn = System.Text.RegularExpressions.Regex.Replace(_XLatexToReturn, NotEncapsulatedPlaceHolderRegExp, evaluator:=New System.Text.RegularExpressions.MatchEvaluator( _
 				 Function(_Match As System.Text.RegularExpressions.Match)
@@ -773,7 +768,7 @@ Namespace Library
 
 			Public Const PathInstructionRegExp$ = "^(((m|M|l|L|c|C) *(\-?\d{1,8})( \-?\d{1,8})+)|(z|Z))$"
 
-			Public ReadOnly CommandLetter As Char
+			Public ReadOnly CommandLetter As [Char]
 			Public ReadOnly Points As Drawing.Point()
 
 			Public Sub New(ByVal _CommandLetter As Char, ByVal _Points As Drawing.Point())
@@ -889,8 +884,10 @@ Namespace Library
 		''' </summary>
 		''' <remarks></remarks>
 		Public Structure DesmosGraphSize
+
 			Public MostPositiveX% : Public MostPositiveY%
 			Public MostNegativeX% : Public MostNegativeY%
+
 			Public ReadOnly Property Height As [UInt32]
 				Get
 					Return CUInt(Me.MostPositiveY - Me.MostNegativeY)
@@ -919,6 +916,7 @@ Namespace Library
 					Return (New DesmosGraphSize() With {.MostNegativeX = -10, .MostNegativeY = -7, .MostPositiveX = 10, .MostPositiveY = 7})
 				End Get
 			End Property
+
 		End Structure
 
 	End Module

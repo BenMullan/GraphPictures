@@ -194,4 +194,98 @@ Public Class Home
 
 	End Sub
 
+
+
+#Region "Desmos-pastables Buttons"
+
+
+	Public Sub Copy_DesmosPastable_SingleBezier() Handles DesmosPastable_SingleBezier_Button.Click
+		Try
+
+			' Serialised Bezier looketh like:
+			' {12, 14} ~ {56, 6} ~ {-14, 78} ~ {43, 76} ~ {65, 54} ~ {43, 87} ~ {90, 76}
+
+			Dim _Bezier As New GraphPictures.Library.BezierObjects.NOrderBezier(
+			 Me.BezierPointsTextBox.Text _
+			 .Replace(" ", "") _
+			 .Split({"~"c}) _
+			 .Select(Of [String])(Function(_PointString_WithCurlies$) _PointString_WithCurlies.Replace("{", "").Replace("}", "")) _
+			 .Select(Of Drawing.Point)(Function(_PointString$) New Drawing.Point(Convert.ToInt32(_PointString.Split({","c}).ElementAt(0)), Convert.ToInt32(_PointString.Split({","c}).ElementAt(1)))) _
+			 .ToArray()
+			)
+
+			My.Computer.Clipboard.SetText(
+			 If(Me.DontUseLatex_CheckBox.Checked, _Bezier.ToLatexExpression().LatexToMathsExpression(), _Bezier.ToLatexExpression()),
+			 TextDataFormat.Text
+			)
+
+			MsgBox("Expression copied to clipboard." & vbCrLf & vbCrLf & "(Paste into Desmos to see it; may need to ZOOM-OUT)", MsgBoxStyle.Information)
+
+		Catch _Ex As Exception : MsgBox(_Ex.Message, MsgBoxStyle.Critical) : End Try
+	End Sub
+
+
+
+	Public Sub Copy_DesmosPastable_DraggableBezier() Handles DesmosPastable_DraggableBezier_Button.Click
+		Try
+
+			' Serialised Bezier looketh like:
+			' {12, 14} ~ {56, 6} ~ {-14, 78} ~ {43, 76} ~ {65, 54} ~ {43, 87} ~ {90, 76}
+
+			Dim _Bezier As New GraphPictures.Library.BezierObjects.NOrderBezier(
+			 Me.BezierPointsTextBox.Text _
+			 .Replace(" ", "") _
+			 .Split({"~"c}) _
+			 .Select(Of [String])(Function(_PointString_WithCurlies$) _PointString_WithCurlies.Replace("{", "").Replace("}", "")) _
+			 .Select(Of Drawing.Point)(Function(_PointString$) New Drawing.Point(Convert.ToInt32(_PointString.Split({","c}).ElementAt(0)), Convert.ToInt32(_PointString.Split({","c}).ElementAt(1)))) _
+			 .ToArray()
+			)
+
+			My.Computer.Clipboard.SetText(
+			 If(Me.DontUseLatex_CheckBox.Checked, _Bezier.GetExpressionsForGraphWithDragablePoints().ToDesmosPastable().LatexToMathsExpression(), _Bezier.GetExpressionsForGraphWithDragablePoints().ToDesmosPastable()),
+			 TextDataFormat.Text
+			)
+
+			MsgBox("Expression(s) copied to clipboard." & vbCrLf & vbCrLf & "(Paste into Desmos to see it; may need to ZOOM-OUT)", MsgBoxStyle.Information)
+
+		Catch _Ex As Exception : MsgBox(_Ex.Message, MsgBoxStyle.Critical) : End Try
+	End Sub
+
+
+
+	Public Sub Copy_DesmosPastable_DraggableBezierWithSubExprs() Handles DesmosPastable_DraggableBezierWithSubExpressions_Button.Click
+		Try
+
+			' Serialised Bezier looketh like:
+			' {12, 14} ~ {56, 6} ~ {-14, 78} ~ {43, 76} ~ {65, 54} ~ {43, 87} ~ {90, 76}
+
+			Dim _Bezier As New GraphPictures.Library.BezierObjects.NOrderBezier(
+			 Me.BezierPointsTextBox.Text _
+			 .Replace(" ", "") _
+			 .Split({"~"c}) _
+			 .Select(Of [String])(Function(_PointString_WithCurlies$) _PointString_WithCurlies.Replace("{", "").Replace("}", "")) _
+			 .Select(Of Drawing.Point)(Function(_PointString$) New Drawing.Point(Convert.ToInt32(_PointString.Split({","c}).ElementAt(0)), Convert.ToInt32(_PointString.Split({","c}).ElementAt(1)))) _
+			 .ToArray()
+			)
+
+			My.Computer.Clipboard.SetText(
+			 If(Me.DontUseLatex_CheckBox.Checked, _Bezier.GetExpressionsForGraphWithDragablePointsAndShowAllSubBeziers().ToDesmosPastable().LatexToMathsExpression(), _Bezier.GetExpressionsForGraphWithDragablePointsAndShowAllSubBeziers().ToDesmosPastable()),
+			 TextDataFormat.Text
+			)
+
+			MsgBox("Expression(s) copied to clipboard." & vbCrLf & vbCrLf & "(Paste into Desmos to see it; may need to ZOOM-OUT)", MsgBoxStyle.Information)
+
+		Catch _Ex As Exception : MsgBox(_Ex.Message, MsgBoxStyle.Critical) : End Try
+	End Sub
+
+
+#End Region
+
+	Private Sub DesmosLinkLabel_LinkClicked_() Handles DesmosLinkLabel.LinkClicked
+		Process.Start("https://www.desmos.com/calculator")
+	End Sub
+
+	Private Sub CloseExelInstances(sender As System.Object, e As System.Windows.Forms.LinkLabelLinkClickedEventArgs) Handles CloseExcelsLinkLabel.LinkClicked
+
+	End Sub
 End Class

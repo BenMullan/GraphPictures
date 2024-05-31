@@ -599,6 +599,9 @@
 			<Global.System.Runtime.CompilerServices.Extension()>
 			Public Function ToDesmosState(ByRef _DesmosExpressions As IDesmosExpression(), ByVal _Options As DesmosStateCreationOptions) As String
 
+				REM Scale the Beziers to a consistent Graph-Size (so that e.g. consecutive Video Frames aren't shake-y)
+				_DesmosExpressions = _DesmosExpressions.ScaledTo(Library.Resources.BezierScaling_TargetDesmosGraphWidth)
+
 				Dim _GraphZoomSize@ = _Options.GraphZoomSize
 
 				'If there are no Beziers (E.g. if it's an enpty VideoFrame), then return a GraphSize of the Standard Viewport
@@ -610,14 +613,24 @@
 
 				Dim _GraphMidPoint As New Drawing.Point((_BeziersGraphSize.MostNegativeX + _BeziersGraphSize.MostPositiveX) \ 2, (_BeziersGraphSize.MostNegativeY + _BeziersGraphSize.MostPositiveY) \ 2)
 
-				REM Calcuate the Positioning by taking the _GraphMidPoint, and making the Adding [half the graph Height and width, times the _GraphZoomSize] to the MidPoint, to get the xmin, xmax, ymin, and ymax
+				REM GraphBounds via MIDPOINT
+				'Calcuate the Positioning by taking the _GraphMidPoint, and making the Adding [half the graph Height and width, times the _GraphZoomSize] to the MidPoint, to get the xmin, xmax, ymin, and ymax
+				'Dim _DesmosStateJSON$ = "{""version"":8,""graph"":{" & _
+				' IIf(_Options.ShowGrid, String.Empty, """showGrid"":false,""showXAxis"":false,""showYAxis"":false,""xAxisNumbers"":false,""yAxisNumbers"":false,""polarNumbers"":false,").ToString() & _
+				' """viewport"":{""xmin"":" & CInt(_GraphMidPoint.X - ((_BeziersGraphSize.Width \ 2) * _GraphZoomSize)).ToString() & _
+				' ",""ymin"":" & CInt(_GraphMidPoint.Y - ((_BeziersGraphSize.Height \ 2) * _GraphZoomSize)).ToString() & _
+				' ",""xmax"":" & CInt(_GraphMidPoint.X + ((_BeziersGraphSize.Width \ 2) * _GraphZoomSize)).ToString() & _
+				' ",""ymax"":" & CInt(_GraphMidPoint.Y + ((_BeziersGraphSize.Height \ 2) * _GraphZoomSize)).ToString() & _
+				' "}},""randomSeed"":""32678c750ac8c06911bb2d61bca23ab9"",""expressions"":{""list"":[" & vbCrLf & vbCrLf
 
+				REM GraphBounds via CONSISTENT BOUNDRIES
+				'Calcuate the Positioning by taking the _GraphMidPoint, and making the Adding [half the graph Height and width, times the _GraphZoomSize] to the MidPoint, to get the xmin, xmax, ymin, and ymax
 				Dim _DesmosStateJSON$ = "{""version"":8,""graph"":{" & _
 				 IIf(_Options.ShowGrid, String.Empty, """showGrid"":false,""showXAxis"":false,""showYAxis"":false,""xAxisNumbers"":false,""yAxisNumbers"":false,""polarNumbers"":false,").ToString() & _
-				 """viewport"":{""xmin"":" & CInt(_GraphMidPoint.X - ((_BeziersGraphSize.Width \ 2) * _GraphZoomSize)).ToString() & _
-				 ",""ymin"":" & CInt(_GraphMidPoint.Y - ((_BeziersGraphSize.Height \ 2) * _GraphZoomSize)).ToString() & _
-				 ",""xmax"":" & CInt(_GraphMidPoint.X + ((_BeziersGraphSize.Width \ 2) * _GraphZoomSize)).ToString() & _
-				 ",""ymax"":" & CInt(_GraphMidPoint.Y + ((_BeziersGraphSize.Height \ 2) * _GraphZoomSize)).ToString() & _
+				 """viewport"":{""xmin"":" & Library.Resources.GraphViewport_MinX.ToString() & _
+				 ",""ymin"":" & Library.Resources.GraphViewport_MinY.ToString() & _
+				 ",""xmax"":" & Library.Resources.GraphViewport_MaxX.ToString() & _
+				 ",""ymax"":" & Library.Resources.GraphViewport_MaxY.ToString() & _
 				 "}},""randomSeed"":""32678c750ac8c06911bb2d61bca23ab9"",""expressions"":{""list"":[" & vbCrLf & vbCrLf
 
 				Dim _ExpressionID% = 1
@@ -625,7 +638,7 @@
 				Dim _ExpressionLineOpacity@ = _Options.LinesOpacity
 				Dim _ExpressionLineWidth@ = _Options.LinesWidth
 				Dim _ExpressionLineStyle As DesmosStateCreationOptions.DesmosLineStyle = _Options.LinesStyle
-				Dim _ExpressionFill As Boolean = _Options.Fill
+				Dim _ExpressionFill As [Boolean] = _Options.Fill
 				Dim _ExpressionFillOpacity@ = _Options.FillOpacity
 
 				Dim _Colours As New Library.ColourResources.ColourRange(_Options.ColourAllocationMode)
@@ -634,8 +647,8 @@
 
 					'Get the proportion through all the Expressions in the IDesmosExpression(), by doing (_ExpressionIndex / (_DesmosExpressions.Count - 1))
 					_ExpressionColour = If(_Options.ColourAllocationMode = ColourRange.ColourGenerationMode.UseExpressionColour, _DesmosExpressions(_ExpressionIndex).Colour, _Colours(CDec(_ExpressionIndex / (_DesmosExpressions.Count - 1))))
-
 					_DesmosStateJSON &= "{""type"":""expression"",""id"":""" & _ExpressionID.ToString() & """,""color"":""" & String.Format("#{0:X2}{1:X2}{2:X2}", _ExpressionColour.R, _ExpressionColour.G, _ExpressionColour.B) & """,""latex"":""" & _DesmosExpressions(_ExpressionIndex).ToLatexExpression() & """,""lineOpacity"":""" & _ExpressionLineOpacity.ToString() & """,""lineWidth"":""" & _ExpressionLineWidth.ToString() & """,""lineStyle"":""" & _ExpressionLineStyle.ToString() & """,""fill"":" & _Options.Fill.ToString().ToLower() & IIf(_Options.Fill, ",""fillOpacity"":""" & _Options.FillOpacity.ToString() & """", String.Empty).ToString() & "}," & vbCrLf & vbCrLf
+
 					_ExpressionID += 1
 				Next
 
@@ -667,8 +680,6 @@
 			''' <summary>
 			''' (MullNet CompilerExtention) Gets the MostPositive and MostNegative X and Y Values in the Array of all Beziers
 			''' </summary>
-			''' <returns></returns>
-			''' <remarks></remarks>
 			<Global.System.Runtime.CompilerServices.Extension()>
 			Public Function GetGraphSize(ByRef _DesmosExpressions As IDesmosExpression()) As DesmosGraphSize
 
@@ -700,6 +711,86 @@
 				.MostNegativeX = _MostNegativeX,
 				.MostNegativeY = _MostNegativeY
 				}
+
+			End Function
+
+			''' <summary>(MullNet CompilerExtention) Gets the MostPositive and MostNegative X and Y Values in the Array of all Beziers</summary>
+			<Global.System.Runtime.CompilerServices.Extension()>
+			Public Function ScaledTo(ByVal _DesmosExpressions As IDesmosExpression(), ByVal _NewWidth As UInt32) As IDesmosExpression()
+
+				REM We need to make the MostPositiveX equal to 1000.
+				'	For any X point, it becomes [the % it is of the input's width (MostPositiveX - MostNegativeX)] of [_NewWidth]
+
+				REM All the _DesmosExpressions need to be either [CubicBezier]s or [QuadraticBezier]s
+				If Not _DesmosExpressions.Select(Of Type)(Function(_IDE As IDesmosExpression) _IDE.GetType()) _
+				 .All(AddressOf {GetType(QuadraticBezier), GetType(CubicBezier)}.Contains) _
+				 Then Throw New GraphPictures.Library.Exceptions.GraphPicturesException("The DesmosExpressions cannot be scaled, because they are not all Quadratic or Cubic Bezier Objects.")
+
+				Dim _InputGraphSize As DesmosGraphSize = _DesmosExpressions.GetGraphSize()
+				Dim _NewHeight As UInt32 = CUInt((_InputGraphSize.Height / _InputGraphSize.Width) * _NewWidth)
+
+				Dim _ScaledDesmosExpressions As New List(Of IDesmosExpression)()
+
+				'Iteratively scale each of the Beziers from the Input
+				For Each _InputDesmosExpression As IDesmosExpression In _DesmosExpressions
+
+					Select Case _InputDesmosExpression.GetType()
+
+						Case GetType(QuadraticBezier)
+
+							'Create a version of the Bezier, scaled to the new dimensions
+							Dim _QuadraticBezier As QuadraticBezier = CType(_InputDesmosExpression, QuadraticBezier)
+
+							_QuadraticBezier.StartPoint = New Drawing.Point(
+							 x:=CInt((_QuadraticBezier.StartPoint.X / _InputGraphSize.Width) * _NewWidth),
+							 y:=CInt((_QuadraticBezier.StartPoint.Y / _InputGraphSize.Height) * _NewHeight)
+							)
+
+							_QuadraticBezier.ControlPoint = New Drawing.Point(
+							 x:=CInt((_QuadraticBezier.ControlPoint.X / _InputGraphSize.Width) * _NewWidth),
+							 y:=CInt((_QuadraticBezier.ControlPoint.Y / _InputGraphSize.Height) * _NewHeight)
+							)
+
+							_QuadraticBezier.EndPoint = New Drawing.Point(
+							 x:=CInt((_QuadraticBezier.EndPoint.X / _InputGraphSize.Width) * _NewWidth),
+							 y:=CInt((_QuadraticBezier.EndPoint.Y / _InputGraphSize.Height) * _NewHeight)
+							)
+
+							_ScaledDesmosExpressions.Add(_QuadraticBezier)
+
+						Case GetType(CubicBezier)
+
+							'Create a version of the Bezier, scaled to the new dimensions
+							Dim _CubicBezier As CubicBezier = CType(_InputDesmosExpression, CubicBezier)
+
+							_CubicBezier.StartPoint = New Drawing.Point(
+							 x:=CInt((_CubicBezier.StartPoint.X / _InputGraphSize.Width) * _NewWidth),
+							 y:=CInt((_CubicBezier.StartPoint.Y / _InputGraphSize.Height) * _NewHeight)
+							)
+
+							_CubicBezier.ControlPointOne = New Drawing.Point(
+							 x:=CInt((_CubicBezier.ControlPointOne.X / _InputGraphSize.Width) * _NewWidth),
+							 y:=CInt((_CubicBezier.ControlPointOne.Y / _InputGraphSize.Height) * _NewHeight)
+							)
+
+							_CubicBezier.ControlPointTwo = New Drawing.Point(
+							 x:=CInt((_CubicBezier.ControlPointTwo.X / _InputGraphSize.Width) * _NewWidth),
+							 y:=CInt((_CubicBezier.ControlPointTwo.Y / _InputGraphSize.Height) * _NewHeight)
+							)
+
+							_CubicBezier.EndPoint = New Drawing.Point(
+							 x:=CInt((_CubicBezier.EndPoint.X / _InputGraphSize.Width) * _NewWidth),
+							 y:=CInt((_CubicBezier.EndPoint.Y / _InputGraphSize.Height) * _NewHeight)
+							)
+
+							_ScaledDesmosExpressions.Add(_CubicBezier)
+
+						Case Else : Throw New Exception("Unaccounted-for DesmosExpression Type: " & _InputDesmosExpression.GetType().FullName)
+					End Select
+
+				Next
+
+				Return _ScaledDesmosExpressions.ToArray()
 
 			End Function
 
