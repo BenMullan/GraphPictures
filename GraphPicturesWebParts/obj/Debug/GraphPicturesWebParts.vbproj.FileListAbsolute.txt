@@ -118,3 +118,15 @@ D:\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\SolutionGH\Grap
 D:\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\SolutionGH\GraphPicturesWebParts\obj\Debug\GraphPictures.WebParts.dll
 D:\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\SolutionGH\GraphPicturesWebParts\obj\Debug\GraphPictures.WebParts.xml
 D:\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\SolutionGH\GraphPicturesWebParts\obj\Debug\GraphPictures.WebParts.pdb
+D:\Benedict\Documents\Programming\_Repositories\GraphPictures\GraphPicturesWebParts\bin\GraphPictures.WebParts.dll
+D:\Benedict\Documents\Programming\_Repositories\GraphPictures\GraphPicturesWebParts\bin\GraphPictures.WebParts.pdb
+D:\Benedict\Documents\Programming\_Repositories\GraphPictures\GraphPicturesWebParts\bin\GraphPictures.WebParts.xml
+D:\Benedict\Documents\Programming\_Repositories\GraphPictures\GraphPicturesWebParts\bin\GraphPictures.Library.dll
+D:\Benedict\Documents\Programming\_Repositories\GraphPictures\GraphPicturesWebParts\bin\GraphPictures.Library.pdb
+D:\Benedict\Documents\Programming\_Repositories\GraphPictures\GraphPicturesWebParts\bin\GraphPictures.Library.xml
+D:\Benedict\Documents\Programming\_Repositories\GraphPictures\GraphPicturesWebParts\obj\Debug\GraphPicturesWebParts.vbprojResolveAssemblyReference.cache
+D:\Benedict\Documents\Programming\_Repositories\GraphPictures\GraphPicturesWebParts\obj\Debug\GraphPictures.Resources.resources
+D:\Benedict\Documents\Programming\_Repositories\GraphPictures\GraphPicturesWebParts\obj\Debug\GraphPicturesWebParts.vbproj.GenerateResource.Cache
+D:\Benedict\Documents\Programming\_Repositories\GraphPictures\GraphPicturesWebParts\obj\Debug\GraphPictures.WebParts.dll
+D:\Benedict\Documents\Programming\_Repositories\GraphPictures\GraphPicturesWebParts\obj\Debug\GraphPictures.WebParts.xml
+D:\Benedict\Documents\Programming\_Repositories\GraphPictures\GraphPicturesWebParts\obj\Debug\GraphPictures.WebParts.pdb

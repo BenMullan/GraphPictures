@@ -6,7 +6,66 @@ GraphPictures.WebParts
 </name>
 </assembly>
 <members>
-<member name="P:GraphPictures.My.MyWebExtension.Application">
+<member name="F:GraphPictures.WebParts.Resources.FileExtentionForCachedAPIResponses">
+	<summary>
+ .APIR - WITH the dot (.)
+ </summary>
+</member><member name="M:GraphPictures.WebParts.Resources.GenerateSVGFromUploadedImage(System.String,System.UInt16)">
+	<summary>
+ Returns the FileName of the new SVG, in the [ClientData\SVGFiles] Folder
+ </summary>
+	<param name="_UploadedImageFileName">JUST THE File Name of the SVG, it is assumed that it's in the [ClientData\UploadedRasterImages] Folder</param>
+	<returns>Returns the FileName of the new SVG, in the [ClientData\SVGFiles] Folder</returns>
+	<remarks></remarks>
+</member><member name="M:GraphPictures.WebParts.Resources.GenerateFramesFromVideo(System.String)">
+	<summary>Generates Frames from _VideoFileName$</summary>
+	<returns>The Number of Frames Generated</returns>
+</member><member name="M:GraphPictures.WebParts.Resources.GenerateVideoFromDesmosFrames(System.String)">
+	<summary>Generated the output as DesmosRendered_{_VideoName}</summary>
+</member><member name="M:GraphPictures.WebParts.Resources.GenerateSVGForVideoFrame(System.String,System.String,System.UInt16)">
+	<summary>
+ Produces an SVG for the Frame, assuming that the Frame is in the location [ClientData\Videos\VideoName.MP4_Frames\Frame00001.BMP].
+ The SVG is then saved to [ClientData\Videos\VideoName.MP4_Frames\SVGs\Frame00001.SVG].
+ </summary>
+	<returns>All SVGGenerationResultData. To get the SVGFileName, use *.LastSVGFileGenerated.Name - That is just the Name of the File, NOT the FullPath</returns>
+</member><member name="M:GraphPictures.WebParts.Resources.GenerateVersionOfVideoWithAudio(System.String)">
+	<summary>
+ Generates a new version of a DesmosRendered_Input.MP4, with the AudioTrack from the Input.MP4
+ </summary>
+	<remarks>Uses FFMPEG</remarks>
+</member><member name="F:GraphPictures.UploadRasterImage.ServerSideForm">
+	<summary>
+ServerSideForm control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:GraphPictures.UploadRasterImage.RasterImageUploader">
+	<summary>
+RasterImageUploader control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:GraphPictures.UploadRasterImage.PerformUploadButton">
+	<summary>
+PerformUploadButton control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:GraphPictures.UploadRasterImage.StatusLabel">
+	<summary>
+StatusLabel control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="P:GraphPictures.My.MyWebExtension.Application">
 	<summary>
  Returns information about the current application.
  </summary>
@@ -90,65 +149,6 @@ To modify move field declaration from designer file to code-behind file.
 	<param name="_RequestObject"></param>
 	<param name="_ResponseObject">This is needed in case a PostData Key is missing, in which case a JSON Response is sent back, informing the user of the missing Parameter</param>
 	<remarks></remarks>
-</member><member name="F:GraphPictures.WebParts.Resources.FileExtentionForCachedAPIResponses">
-	<summary>
- .APIR - WITH the dot (.)
- </summary>
-</member><member name="M:GraphPictures.WebParts.Resources.GenerateSVGFromUploadedImage(System.String,System.UInt16)">
-	<summary>
- Returns the FileName of the new SVG, in the [ClientData\SVGFiles] Folder
- </summary>
-	<param name="_UploadedImageFileName">JUST THE File Name of the SVG, it is assumed that it's in the [ClientData\UploadedRasterImages] Folder</param>
-	<returns>Returns the FileName of the new SVG, in the [ClientData\SVGFiles] Folder</returns>
-	<remarks></remarks>
-</member><member name="M:GraphPictures.WebParts.Resources.GenerateFramesFromVideo(System.String)">
-	<summary>Generates Frames from _VideoFileName$</summary>
-	<returns>The Number of Frames Generated</returns>
-</member><member name="M:GraphPictures.WebParts.Resources.GenerateVideoFromDesmosFrames(System.String)">
-	<summary>Generated the output as DesmosRendered_{_VideoName}</summary>
-</member><member name="M:GraphPictures.WebParts.Resources.GenerateSVGForVideoFrame(System.String,System.String,System.UInt16)">
-	<summary>
- Produces an SVG for the Frame, assuming that the Frame is in the location [ClientData\Videos\VideoName.MP4_Frames\Frame00001.BMP].
- The SVG is then saved to [ClientData\Videos\VideoName.MP4_Frames\SVGs\Frame00001.SVG].
- </summary>
-	<returns>All SVGGenerationResultData. To get the SVGFileName, use *.LastSVGFileGenerated.Name - That is just the Name of the File, NOT the FullPath</returns>
-</member><member name="M:GraphPictures.WebParts.Resources.GenerateVersionOfVideoWithAudio(System.String)">
-	<summary>
- Generates a new version of a DesmosRendered_Input.MP4, with the AudioTrack from the Input.MP4
- </summary>
-	<remarks>Uses FFMPEG</remarks>
-</member><member name="F:GraphPictures.UploadRasterImage.ServerSideForm">
-	<summary>
-ServerSideForm control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:GraphPictures.UploadRasterImage.RasterImageUploader">
-	<summary>
-RasterImageUploader control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:GraphPictures.UploadRasterImage.PerformUploadButton">
-	<summary>
-PerformUploadButton control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:GraphPictures.UploadRasterImage.StatusLabel">
-	<summary>
-StatusLabel control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
 </member>
 </members>
 </doc>

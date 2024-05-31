@@ -9,11 +9,12 @@ Watch the [**GraphPictures Demo Video**](https://www.youtube.com/watch?v=OfOA4RK
 <img src="https://github.com/BenMullan/GraphPictures/blob/main/_Resources/GraphPictures_VideoRenderer_Demo.PNG?raw=true" width="100%" />
 <br/><br/>
 
+
 ### To use this software:
 - Install Visual Studio (2010 or never)
 - Download [the latest `.zip` of this repository](https://github.com/BenMullan/GraphPictures/archive/refs/heads/main.zip)
 - Extract the zip's contents, and double-click the `GraphPictures.sln` solution
-- Press the green "play" (Debug) button at the top, to start `GraphPicturesWebParts`
+- Right-click the `GraphPicturesWebParts` project; Debug → Start new instance
 
 (To plot excel-based graphs and generate desmos-pastable bezier expressions, start the `GraphPicturesWindowsUtils` project instead)
 
