@@ -4,9 +4,10 @@ _A suite of tools for plotting raster images as vector graphics on different sor
 <br/>
 
 Watch the [**GraphPictures Demo Video**](https://www.youtube.com/watch?v=OfOA4RKgIlA)!
-<br/>
+<br/><br/>
 
-<br/><img src="https://github.com/BenMullan/GraphPictures/blob/main/_Resources/GraphPictures_VideoRenderer_Demo.PNG?raw=true" width="100%" /><br/>
+<img src="https://github.com/BenMullan/GraphPictures/blob/main/_Resources/GraphPictures_VideoRenderer_Demo.PNG?raw=true" width="100%" />
+<br/><br/>
 
 ### To use this software:
 - Install Visual Studio (2010 or never)
@@ -25,10 +26,10 @@ Neverthenonetheless, as of 2024, it all still seems to run just fine in the late
 (Note: This version of the solution does not include the oscilloscope-graphing resources.)
 
 
-<br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/>
 ---
-<img src="https://github.com/BenMullan/GraphPictures/blob/main/_Resources/GraphPictures_GeneratedDraggableBezier_Demo.GIF?raw=true" width="70%" />
+<img src="https://github.com/BenMullan/GraphPictures/blob/main/_Resources/GraphPictures_GeneratedDraggableBezier_Demo.GIF?raw=true" width="100%" />
 <br/><br/>
-<img src="https://github.com/BenMullan/GraphPictures/blob/main/_Resources/GraphPictures_ExcelRendering_Demo.PNG?raw=true" width="70%" />
+<img src="https://github.com/BenMullan/GraphPictures/blob/main/_Resources/GraphPictures_ExcelRendering_Demo.PNG?raw=true" width="100%" />
 <br/><br/>
-<img src="https://github.com/BenMullan/GraphPictures/blob/main/_Resources/GraphPictures_BezierUtils_Demo.PNG?raw=true" width="70%" />
+<img src="https://github.com/BenMullan/GraphPictures/blob/main/_Resources/GraphPictures_BezierUtils_Demo.PNG?raw=true" width="100%" />
