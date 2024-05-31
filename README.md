@@ -4,14 +4,15 @@ _A suite of tools for plotting raster images as vector graphics on different sor
 <br/>
 
 Watch the [**GraphPictures Demo Video**](https://www.youtube.com/watch?v=OfOA4RKgIlA)!
-<br/><br/>
+<br/>
 
+<br/><br/>
 <img src="https://github.com/BenMullan/GraphPictures/blob/main/_Resources/GraphPictures_VideoRenderer_Demo.PNG?raw=true" width="100%" />
 <br/><br/>
 
 
 ### To use this software:
-- Install Visual Studio (2010 or never)
+- Install Visual Studio (2010 or newer)
 - Download [the latest `.zip` of this repository](https://github.com/BenMullan/GraphPictures/archive/refs/heads/main.zip)
 - Extract the zip's contents, and double-click the `GraphPictures.sln` solution
 - Right-click the `GraphPicturesWebParts` project; Debug → Start new instance
