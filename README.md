@@ -17,6 +17,7 @@ Watch the [**GraphPictures Demo Video**](https://www.youtube.com/watch?v=OfOA4RK
 
 (To plot excel-based graphs and generate desmos-pastable bezier expressions, start the `GraphPicturesWindowsUtils` project instead)
 
+
 ---
 I wrote this software back in the 1st year of sixth-form, using VS 2010 on a 12-year-old Latitude E5500 running Windows 7.
 It was an amazingly fun project, which made quite a large splash, and even helped me to get my first IT job!
