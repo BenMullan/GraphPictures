@@ -6,288 +6,70 @@ GraphPictures.Library
 </name>
 </assembly>
 <members>
-<member name="F:GraphPictures.Library.ImagingResources.SVGGenerator.SVGSizeModerationAlgorythm.CropInputEdges">
-	<summary>
- Chops off the outer walls of the input RasterGraphic to attempt to reduce the size of the SVG generated
- </summary>
-</member><member name="F:GraphPictures.Library.ImagingResources.SVGGenerator.SVGSizeModerationAlgorythm.AdjustTSize">
-	<summary>
- Changes the "--turdsize=" Argument to Potrace, so that More, or less, detail, ends up in the SVG.
- </summary>
-</member><member name="F:GraphPictures.Library.ImagingResources.SVGGenerator.SVGSizeModerationAlgorythm.AdjustInputQuality">
-	<summary>
- Alters the [RG for Potrace]'s Dimensions relative to those of the IRG, over a Maximun Number of attempts, in the hope that Potrace will then pick up on less, or more, detail from the RG.
- </summary>
-</member><member name="F:GraphPictures.Library.ImagingResources.SVGGenerator.SVGSizeModerationAlgorythm.DontModerateSVGFileSize">
-	<summary>
- Bypasses all attempts to Get the SVGFile to be a certian size.
- </summary>
-</member><member name="M:GraphPictures.Library.ImagingResources.SVGGenerator.SVGGenerationResultData.ToString">
-	<summary>Returns some XML (as a string), indicitive of the current contents of the current SVGGenerationResultData Object</summary>
-</member><member name="M:GraphPictures.Library.ImagingResources.SVGGenerator.#ctor(System.IO.FileInfo,GraphPictures.Library.ImagingResources.SVGGenerator.SVGGenerationOptions)">
-	<summary>Instanciates an SVGGenerator</summary>
-	<param name="_InputRasterGraphic">A Pointer to the RasterGraphic for which an SVG is to be generated</param>
-	<param name="_SVGGenerationOptions">Various Perameters required to how to Generate the SVG from the RasterGraphic. Some of these parameters are already predefined with default values, but some are not!</param>
-</member><member name="M:GraphPictures.Library.ImagingResources.SVGGenerator.GenerateSVGInFolder(System.IO.DirectoryInfo)">
-	<summary>
- Generates an SVG whose name is based off of the name of the Input RasterGraphic, and the number of times the input image had to be cropped
- </summary>
-</member><member name="M:GraphPictures.Library.ImagingResources.SVGGenerator.GenerateSVG(System.String)">
-	<summary>
- Generates an SVG for the InputRasterGraphic, overwriting the File at _FinalSVGFile_OutputPath if it already exists.
- </summary>
-</member><member name="M:GraphPictures.Library.ImagingResources.SVGGenerator.GenerateSVG_DontModerateSVGFileSize_(System.String,System.UInt16)">
-	<summary>
- Generates an SVG for the InputRasterGraphic, using the Hard-Coded TSize
- </summary>
-	<returns></returns>
-</member><member name="M:GraphPictures.Library.ImagingResources.SVGGenerator.GenerateSVG_AdjustInputQuality_(System.String,System.UInt16,System.UInt16)">
-	<summary>
- Generates an SVG for the InputRasterGraphic, reducing or increacing the Bitmap Dimensions of the IRG over a Maximun Number of attempts, in the hope that Potrace will then pick up on less (or mrore) detail
- </summary>
-	<returns></returns>
-</member><member name="M:GraphPictures.Library.ImagingResources.SVGGenerator.GenerateSVG_AdjustTSize_(System.String,System.UInt16)">
-	<summary>
- Generates an SVG for the InputRasterGraphic, adjusting the Potrace TSize if it's not within 10% of the _TargetSVGFileSizeKB
- </summary>
-	<returns></returns>
-</member><member name="M:GraphPictures.Library.ImagingResources.SVGGenerator.GenerateSVG_CropInputEdges_(System.String,System.UInt16)">
-	<summary>
- Generates an SVG for the InputRasterGraphic, cropping the input RasterGraphic if it produces too many beziers in the output SVG
- </summary>
-	<param name="_IdealMaximumSVGFileSizeKB">SVGs above this size will actually make it through if MaxAttempts to crop the image is reached, before an SVG below this size is generated...</param>
-	<returns>Data including The Number of times the Input Image had to be cropped, before an SVG of acceptable size was produced.</returns>
-</member><member name="M:GraphPictures.Library.ImagingResources.SVGGenerator.GenerateBMPInFolder(System.IO.FileInfo,System.IO.DirectoryInfo)">
-	<summary>
- Generates a .BMP version of the _InputRasterGraphic, and saves it under an avaliable FileName within the _BMPOutputFolder, before returning this a Pointer to this File in the form of a FileInfo
- </summary>
-</member><member name="M:GraphPictures.Library.ImagingResources.SVGGenerator.GenerateBMP(System.IO.FileInfo,System.String)">
-	<summary>
- Generates a .BMP version of the _InputRasterHraphic, saved under the _BMPOutputPath$
- </summary>
-</member><member name="M:GraphPictures.Library.ImagingResources.SVGGenerator.RunPotraceEXE(System.IO.FileInfo,System.String,System.UInt32)">
-	<summary>
- Instanciates POTRACE.EXE with the specifier CLA's, from the specified Image Path. If the Process dosen't terminate in the specified No. MS, then it is killed.
- </summary>
-</member><member name="M:GraphPictures.Library.ImagingResources.SVGGenerator.SVGFileContainsNoBeziers(System.String)">
-	<summary>
- Evaluates weather or not an SVG File contains any path data. An Exception is also Thrown if the SVGFile contains no text at all.
- </summary>
-</member><member name="M:GraphPictures.Library.ImagingResources.GenerateBitmapFromText(System.String)">
-	<summary>Puts the Specified Text in the Middle of the Bitmap Returned, using a size-25 Tahoma font on a grey background</summary>
-</member><member name="M:GraphPictures.Library.ImagingResources.SaveBase64PNGToDisk(System.String,System.String)">
-	<summary>
- Saves a Base64 String, beginning with [data:image/png;base64,] to a .PNG file on Disk
- </summary>
-	<param name="_OutputPNGPath">The full path the the Output PNG, E.g. [Z:\Images\Output.PNG]</param>
-	<remarks>The File is OVERWRITTEN, not APPENDED to, if it already exists</remarks>
-</member><member name="M:GraphPictures.Library.ImagingResources.ApplyTransformationToSavedImage(System.String,System.Drawing.RotateFlipType)">
-	<summary>
- Reads in the Image from Disk, applies the specified Transformaiton, and saves the image back unto disk
- </summary>
-</member><member name="P:GraphPictures.Library.BezierObjects.NOrderBezier.BezierOrderDescription">
-	<summary>Returns the Bezier's Order, E.g. "Linear", or "9-th Order"</summary>
-</member><member name="M:GraphPictures.Library.BezierObjects.NOrderBezier.GetExpressionsForGraphWithDragablePoints(System.UInt16)">
-	<summary>
- Retunrs the IDesmosExpressions, for the current nOrder Bezier, but with all of it's points as draggable elements in Desmos.
- Run these through the ToDesmosPastable() Compiler Extention Method for a String you can Paste into Desmos
- </summary>
-</member><member name="M:GraphPictures.Library.BezierObjects.NOrderBezier.GetExpressionsForGraphWithDragablePointsAndShowAllSubBeziers(System.UInt16)">
-	<summary>
- Retunrs the IDesmosExpressions, for the current nOrder Bezier, but with all of it's points as draggable elements in Desmos.
- Also returns [IDesmosExpression]'s for all the SubBeziers within the current NOrderBezier. These SubBeziers also referance the XYVariables, so response when the Points are dragged.
- Run these through the ToDesmosPastable() Compiler Extention Method for a String you can paste into Desmos
- </summary>
-</member><member name="M:GraphPictures.Library.BezierObjects.CubicBezier.ToLatexExpression">
-	<summary>
- Formats the Bezier as a LaTeX Expression, ready to paste into Graphing Calcuators such as Desmos
- </summary>
-	<returns></returns>
-	<remarks></remarks>
-</member><member name="M:GraphPictures.Library.BezierObjects.CubicBezier.ToString">
-	<summary>
- Returns a String representing the Bezier's Start, Control and End Points
- </summary>
-	<returns>Returns a String representing the Bezier's Start, Control and End Points</returns>
-	<remarks></remarks>
-</member><member name="P:GraphPictures.Library.BezierObjects.CubicBezier.GraphBoundries">
-	<summary>
- Gets the Max and Min X and Y values in the Points of the Cubic Bezier
- </summary>
-	<value></value>
-	<returns></returns>
-	<remarks></remarks>
-</member><member name="T:GraphPictures.Library.BezierObjects.CubicBezier">
-	<summary>
- Represents a Bezier with a StartPoint, Two ControlPoints, and an EndPoint
- </summary>
-	<remarks></remarks>
-</member><member name="M:GraphPictures.Library.BezierObjects.QuadraticBezier.MakeBezierPassThrough(System.Drawing.Point)">
-	<summary>
- Positions the ControlPoint, so that the Quadratic Bezier passes through the _DesiredPoint, Based off of the current Values of [the StartPoint and EndPoint, which must be set first for this to work].
- </summary>
-	<param name="_DesiredPoint"></param>
-	<remarks></remarks>
-</member><member name="M:GraphPictures.Library.BezierObjects.QuadraticBezier.ToLatexExpression">
-	<summary>
- Formats the Bezier as a LaTeX Expression, ready to paste into Graphing Calcuators such as Desmos
- </summary>
-	<returns></returns>
-	<remarks></remarks>
-</member><member name="P:GraphPictures.Library.BezierObjects.QuadraticBezier.GraphBoundries">
-	<summary>
- Gets the Max and Min X and Y values in the Points of the Cubic Bezier
- </summary>
-	<value></value>
-	<returns></returns>
-	<remarks></remarks>
-</member><member name="M:GraphPictures.Library.BezierObjects.QuadraticBezier.ToString">
-	<summary>
- Returns a String representing the Bezier's Start, Control and End Points
- </summary>
-	<returns>Returns a String representing the Bezier's Start, Control and End Points</returns>
-	<remarks></remarks>
-</member><member name="T:GraphPictures.Library.BezierObjects.QuadraticBezier">
-	<summary>
- Represents a Bezier with a StartPoint, ControlPoint, and EndPoint
- </summary>
-	<remarks></remarks>
-</member><member name="F:GraphPictures.Library.BezierObjects.DraggablePoint.XYVariablesNumber">
-	<summary>
- The SubScript X and Y number to use for the corrosponding Desmos Variables for this DraggablePoint.
- E.g. were it 5, then this Point's LatexExpr would be (x_{5},y_{5})
- </summary>
-</member><member name="P:GraphPictures.Library.BezierObjects.DraggablePoint.GraphBoundries">
-	<summary>
- !!! There are no GraphBoundries for a DraggablePoint; it's position is determined by it's X and Y Variables
- </summary>
-</member><member name="F:GraphPictures.Library.BezierObjects.DesmosVariable.SubScriptNumber">
-	<summary>
- I.E. Name_{SubScriptNumber} for the LaTeX Expr
- </summary>
-</member><member name="P:GraphPictures.Library.BezierObjects.DesmosVariable.Colour">
-	<summary>
- This Type of DesmosExpr isn't actually seen on the Graph, so the Colour dosen't matter
- </summary>
-</member><member name="P:GraphPictures.Library.BezierObjects.DesmosVariable.GraphBoundries">
-	<summary>
- Variables do not appear on the Graph themselves, so do not have boundries
- </summary>
-</member><member name="T:GraphPictures.Library.BezierObjects.GenericDesmosLatexExpression">
-	<summary>
- Represents a Generic Desmos Latex Expression
- </summary>
-</member><member name="M:GraphPictures.Library.BezierObjects.SVGPathInstruction.FromDAttributeInstruction(System.String)">
-	<summary>
- Takes in a Singular Instruction which appeared in a Path's d="" Attribute. E.g. C 60 90
- </summary>
-	<param name="_DAttributeInstruction"></param>
-	<returns></returns>
-	<remarks></remarks>
-</member><member name="M:GraphPictures.Library.BezierObjects.SVGPathInstruction.ToString">
-	<summary>
- Produces a String representing the CommandLetter and Points of the current SVGPathInstruction Instance.
- </summary>
-	<returns></returns>
-	<remarks></remarks>
-</member><member name="T:GraphPictures.Library.BezierObjects.SVGPathInstruction">
-	<summary>
- Represents an SVG path element Instruction, such as "M 50 50"
- </summary>
-	<remarks></remarks>
-</member><member name="P:GraphPictures.Library.BezierObjects.DesmosGraphSize.NoGraphSize">
-	<summary>
- Used for Expressions which don't appear on the Graph themselves, such as Variables
- </summary>
-</member><member name="P:GraphPictures.Library.BezierObjects.DesmosGraphSize.StandardViewport">
-	<summary>
- Used for Blank VideoFrames
- </summary>
-</member><member name="T:GraphPictures.Library.BezierObjects.DesmosGraphSize">
-	<summary>
- An structre to represent the Size of a BezierGraph
- </summary>
-	<remarks></remarks>
-</member><member name="M:GraphPictures.Library.ExcelResources.PlotBitmapOnExcelByRGB(System.Drawing.Bitmap,System.Boolean,System.UInt32)">
-	<summary>
- Instead of colouring 1 square cell per pixel, 3 cells are used, one for each of the Red, Green, and Blue.
- </summary>
-</member><member name="M:GraphPictures.Library.FileResources.RemoveFirstNBytesFromStartOfFile(System.String,System.UInt16)">
-	<summary>
- Removes the first N bytes from the start of the File's :Data$ Stream
- </summary>
-	<param name="_FilePath"></param>
-	<param name="_NumberOfBytesToRemove"></param>
-	<remarks></remarks>
-</member><member name="M:GraphPictures.Library.FileResources.FindAvaliableFileNameInFolder(System.String,System.String)">
-	<summary>
- Returns a FileName which does not yet exist in the folder. An attempt is made to use the Seed as it is, but that FileName is already taken, then a random String will be prepended.
- </summary>
-</member><member name="M:GraphPictures.Library.OscilloscopeResources.GetPDEFileContentsFromBeziers(GraphPictures.Library.BezierObjects.IDesmosExpression[])">
-	<summary>
- Only produces xy.vector() instructions, to make a shape.
- </summary>
-</member><member name="M:GraphPictures.Library.OscilloscopeResources.GenerateAndRunPDEFileFromSVG(System.String)">
-	<summary>
- Saves the PDE to Disk (Generated from the SVG), in the OscilloscopeResources.SinglePDEs_OutputFolder_Path, with a randomly-generated FileName.
- </summary>
-</member><member name="M:GraphPictures.Library.OscilloscopeResources.GenerateOscilloscopeVideoFramePDEsFor(System.String)">
-	<summary>
- Generates the .PDE Files for each frame of the Video. These can then be opened in Processing, to get the Audio for the Frame.
- </summary>
-</member><member name="M:GraphPictures.Library.OscilloscopeResources.SequentiallyRunVideoFramePDEFiles(System.String)">
-	<summary>
- !
- !
- !
- MAKE SURE TO SET THE SYSTEM VOLUME TO MUTE, BEFORE RUNNING THIS METHOD!!!!!!!!!!!!!!!
- !
- !
- !
- Runs the PDEFile for Frame00001, then for Frame00002, etc...
- </summary>
-	<param name="_VideoName"></param>
-	<remarks></remarks>
-</member><member name="M:GraphPictures.Library.OscilloscopeResources.GenerateFramesForOscilliVideo(System.String)">
-	<summary>
- Generates Frames from _VideoFileName$
- </summary>
-	<param name="_VideoFileName"></param>
-	<returns>The Number of Frames Generated</returns>
-	<remarks></remarks>
-</member><member name="M:GraphPictures.Library.OscilloscopeResources.GenerateSVGForOscilliVideoFrame(System.String,System.String,System.UInt16)">
-	<summary>
- Produces an SVG for the Frame, assuming that the Frame is in [OscilloscopeData\Videos\VideoName.MP4_Frames\Frame00001.BMP].
- The SVG is then saved to [OscilloscopeData\Videos\VideoName.MP4_Frames\SVGs\Frame00001.SVG].
- 
- Note that the _FrameNumber$ is a string because it needs to have the correct number of leading 0's
- </summary>
-</member><member name="M:GraphPictures.Library.OscilloscopeResources.GetPDEFileContentsFromSVG(System.String)">
-	<summary>
- The SVG File's Beziers are approximated as 3 Lines Each, and the PDE File tells Processing\XYScope to Draw these lines as vertex's in a compound shape.
- </summary>
-	<param name="_SVGFilePath"></param>
-	<returns>The Contents of the PDEFile</returns>
-	<remarks></remarks>
-</member><member name="M:GraphPictures.Library.OscilloscopeResources.SavePDEToDisk(System.String,System.String,System.String)">
-	<summary>
- The PDE File is saved to disk (in the strange manner that processing seems to require - that's why this function isn't just a File.WriteText() call...)
- </summary>
-	<param name="_PDEName">If set to {AutoGenerate}, then a FileName will be automatically generated in the format ^GP_\w{10}\.PDE$</param>
-	<returns>The Name of the PDE (Sketch) Generated (Same as the File without the Extention .pde)</returns>
-</member><member name="M:GraphPictures.Library.OscilloscopeResources.RunPDEFile(System.String)">
-	<summary>
- Starts playing the Audio for the PDEFile, using the Processing-Java.EXE
- </summary>
-	<param name="_PDEFolderPath">NOTE: This is not the path to a .PDE File. Instead, it is the path to the Folder, which has the same name as the pde file, but without the extention</param>
-	<remarks></remarks>
-</member><member name="M:GraphPictures.Library.BezierResources.GetBeziersFromPotraceSVG(System.String)">
+<member name="M:GraphPictures.Library.BezierResources.GetBeziersFromPotraceSVG(System.String)">
 	<summary>
  Creates Quadratic Beziers representing the lines and curves in the SVG File
  </summary>
 	<param name="_SVGFilePath"></param>
 	<returns></returns>
 	<remarks>Supporting ONLY Potrace-outputted SVGs for now. (Only the path Elements are delt with, and only the M, L, and C commands are handled.)</remarks>
+</member><member name="M:GraphPictures.Library.Resources.DesmosStateCreationOptions.ModifyByQueryStrings(System.Web.HttpRequest@)">
+	<summary>
+ Scans the QueryStrings in the _Request, and changes the propities of the current DesmosStateCreationOptions Object, based off of the QueryString Values if they are there...
+ Returns the Current Instance in it's new State...
+ </summary>
+</member><member name="M:GraphPictures.Library.Resources.DesmosStateCreationOptions.FromQueryStrings(System.Web.HttpRequest@)">
+	<summary>
+ Scans the QueryStrings in the _Request, creating a Perameter Object From them.
+ </summary>
+</member><member name="M:GraphPictures.Library.Resources.DesmosStateCreationOptions.ToString">
+	<summary>
+ Generates a String representing the current Instance of the CreationOptions
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:GraphPictures.Library.Resources.DesmosStateCreationOptions">
+	<summary>
+ Used for the _Options Argument to ToDesmosState() CompilerExtention
+ </summary>
+</member><member name="M:GraphPictures.Library.Resources.GetRandomString(System.UInt16)">
+	<summary>
+ Generates a Random String of the Specified Length. The Characters used are specified in the Array inside the Function
+ </summary>
+	<param name="_WantedLength"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:GraphPictures.Library.ColourResources.ColourRange.ColourAtPercentageThrough(System.Decimal)">
+	<summary>
+ Gets the Colour x% of the way through the Range
+ </summary>
+	<param name="_ProportionOfRangeLength">E.g. 0.52 Would be 52% of the way through the Colours Array of the current ColourRange Object</param>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:GraphPictures.Library.ColourResources.ColourRange">
+	<summary>
+ Represents a Range of Colours.
+ </summary>
+	<remarks></remarks>
+</member><member name="P:GraphPictures.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:GraphPictures.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="T:GraphPictures.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member><member name="T:GraphPictures.Library.PointPlottingObjects.PointPlottedRasterGraphic">
+	<summary>
+ Represents a Graphic which can be plotted onto a DesmosGraph, using a Point for each Pixel
+ </summary>
+	<remarks></remarks>
 </member><member name="M:GraphPictures.Library.CompilerExtentions.StringExtentions.MakeNoLongerThan(System.String,System.UInt32)">
 	<summary>
  (MullNet CompilerExtention) Chops off Excess Characters from the end of the String if it's too long
@@ -465,16 +247,16 @@ GraphPictures.Library
  </summary>
 	<returns></returns>
 	<remarks></remarks>
-</member><member name="M:GraphPictures.Library.CompilerExtentions.CollectionTypeExtentions.MaxIndex(System.Array@)">
+</member><member name="M:GraphPictures.Library.CompilerExtentions.CollectionTypeExtentions.MaxIndex``1(``0[]@)">
 	<summary>
  (MullNet CompilerExtention) Returns the Maximun possible Index one could specify for a non-[dynamically-allocated], zero-indexed Array
  </summary>
 	<param name="_Array"></param>
 	<returns>Returns the Maximun possible Index one could specify for a non-[dynamically-allocated], zero-indexed Array</returns>
 	<remarks></remarks>
-</member><member name="M:GraphPictures.Library.CompilerExtentions.CollectionTypeExtentions.PenultimateIndex(System.Array@)">
+</member><member name="M:GraphPictures.Library.CompilerExtentions.CollectionTypeExtentions.PenultimateIndex``1(``0[]@)">
 	<summary>
- (MullNet CompilerExtention)
+ (MullNet CompilerExtention) → _Array.Length - 2
  </summary>
 </member><member name="M:GraphPictures.Library.CompilerExtentions.CollectionTypeExtentions.ListValues(System.Collections.Generic.List{System.UInt64})">
 	<summary>
@@ -597,63 +379,281 @@ GraphPictures.Library
 	<summary>
  (MullNet CompilerExtention) Invokes the Control if required, and runs the specified _Action
  </summary>
-</member><member name="M:GraphPictures.Library.Resources.DesmosStateCreationOptions.ModifyByQueryStrings(System.Web.HttpRequest@)">
+</member><member name="F:GraphPictures.Library.ImagingResources.SVGGenerator.SVGSizeModerationAlgorythm.CropInputEdges">
 	<summary>
- Scans the QueryStrings in the _Request, and changes the propities of the current DesmosStateCreationOptions Object, based off of the QueryString Values if they are there...
- Returns the Current Instance in it's new State...
+ Chops off the outer walls of the input RasterGraphic to attempt to reduce the size of the SVG generated
  </summary>
-</member><member name="M:GraphPictures.Library.Resources.DesmosStateCreationOptions.FromQueryStrings(System.Web.HttpRequest@)">
+</member><member name="F:GraphPictures.Library.ImagingResources.SVGGenerator.SVGSizeModerationAlgorythm.AdjustTSize">
 	<summary>
- Scans the QueryStrings in the _Request, creating a Perameter Object From them.
+ Changes the "--turdsize=" Argument to Potrace, so that More, or less, detail, ends up in the SVG.
  </summary>
-</member><member name="M:GraphPictures.Library.Resources.DesmosStateCreationOptions.ToString">
+</member><member name="F:GraphPictures.Library.ImagingResources.SVGGenerator.SVGSizeModerationAlgorythm.AdjustInputQuality">
 	<summary>
- Generates a String representing the current Instance of the CreationOptions
+ Alters the [RG for Potrace]'s Dimensions relative to those of the IRG, over a Maximun Number of attempts, in the hope that Potrace will then pick up on less, or more, detail from the RG.
+ </summary>
+</member><member name="F:GraphPictures.Library.ImagingResources.SVGGenerator.SVGSizeModerationAlgorythm.DontModerateSVGFileSize">
+	<summary>
+ Bypasses all attempts to Get the SVGFile to be a certian size.
+ </summary>
+</member><member name="M:GraphPictures.Library.ImagingResources.SVGGenerator.SVGGenerationResultData.ToString">
+	<summary>Returns some XML (as a string), indicitive of the current contents of the current SVGGenerationResultData Object</summary>
+</member><member name="M:GraphPictures.Library.ImagingResources.SVGGenerator.#ctor(System.IO.FileInfo,GraphPictures.Library.ImagingResources.SVGGenerator.SVGGenerationOptions)">
+	<summary>Instanciates an SVGGenerator</summary>
+	<param name="_InputRasterGraphic">A Pointer to the RasterGraphic for which an SVG is to be generated</param>
+	<param name="_SVGGenerationOptions">Various Perameters required to how to Generate the SVG from the RasterGraphic. Some of these parameters are already predefined with default values, but some are not!</param>
+</member><member name="M:GraphPictures.Library.ImagingResources.SVGGenerator.GenerateSVGInFolder(System.IO.DirectoryInfo)">
+	<summary>
+ Generates an SVG whose name is based off of the name of the Input RasterGraphic, and the number of times the input image had to be cropped
+ </summary>
+</member><member name="M:GraphPictures.Library.ImagingResources.SVGGenerator.GenerateSVG(System.String)">
+	<summary>
+ Generates an SVG for the InputRasterGraphic, overwriting the File at _FinalSVGFile_OutputPath if it already exists.
+ </summary>
+</member><member name="M:GraphPictures.Library.ImagingResources.SVGGenerator.GenerateSVG_DontModerateSVGFileSize_(System.String,System.UInt16)">
+	<summary>
+ Generates an SVG for the InputRasterGraphic, using the Hard-Coded TSize
+ </summary>
+	<returns></returns>
+</member><member name="M:GraphPictures.Library.ImagingResources.SVGGenerator.GenerateSVG_AdjustInputQuality_(System.String,System.UInt16,System.UInt16)">
+	<summary>
+ Generates an SVG for the InputRasterGraphic, reducing or increacing the Bitmap Dimensions of the IRG over a Maximun Number of attempts, in the hope that Potrace will then pick up on less (or mrore) detail
+ </summary>
+	<returns></returns>
+</member><member name="M:GraphPictures.Library.ImagingResources.SVGGenerator.GenerateSVG_AdjustTSize_(System.String,System.UInt16)">
+	<summary>
+ Generates an SVG for the InputRasterGraphic, adjusting the Potrace TSize if it's not within 10% of the _TargetSVGFileSizeKB
+ </summary>
+	<returns></returns>
+</member><member name="M:GraphPictures.Library.ImagingResources.SVGGenerator.GenerateSVG_CropInputEdges_(System.String,System.UInt16)">
+	<summary>
+ Generates an SVG for the InputRasterGraphic, cropping the input RasterGraphic if it produces too many beziers in the output SVG
+ </summary>
+	<param name="_IdealMaximumSVGFileSizeKB">SVGs above this size will actually make it through if MaxAttempts to crop the image is reached, before an SVG below this size is generated...</param>
+	<returns>Data including The Number of times the Input Image had to be cropped, before an SVG of acceptable size was produced.</returns>
+</member><member name="M:GraphPictures.Library.ImagingResources.SVGGenerator.GenerateBMPInFolder(System.IO.FileInfo,System.IO.DirectoryInfo)">
+	<summary>
+ Generates a .BMP version of the _InputRasterGraphic, and saves it under an avaliable FileName within the _BMPOutputFolder, before returning this a Pointer to this File in the form of a FileInfo
+ </summary>
+</member><member name="M:GraphPictures.Library.ImagingResources.SVGGenerator.GenerateBMP(System.IO.FileInfo,System.String)">
+	<summary>
+ Generates a .BMP version of the _InputRasterHraphic, saved under the _BMPOutputPath$
+ </summary>
+</member><member name="M:GraphPictures.Library.ImagingResources.SVGGenerator.RunPotraceEXE(System.IO.FileInfo,System.String,System.UInt32)">
+	<summary>
+ Instanciates POTRACE.EXE with the specifier CLA's, from the specified Image Path. If the Process dosen't terminate in the specified No. MS, then it is killed.
+ </summary>
+</member><member name="M:GraphPictures.Library.ImagingResources.SVGGenerator.SVGFileContainsNoBeziers(System.String)">
+	<summary>
+ Evaluates weather or not an SVG File contains any path data. An Exception is also Thrown if the SVGFile contains no text at all.
+ </summary>
+</member><member name="M:GraphPictures.Library.ImagingResources.GenerateBitmapFromText(System.String)">
+	<summary>Puts the Specified Text in the Middle of the Bitmap Returned, using a size-25 Tahoma font on a grey background</summary>
+</member><member name="M:GraphPictures.Library.ImagingResources.SaveBase64PNGToDisk(System.String,System.String)">
+	<summary>
+ Saves a Base64 String, beginning with [data:image/png;base64,] to a .PNG file on Disk
+ </summary>
+	<param name="_OutputPNGPath">The full path the the Output PNG, E.g. [Z:\Images\Output.PNG]</param>
+	<remarks>The File is OVERWRITTEN, not APPENDED to, if it already exists</remarks>
+</member><member name="M:GraphPictures.Library.ImagingResources.ApplyTransformationToSavedImage(System.String,System.Drawing.RotateFlipType)">
+	<summary>
+ Reads in the Image from Disk, applies the specified Transformaiton, and saves the image back unto disk
+ </summary>
+</member><member name="M:GraphPictures.Library.OscilloscopeResources.GetPDEFileContentsFromBeziers(GraphPictures.Library.BezierObjects.IDesmosExpression[])">
+	<summary>
+ Only produces xy.vector() instructions, to make a shape.
+ </summary>
+</member><member name="M:GraphPictures.Library.OscilloscopeResources.GenerateAndRunPDEFileFromSVG(System.String)">
+	<summary>
+ Saves the PDE to Disk (Generated from the SVG), in the OscilloscopeResources.SinglePDEs_OutputFolder_Path, with a randomly-generated FileName.
+ </summary>
+</member><member name="M:GraphPictures.Library.OscilloscopeResources.GenerateOscilloscopeVideoFramePDEsFor(System.String)">
+	<summary>
+ Generates the .PDE Files for each frame of the Video. These can then be opened in Processing, to get the Audio for the Frame.
+ </summary>
+</member><member name="M:GraphPictures.Library.OscilloscopeResources.SequentiallyRunVideoFramePDEFiles(System.String)">
+	<summary>
+ !
+ !
+ !
+ MAKE SURE TO SET THE SYSTEM VOLUME TO MUTE, BEFORE RUNNING THIS METHOD!!!!!!!!!!!!!!!
+ !
+ !
+ !
+ Runs the PDEFile for Frame00001, then for Frame00002, etc...
+ </summary>
+	<param name="_VideoName"></param>
+	<remarks></remarks>
+</member><member name="M:GraphPictures.Library.OscilloscopeResources.GenerateFramesForOscilliVideo(System.String)">
+	<summary>
+ Generates Frames from _VideoFileName$
+ </summary>
+	<param name="_VideoFileName"></param>
+	<returns>The Number of Frames Generated</returns>
+	<remarks></remarks>
+</member><member name="M:GraphPictures.Library.OscilloscopeResources.GenerateSVGForOscilliVideoFrame(System.String,System.String,System.UInt16)">
+	<summary>
+ Produces an SVG for the Frame, assuming that the Frame is in [OscilloscopeData\Videos\VideoName.MP4_Frames\Frame00001.BMP].
+ The SVG is then saved to [OscilloscopeData\Videos\VideoName.MP4_Frames\SVGs\Frame00001.SVG].
+ 
+ Note that the _FrameNumber$ is a string because it needs to have the correct number of leading 0's
+ </summary>
+</member><member name="M:GraphPictures.Library.OscilloscopeResources.GetPDEFileContentsFromSVG(System.String)">
+	<summary>
+ The SVG File's Beziers are approximated as 3 Lines Each, and the PDE File tells Processing\XYScope to Draw these lines as vertex's in a compound shape.
+ </summary>
+	<param name="_SVGFilePath"></param>
+	<returns>The Contents of the PDEFile</returns>
+	<remarks></remarks>
+</member><member name="M:GraphPictures.Library.OscilloscopeResources.SavePDEToDisk(System.String,System.String,System.String)">
+	<summary>
+ The PDE File is saved to disk (in the strange manner that processing seems to require - that's why this function isn't just a File.WriteText() call...)
+ </summary>
+	<param name="_PDEName">If set to {AutoGenerate}, then a FileName will be automatically generated in the format ^GP_\w{10}\.PDE$</param>
+	<returns>The Name of the PDE (Sketch) Generated (Same as the File without the Extention .pde)</returns>
+</member><member name="M:GraphPictures.Library.OscilloscopeResources.RunPDEFile(System.String)">
+	<summary>
+ Starts playing the Audio for the PDEFile, using the Processing-Java.EXE
+ </summary>
+	<param name="_PDEFolderPath">NOTE: This is not the path to a .PDE File. Instead, it is the path to the Folder, which has the same name as the pde file, but without the extention</param>
+	<remarks></remarks>
+</member><member name="P:GraphPictures.Library.BezierObjects.NOrderBezier.BezierOrderDescription">
+	<summary>Returns the Bezier's Order, E.g. "Linear", or "9-th Order"</summary>
+</member><member name="M:GraphPictures.Library.BezierObjects.NOrderBezier.GetExpressionsForGraphWithDragablePoints(System.UInt16)">
+	<summary>
+ Retunrs the IDesmosExpressions, for the current nOrder Bezier, but with all of it's points as draggable elements in Desmos.
+ Run these through the ToDesmosPastable() Compiler Extention Method for a String you can Paste into Desmos
+ </summary>
+</member><member name="M:GraphPictures.Library.BezierObjects.NOrderBezier.GetExpressionsForGraphWithDragablePointsAndShowAllSubBeziers(System.UInt16)">
+	<summary>
+ Retunrs the IDesmosExpressions, for the current nOrder Bezier, but with all of it's points as draggable elements in Desmos.
+ Also returns [IDesmosExpression]'s for all the SubBeziers within the current NOrderBezier. These SubBeziers also referance the XYVariables, so response when the Points are dragged.
+ Run these through the ToDesmosPastable() Compiler Extention Method for a String you can paste into Desmos
+ </summary>
+</member><member name="M:GraphPictures.Library.BezierObjects.CubicBezier.ToLatexExpression">
+	<summary>
+ Formats the Bezier as a LaTeX Expression, ready to paste into Graphing Calcuators such as Desmos
  </summary>
 	<returns></returns>
 	<remarks></remarks>
-</member><member name="T:GraphPictures.Library.Resources.DesmosStateCreationOptions">
+</member><member name="M:GraphPictures.Library.BezierObjects.CubicBezier.ToString">
 	<summary>
- Used for the _Options Argument to ToDesmosState() CompilerExtention
+ Returns a String representing the Bezier's Start, Control and End Points
  </summary>
-</member><member name="M:GraphPictures.Library.Resources.GetRandomString(System.UInt16)">
-	<summary>
- Generates a Random String of the Specified Length. The Characters used are specified in the Array inside the Function
- </summary>
-	<param name="_WantedLength"></param>
-	<returns></returns>
+	<returns>Returns a String representing the Bezier's Start, Control and End Points</returns>
 	<remarks></remarks>
-</member><member name="P:GraphPictures.My.Resources.Resources.ResourceManager">
+</member><member name="P:GraphPictures.Library.BezierObjects.CubicBezier.GraphBoundries">
 	<summary>
-  Returns the cached ResourceManager instance used by this class.
-</summary>
-</member><member name="P:GraphPictures.My.Resources.Resources.Culture">
-	<summary>
-  Overrides the current thread's CurrentUICulture property for all
-  resource lookups using this strongly typed resource class.
-</summary>
-</member><member name="T:GraphPictures.My.Resources.Resources">
-	<summary>
-  A strongly-typed resource class, for looking up localized strings, etc.
-</summary>
-</member><member name="P:GraphPictures.Library.ColourResources.ColourRange.ColourAtPercentageThrough(System.Decimal)">
-	<summary>
- Gets the Colour x% of the way through the Range
+ Gets the Max and Min X and Y values in the Points of the Cubic Bezier
  </summary>
-	<param name="_ProportionOfRangeLength">E.g. 0.52 Would be 52% of the way through the Colours Array of the current ColourRange Object</param>
 	<value></value>
 	<returns></returns>
 	<remarks></remarks>
-</member><member name="T:GraphPictures.Library.ColourResources.ColourRange">
+</member><member name="T:GraphPictures.Library.BezierObjects.CubicBezier">
 	<summary>
- Represents a Range of Colours.
+ Represents a Bezier with a StartPoint, Two ControlPoints, and an EndPoint
  </summary>
 	<remarks></remarks>
-</member><member name="T:GraphPictures.Library.PointPlottingObjects.PointPlottedRasterGraphic">
+</member><member name="M:GraphPictures.Library.BezierObjects.QuadraticBezier.MakeBezierPassThrough(System.Drawing.Point)">
 	<summary>
- Represents a Graphic which can be plotted onto a DesmosGraph, using a Point for each Pixel
+ Positions the ControlPoint, so that the Quadratic Bezier passes through the _DesiredPoint, Based off of the current Values of [the StartPoint and EndPoint, which must be set first for this to work].
+ </summary>
+	<param name="_DesiredPoint"></param>
+	<remarks></remarks>
+</member><member name="M:GraphPictures.Library.BezierObjects.QuadraticBezier.ToLatexExpression">
+	<summary>
+ Formats the Bezier as a LaTeX Expression, ready to paste into Graphing Calcuators such as Desmos
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:GraphPictures.Library.BezierObjects.QuadraticBezier.GraphBoundries">
+	<summary>
+ Gets the Max and Min X and Y values in the Points of the Cubic Bezier
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:GraphPictures.Library.BezierObjects.QuadraticBezier.ToString">
+	<summary>
+ Returns a String representing the Bezier's Start, Control and End Points
+ </summary>
+	<returns>Returns a String representing the Bezier's Start, Control and End Points</returns>
+	<remarks></remarks>
+</member><member name="T:GraphPictures.Library.BezierObjects.QuadraticBezier">
+	<summary>
+ Represents a Bezier with a StartPoint, ControlPoint, and EndPoint
  </summary>
 	<remarks></remarks>
+</member><member name="F:GraphPictures.Library.BezierObjects.DraggablePoint.XYVariablesNumber">
+	<summary>
+ The SubScript X and Y number to use for the corrosponding Desmos Variables for this DraggablePoint.
+ E.g. were it 5, then this Point's LatexExpr would be (x_{5},y_{5})
+ </summary>
+</member><member name="P:GraphPictures.Library.BezierObjects.DraggablePoint.GraphBoundries">
+	<summary>
+ !!! There are no GraphBoundries for a DraggablePoint; it's position is determined by it's X and Y Variables
+ </summary>
+</member><member name="F:GraphPictures.Library.BezierObjects.DesmosVariable.SubScriptNumber">
+	<summary>
+ I.E. Name_{SubScriptNumber} for the LaTeX Expr
+ </summary>
+</member><member name="P:GraphPictures.Library.BezierObjects.DesmosVariable.Colour">
+	<summary>
+ This Type of DesmosExpr isn't actually seen on the Graph, so the Colour dosen't matter
+ </summary>
+</member><member name="P:GraphPictures.Library.BezierObjects.DesmosVariable.GraphBoundries">
+	<summary>
+ Variables do not appear on the Graph themselves, so do not have boundries
+ </summary>
+</member><member name="T:GraphPictures.Library.BezierObjects.GenericDesmosLatexExpression">
+	<summary>
+ Represents a Generic Desmos Latex Expression
+ </summary>
+</member><member name="M:GraphPictures.Library.BezierObjects.SVGPathInstruction.FromDAttributeInstruction(System.String)">
+	<summary>
+ Takes in a Singular Instruction which appeared in a Path's d="" Attribute. E.g. C 60 90
+ </summary>
+	<param name="_DAttributeInstruction"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:GraphPictures.Library.BezierObjects.SVGPathInstruction.ToString">
+	<summary>
+ Produces a String representing the CommandLetter and Points of the current SVGPathInstruction Instance.
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:GraphPictures.Library.BezierObjects.SVGPathInstruction">
+	<summary>
+ Represents an SVG path element Instruction, such as "M 50 50"
+ </summary>
+	<remarks></remarks>
+</member><member name="P:GraphPictures.Library.BezierObjects.DesmosGraphSize.NoGraphSize">
+	<summary>
+ Used for Expressions which don't appear on the Graph themselves, such as Variables
+ </summary>
+</member><member name="P:GraphPictures.Library.BezierObjects.DesmosGraphSize.StandardViewport">
+	<summary>
+ Used for Blank VideoFrames
+ </summary>
+</member><member name="T:GraphPictures.Library.BezierObjects.DesmosGraphSize">
+	<summary>
+ An structre to represent the Size of a BezierGraph
+ </summary>
+	<remarks></remarks>
+</member><member name="M:GraphPictures.Library.FileResources.RemoveFirstNBytesFromStartOfFile(System.String,System.UInt16)">
+	<summary>
+ Removes the first N bytes from the start of the File's :Data$ Stream
+ </summary>
+	<param name="_FilePath"></param>
+	<param name="_NumberOfBytesToRemove"></param>
+	<remarks></remarks>
+</member><member name="M:GraphPictures.Library.FileResources.FindAvaliableFileNameInFolder(System.String,System.String)">
+	<summary>
+ Returns a FileName which does not yet exist in the folder. An attempt is made to use the Seed as it is, but that FileName is already taken, then a random String will be prepended.
+ </summary>
+</member><member name="M:GraphPictures.Library.ExcelResources.PlotBitmapOnExcelByRGB(System.Drawing.Bitmap,System.Boolean,System.UInt32)">
+	<summary>
+ Instead of colouring 1 square cell per pixel, 3 cells are used, one for each of the Red, Green, and Blue.
+ </summary>
 </member>
 </members>
 </doc>

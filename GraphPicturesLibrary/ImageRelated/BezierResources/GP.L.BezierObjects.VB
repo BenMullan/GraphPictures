@@ -757,7 +757,7 @@ Namespace Library
 
 		End Structure
 
-		REM This couldn't go inside the Structre Below because Struct's don't support Instance Member Initialisers
+		REM This couldn't go inside the Structre Below because Structs don't support Instance Member Initialisers
 		Public ReadOnly PathInstructionChars As Char() = "MmLlCcZz".ToCharArray()
 
 		''' <summary>
@@ -768,14 +768,12 @@ Namespace Library
 
 			Public Const PathInstructionRegExp$ = "^(((m|M|l|L|c|C) *(\-?\d{1,8})( \-?\d{1,8})+)|(z|Z))$"
 
-			Public ReadOnly CommandLetter As [Char]
-			Public ReadOnly Points As Drawing.Point()
+			Public CommandLetter As [Char]
+			Public Points As Drawing.Point()
 
 			Public Sub New(ByVal _CommandLetter As Char, ByVal _Points As Drawing.Point())
-				With Me
-					.CommandLetter = _CommandLetter
-					.Points = _Points
-				End With
+				Me.CommandLetter = _CommandLetter
+				Me.Points = _Points
 			End Sub
 
 			''' <summary>

@@ -14,3 +14,11 @@ D:\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\SolutionGH\Grap
 D:\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\SolutionGH\GraphPicturesLibrary\obj\Release\GraphPictures.Library.dll
 D:\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\SolutionGH\GraphPicturesLibrary\obj\Release\GraphPictures.Library.xml
 D:\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\SolutionGH\GraphPicturesLibrary\obj\Release\GraphPictures.Library.pdb
+D:\Benedict\Documents\Programming\_Repositories\GraphPictures\GraphPicturesLibrary\bin\Release\GraphPictures.Library.dll
+D:\Benedict\Documents\Programming\_Repositories\GraphPictures\GraphPicturesLibrary\bin\Release\GraphPictures.Library.pdb
+D:\Benedict\Documents\Programming\_Repositories\GraphPictures\GraphPicturesLibrary\bin\Release\GraphPictures.Library.xml
+D:\Benedict\Documents\Programming\_Repositories\GraphPictures\GraphPicturesLibrary\obj\Release\GraphPictures.Resources.resources
+D:\Benedict\Documents\Programming\_Repositories\GraphPictures\GraphPicturesLibrary\obj\Release\GraphPicturesLibrary.vbproj.GenerateResource.Cache
+D:\Benedict\Documents\Programming\_Repositories\GraphPictures\GraphPicturesLibrary\obj\Release\GraphPictures.Library.dll
+D:\Benedict\Documents\Programming\_Repositories\GraphPictures\GraphPicturesLibrary\obj\Release\GraphPictures.Library.xml
+D:\Benedict\Documents\Programming\_Repositories\GraphPictures\GraphPicturesLibrary\obj\Release\GraphPictures.Library.pdb

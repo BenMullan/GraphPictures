@@ -70,3 +70,15 @@ D:\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\SolutionGH\Grap
 D:\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\SolutionGH\GraphPicturesCMDUtils\obj\x86\Debug\GraphPictures.CMDUtils.exe
 D:\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\SolutionGH\GraphPicturesCMDUtils\obj\x86\Debug\GraphPictures.CMDUtils.xml
 D:\Benedict\Documents\SchoolWork\Projects\GraphPictures\Solution\SolutionGH\GraphPicturesCMDUtils\obj\x86\Debug\GraphPictures.CMDUtils.pdb
+D:\Benedict\Documents\Programming\_Repositories\GraphPictures\GraphPicturesCMDUtils\bin\Debug\GraphPictures.CMDUtils.exe
+D:\Benedict\Documents\Programming\_Repositories\GraphPictures\GraphPicturesCMDUtils\bin\Debug\GraphPictures.CMDUtils.pdb
+D:\Benedict\Documents\Programming\_Repositories\GraphPictures\GraphPicturesCMDUtils\bin\Debug\GraphPictures.CMDUtils.xml
+D:\Benedict\Documents\Programming\_Repositories\GraphPictures\GraphPicturesCMDUtils\bin\Debug\GraphPictures.Library.dll
+D:\Benedict\Documents\Programming\_Repositories\GraphPictures\GraphPicturesCMDUtils\bin\Debug\GraphPictures.Library.pdb
+D:\Benedict\Documents\Programming\_Repositories\GraphPictures\GraphPicturesCMDUtils\bin\Debug\GraphPictures.Library.xml
+D:\Benedict\Documents\Programming\_Repositories\GraphPictures\GraphPicturesCMDUtils\obj\x86\Debug\GraphPicturesCMDUtils.vbprojResolveAssemblyReference.cache
+D:\Benedict\Documents\Programming\_Repositories\GraphPictures\GraphPicturesCMDUtils\obj\x86\Debug\GraphPictures.Resources.resources
+D:\Benedict\Documents\Programming\_Repositories\GraphPictures\GraphPicturesCMDUtils\obj\x86\Debug\GraphPicturesCMDUtils.vbproj.GenerateResource.Cache
+D:\Benedict\Documents\Programming\_Repositories\GraphPictures\GraphPicturesCMDUtils\obj\x86\Debug\GraphPictures.CMDUtils.exe
+D:\Benedict\Documents\Programming\_Repositories\GraphPictures\GraphPicturesCMDUtils\obj\x86\Debug\GraphPictures.CMDUtils.xml
+D:\Benedict\Documents\Programming\_Repositories\GraphPictures\GraphPicturesCMDUtils\obj\x86\Debug\GraphPictures.CMDUtils.pdb

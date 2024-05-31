@@ -489,15 +489,15 @@
 			''' <returns>Returns the Maximun possible Index one could specify for a non-[dynamically-allocated], zero-indexed Array</returns>
 			''' <remarks></remarks>
 			<Global.System.Runtime.CompilerServices.Extension()>
-			Public Function MaxIndex%(ByRef _Array As Array)
+			Public Function MaxIndex(Of _TElement)(ByRef _Array As _TElement()) As Int32
 				Return (_Array.Length - 1)
 			End Function
 
 			''' <summary>
-			''' (MullNet CompilerExtention)
+			''' (MullNet CompilerExtention) → _Array.Length - 2
 			''' </summary>
 			<Global.System.Runtime.CompilerServices.Extension()>
-			Public Function PenultimateIndex%(ByRef _Array As Array)
+			Public Function PenultimateIndex(Of _TElement)(ByRef _Array As _TElement()) As Int32
 				Return (_Array.Length - 2)
 			End Function
 
