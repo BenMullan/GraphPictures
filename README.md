@@ -3,7 +3,7 @@
 _A suite of tools for plotting raster images as vector graphics on different sorts of Graphs (Desmos, Excel, or Oscilloscopes)_
 <br/>
 
-Watch the [**GraphPictures Demo Video**](https://www.youtube.com/watch?v=OfOA4RKgIlA)!
+> Watch the [**GraphPictures YouTube Video**](https://www.youtube.com/watch?v=OfOA4RKgIlA)!
 <br/>
 
 <br/><br/>
